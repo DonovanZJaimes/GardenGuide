@@ -22,6 +22,7 @@
 		5DCE881A2BC5C69100F853B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88192BC5C69100F853B5 /* GoogleSignIn */; };
 		5DCE881C2BC5C69100F853B5 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE881B2BC5C69100F853B5 /* GoogleSignInSwift */; };
 		5DCE881E2BC5C8C000F853B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */; };
+		5DCE88402BC8547500F853B5 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE883F2BC8547500F853B5 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 				5DCE881C2BC5C69100F853B5 /* GoogleSignInSwift in Frameworks */,
 				5DCE88042BC46BD500F853B5 /* FirebaseAnalytics in Frameworks */,
 				5DCE881A2BC5C69100F853B5 /* GoogleSignIn in Frameworks */,
+				5DCE88402BC8547500F853B5 /* FirebaseCrashlytics in Frameworks */,
 				5DCE88172BC4A49900F853B5 /* FirebaseAuth in Frameworks */,
 				5DCE88062BC46BD500F853B5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
@@ -115,6 +117,7 @@
 				5DCE87E52BC4641500F853B5 /* Sources */,
 				5DCE87E62BC4641500F853B5 /* Frameworks */,
 				5DCE87E72BC4641500F853B5 /* Resources */,
+				5DCE88412BC85DB000F853B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,6 +130,7 @@
 				5DCE88162BC4A49900F853B5 /* FirebaseAuth */,
 				5DCE88192BC5C69100F853B5 /* GoogleSignIn */,
 				5DCE881B2BC5C69100F853B5 /* GoogleSignInSwift */,
+				5DCE883F2BC8547500F853B5 /* FirebaseCrashlytics */,
 			);
 			productName = GardenGuide;
 			productReference = 5DCE87E92BC4641500F853B5 /* GardenGuide.app */;
@@ -183,6 +187,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DCE88412BC85DB000F853B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(SRCROOT)/$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5DCE87E52BC4641500F853B5 /* Sources */ = {
@@ -244,7 +273,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -448,6 +477,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		5DCE883F2BC8547500F853B5 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

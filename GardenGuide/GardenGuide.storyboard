@@ -25,6 +25,15 @@
                                     <action selector="closeSession:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e8M-5N-mWN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1I-4H-se3">
+                                <rect key="frame" x="166" y="541" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Error"/>
+                                <connections>
+                                    <action selector="ConfigError:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HpY-OI-FmD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

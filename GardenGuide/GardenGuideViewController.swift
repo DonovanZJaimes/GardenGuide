@@ -77,4 +77,9 @@ class GardenGuideViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func ConfigError(_ sender: Any) {
+        fatalError("Crash was triggered")
+    }
+    
 }
