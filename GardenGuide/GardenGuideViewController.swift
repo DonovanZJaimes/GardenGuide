@@ -10,6 +10,7 @@ import FirebaseAnalytics
 import FirebaseAuth
 import GoogleSignIn
 import FirebaseRemoteConfig
+import FirebaseFirestore
 
 class GardenGuideViewController: UIViewController {
 
@@ -17,9 +18,10 @@ class GardenGuideViewController: UIViewController {
     
     @IBOutlet weak var errorButton: UIButton!
     
+    @IBOutlet weak var infoLabel: UITextField!
     var email: String = ""
     var provider: ProviderType = .none
-    
+    private let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +101,33 @@ class GardenGuideViewController: UIViewController {
     
     @IBAction func ConfigError(_ sender: Any) {
         fatalError("Crash was triggered")
+    }
+    
+    
+    @IBAction func saveButton(_ sender: Any) {
+        view.endEditing(true)
+        db.collection("users").document(email).setData([
+            "provider": provider.rawValue,
+            "text": infoLabel.text ?? ""
+        ])
+    }
+    
+    @IBAction func recuperarButton(_ sender: Any) {
+        view.endEditing(true)
+        db.collection("users").document(email).getDocument { (documentSnapshot, error) in
+            if let document = documentSnapshot, error == nil {
+                if let text = document.get("text") as? String {
+                    self.infoLabel.text = text
+                } else {
+                    self.infoLabel.text = ""
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeButton(_ sender: Any) {
+        view.endEditing(true)
+        db.collection("users").document(email).delete()
     }
     
 }
