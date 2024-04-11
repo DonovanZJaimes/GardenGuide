@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1I-4H-se3">
-                                <rect key="frame" x="166" y="541" width="62" height="35"/>
+                                <rect key="frame" x="72" y="541" width="192" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Error"/>
@@ -41,6 +41,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="IIx-R3-gxN"/>
                     <connections>
                         <outlet property="closeSessionButton" destination="pLF-hh-GUk" id="hCy-GH-W45"/>
+                        <outlet property="errorButton" destination="v1I-4H-se3" id="b45-2q-djg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,10 +9,13 @@ import UIKit
 import FirebaseAnalytics
 import FirebaseAuth
 import GoogleSignIn
+import FirebaseRemoteConfig
 
 class GardenGuideViewController: UIViewController {
 
     @IBOutlet weak var closeSessionButton: UIButton!
+    
+    @IBOutlet weak var errorButton: UIButton!
     
     var email: String = ""
     var provider: ProviderType = .none
@@ -23,6 +26,22 @@ class GardenGuideViewController: UIViewController {
         print(email)
         print(provider)
         saveUser(email: email, provider: provider)
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.fetchAndActivate{ (status, error) in
+            if status != .error {
+                let showErrorButton = remoteConfig.configValue(forKey: "show_error_button").boolValue
+                let errorButtonText = remoteConfig.configValue(forKey: "error_Button_text").stringValue
+                
+                DispatchQueue.main.async {
+                    self.errorButton.isHidden = !showErrorButton
+                    self.errorButton.setTitle(errorButtonText, for: .normal)
+                }
+                
+            }
+            
+        }
+        
     }
     
     func saveUser(email: String, provider: ProviderType) {

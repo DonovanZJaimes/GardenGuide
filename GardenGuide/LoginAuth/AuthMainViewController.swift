@@ -25,6 +25,7 @@ import FirebaseAnalytics
 import FirebaseAuth
 import GoogleSignIn
 import FirebaseCore
+import FirebaseRemoteConfig
 
 class AuthMainViewController: UIViewController, AuthUIDelegate {
 
@@ -42,6 +43,25 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         super.viewDidLoad()
         configureButtons()
         
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 60
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.configSettings = settings
+        remoteConfig.setDefaults(["show_Sign_In_Button": NSNumber(true), "error_Button_text":NSString("MuestrameError"), "show_error_button":NSNumber(true)])
+        
+        
+        remoteConfig.fetchAndActivate{ (status, error) in
+            if status != .error {
+                let showSignInButton = remoteConfig.configValue(forKey: "show_Sign_In_Button").boolValue
+                
+                DispatchQueue.main.async {
+                    self.signInButton.isHidden = !showSignInButton
+                }
+                
+            }
+            
+        }
         
     }
     
