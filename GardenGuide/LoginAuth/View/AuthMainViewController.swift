@@ -4,22 +4,7 @@
 //
 //  Created by Donovan Z. Jaimes on 08/04/24.
 //
-//qfmH9WIKnwJugmCW2xMToUerR
-//qBTPMgj17Reg2Ascec1oBNWGfec6sigqHDbvreHnLCC2CN6Osy
-//https://gardenguide-8e010.firebaseapp.com/__/auth/handler
 
-
-/**
- clien ID
- RjBiX2c3dXlxdFUtM04yajhIS2Y6MTpjaQ
- Client Secet
- WaQbIh1rRGcZHL8d5LOUMyzM4QJKg5tRtWERY6K9XD7vLau6dE
- apy Key
- WYRrwrKzWbSzb4jv46M7Trawg
- apykey seceret
- isGszggQKavRXJ6mGfNgqjy24YNjGnMFbEqxDUiw2MMD6KbMWn
- 
- */
 import UIKit
 import FirebaseAnalytics
 import FirebaseAuth
@@ -36,7 +21,8 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var signInButton: GIDSignInButton!
-    var provider: OAuthProvider?
+    
+    lazy var delegate = AuthMainController(delegate: self, viewController: self)
     
     
     override func viewDidLoad() {
@@ -84,17 +70,13 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     //MARK: Email Auth
     @IBAction func logInButtonAction(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) { (result , error) in
-                self.goToGardenGuideViewController(result: result, error: error, provider: .email)
-            }
+            delegate.signInWithEmail(email, password: password)
         }
     }
     
     @IBAction func singUpButtonAction(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (result , error) in
-                self.goToGardenGuideViewController(result: result, error: error, provider: .email)
-            }
+            delegate.singUpWithEmail( email, password: password)
         }
     }
     
@@ -127,69 +109,18 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         }
     }
     
+    //MARK: Google Auth
     @IBAction func signInWithGoogle2(_ sender: UIButton) {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = config
-
-        // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
-          guard error == nil else {
-              //throw error
-              //print(error as Any)
-              return
-          }
-          guard let user = result?.user,
-            let idToken = user.idToken?.tokenString
-            else {
-              //throw error
-              return
-          }
-          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                         accessToken: user.accessToken.tokenString)
-            Auth.auth().signIn(with: credential) { result, error in
-                self.goToGardenGuideViewController(result: result, error: error, provider: .google)
-            }
-        }
+        delegate.signInWithGoogle()
     }
     
     //MARK: Anonymous Auth
     @IBAction func signUpAnonymously(_ sender: Any) {
-        Auth.auth().signInAnonymously { (authResult, error) in
-            guard error == nil else {
-                return
-            }
-            guard let user = authResult?.user else { return }
-            let isAnonymous = user.isAnonymous  // true
-            let uid = user.uid
-            self.goToGardenGuideViewController(result: authResult, error: error, provider: .anonymous,id: uid)
-        }
-        
+        delegate.signUpAnonymously()
     }
     
     @IBAction func twitterButtonAction(_ sender: Any) {
-        provider = OAuthProvider(providerID: "twitter.com")
-        provider?.getCredentialWith(nil) { credential, error in
-              if error != nil {
-                // Handle error.
-                  print("entro error1",error)
-                  
-              }
-              if credential != nil {
-                  Auth.auth().signIn(with: credential!) { authResult, error in
-                  if error != nil {
-                    // Handle error.
-                      print("entro error 2")
-                  }
-                      print("entro")
-                      print(authResult?.user.displayName)
-                      self.goToGardenGuideViewController(result: authResult, error: error, provider: .twitter)
-                }
-              }
-            }
-
+        delegate.signInWithTwitter()
     }
     
     func goToGardenGuideViewController(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String? = nil) {
@@ -216,4 +147,10 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     }
     
     
+}
+
+extension AuthMainViewController: AuthMainViewProtocol {
+    func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String?) {
+        goToGardenGuideViewController(result: result, error: error, provider: provider, id: id)
+    }
 }

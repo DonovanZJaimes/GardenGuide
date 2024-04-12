@@ -27,6 +27,7 @@
 		5DCE88452BC86B4900F853B5 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88442BC86B4900F853B5 /* FirebaseRemoteConfigSwift */; };
 		5DCE88472BC8774900F853B5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88462BC8774900F853B5 /* FirebaseFirestore */; };
 		5DCE88492BC8774900F853B5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88482BC8774900F853B5 /* FirebaseFirestoreSwift */; };
+		5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5DCE880D2BC4758600F853B5 /* GardenGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GardenGuide.storyboard; sourceTree = "<group>"; };
 		5DCE88102BC4876E00F853B5 /* ProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,9 @@
 		5DCE880F2BC47EFB00F853B5 /* LoginAuth */ = {
 			isa = PBXGroup;
 			children = (
-				5DCE88072BC474BF00F853B5 /* AuthMainViewController.swift */,
-				5DCE88092BC474DE00F853B5 /* AuthMain.storyboard */,
-				5DCE88102BC4876E00F853B5 /* ProviderType.swift */,
+				5DCE884C2BC8857300F853B5 /* Controller */,
+				5DCE884B2BC8856900F853B5 /* View */,
+				5DCE884A2BC8855A00F853B5 /* Model */,
 			);
 			path = LoginAuth;
 			sourceTree = "<group>";
@@ -113,6 +115,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DCE884A2BC8855A00F853B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE88102BC4876E00F853B5 /* ProviderType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5DCE884B2BC8856900F853B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE88072BC474BF00F853B5 /* AuthMainViewController.swift */,
+				5DCE88092BC474DE00F853B5 /* AuthMain.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5DCE884C2BC8857300F853B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +261,7 @@
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
+				5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */,
 				5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
