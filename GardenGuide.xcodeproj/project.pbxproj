@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */; };
+		5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */; };
 		5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */; };
 		5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */; };
 		5DCE87F62BC4641800F853B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE87F52BC4641800F853B5 /* Assets.xcassets */; };
@@ -28,9 +30,14 @@
 		5DCE88472BC8774900F853B5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88462BC8774900F853B5 /* FirebaseFirestore */; };
 		5DCE88492BC8774900F853B5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88482BC8774900F853B5 /* FirebaseFirestoreSwift */; };
 		5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */; };
+		5DCE88522BC9ED1200F853B5 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */; };
+		5DCE88542BC9EEA200F853B5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */; };
+		5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88552BCB261400F853B5 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
+		5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebase.swift; sourceTree = "<group>"; };
 		5DCE87E92BC4641500F853B5 /* GardenGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GardenGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,9 @@
 		5DCE88102BC4876E00F853B5 /* ProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainController.swift; sourceTree = "<group>"; };
+		5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5DCE88552BCB261400F853B5 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 		5DCE87EB2BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXGroup;
 			children = (
+				5DCE884F2BC9ECD800F853B5 /* Utils */,
 				5DCE880F2BC47EFB00F853B5 /* LoginAuth */,
 				5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */,
 				5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */,
@@ -121,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCE88102BC4876E00F853B5 /* ProviderType.swift */,
+				5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */,
+				5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +153,24 @@
 				5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5DCE884F2BC9ECD800F853B5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE88502BC9ECFA00F853B5 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DCE88502BC9ECFA00F853B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */,
+				5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */,
+				5DCE88552BCB261400F853B5 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,12 +288,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */,
+				5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */,
 				5DCE88082BC474BF00F853B5 /* AuthMainViewController.swift in Sources */,
+				5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */,
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
 				5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */,
 				5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */,
+				5DCE88522BC9ED1200F853B5 /* UIButton+Extension.swift in Sources */,
+				5DCE88542BC9EEA200F853B5 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

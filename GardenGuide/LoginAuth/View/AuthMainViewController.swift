@@ -4,7 +4,6 @@
 //
 //  Created by Donovan Z. Jaimes on 08/04/24.
 //
-
 import UIKit
 import FirebaseAnalytics
 import FirebaseAuth
@@ -17,17 +16,23 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var singUpButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     
     lazy var delegate = AuthMainController(delegate: self, viewController: self)
+    private var password: String? = nil
+    private var email: String? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtons()
+        configEmailButtons()
+        enableEmailButtons()
+        errorLabel.isHidden = true
         
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 60
@@ -44,44 +49,56 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
                 DispatchQueue.main.async {
                     self.signInButton.isHidden = !showSignInButton
                 }
-                
             }
-            
         }
-        
     }
     
-    func configureButtons() {
-        let buttonsEmail = [logInButton, singUpButton]
-        buttonsEmail.forEach { button in
-            button?.layer.cornerRadius = (button?.frame.height)!/7
-            
-        }
-        let borderColor = UIColor(named: "Opaque Separator Color") /***Color del borde*/
-        let buttonsSignIn =  [googleButton, twitterButton]
-        buttonsSignIn.forEach { button in
-            button!.layer.cornerRadius = (button?.frame.height)!/7
-            button!.layer.borderColor = borderColor?.cgColor
-            button!.layer.borderWidth = 0.1
-        }
-        
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        password = nil
+        email = nil
+        errorLabel.isHidden = true
     }
+    
+    //MARK: Config View
+    func configEmailButtons() {
+        let emailButtons = [logInButton, signUpButton]
+        emailButtons.forEach { button in
+            button?.modifyCornerRadius((button?.frame.height)!/7)
+        }
+        let signInButtons =  [googleButton, twitterButton]
+        signInButtons.forEach { button in
+            button?.modifyCornerRadius((button?.frame.height)!/7, withColor: .opaqueSeparator, andWidth: 0.3)
+        }
+    }
+    
     
     //MARK: Email Auth
     @IBAction func logInButtonAction(_ sender: Any) {
-        if let email = emailTextField.text, let password = passwordTextField.text {
+        if let email = emailTextField.text, let password = passwordTextField.text  {
             delegate.signInWithEmail(email, password: password)
         }
     }
     
-    @IBAction func singUpButtonAction(_ sender: Any) {
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            delegate.singUpWithEmail( email, password: password)
+    @IBAction func signUpButtonAction(_ sender: Any) {
+        guard let email = email else {
+            errorLabel.isHidden = false
+            errorLabel.text = SignUpError.invalidEmail.localizedDescription
+            return
         }
+        guard let password = password  else {
+            errorLabel.isHidden = false
+            errorLabel.text = SignUpError.invalidPassword.localizedDescription
+            return
+        }
+         
+        errorLabel.isHidden = true
+        delegate.signUpWithEmail( email, password: password)
     }
     
+    
    //MARK: Google Auth
-    @IBAction func signInWithGoogle(_ sender: GIDSignInButton) {
+    @IBAction func signInWithGIDGoogle(_ sender: GIDSignInButton) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         // Create Google Sign In configuration object.
@@ -104,13 +121,17 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
           let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                          accessToken: user.accessToken.tokenString)
             Auth.auth().signIn(with: credential) { result, error in
-                self.goToGardenGuideViewController(result: result, error: error, provider: .google)
+                if let result = result, error == nil {
+                    self.goToGardenGuideViewController(email: (result.user.email ?? result.user.displayName) ??  "" , provider: .google)
+                }else {
+                    self.errorLabel.text = "Failed Authentication"
+                }
             }
         }
     }
     
     //MARK: Google Auth
-    @IBAction func signInWithGoogle2(_ sender: UIButton) {
+    @IBAction func signInWithGoogle(_ sender: UIButton) {
         delegate.signInWithGoogle()
     }
     
@@ -119,38 +140,63 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         delegate.signUpAnonymously()
     }
     
+    //MARK: Twitter Auth
     @IBAction func twitterButtonAction(_ sender: Any) {
         delegate.signInWithTwitter()
     }
     
-    func goToGardenGuideViewController(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String? = nil) {
-        if let result = result, error == nil {
-            
-            let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
-            if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,  let gardenGuideViewController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
-                let email = id == nil ? (result.user.email ?? result.user.displayName)! : id!
-                gardenGuideViewController.email = email //result.user.email!
-                gardenGuideViewController.provider = provider
-                
-                gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
-                
-                self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
-                self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
-            }
-            
-        } else {
-            let alertController = UIAlertController(title: "Error", message: "An error occurred while registering the user", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Accept", style: .default)
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true)
+    
+    @IBAction func editingEmailTextField(_ sender: UITextField) {
+        enableEmailButtons()
+        guard let email = sender.text, email.isValidEmail else {
+            email = nil
+            return
         }
+        self.email = email
     }
     
+    @IBAction func editingPasswordTextField(_ sender: UITextField) {
+        password = String(passwordSafeString: sender.text ?? "")
+        enableEmailButtons()
+    }
+    
+    func enableEmailButtons() {
+        guard emailTextField.text != "" && passwordTextField.text != "" else {
+            signUpButton.isEnabled = false
+            logInButton.isEnabled = false
+            return
+        }
+        signUpButton.isEnabled = true
+        logInButton.isEnabled = true
+        
+    }
+    
+    func goToGardenGuideViewController(email: String, provider: ProviderType) {
+        let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
+        if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,  let gardenGuideViewController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
+            
+            gardenGuideViewController.email = email
+            gardenGuideViewController.provider = provider
+            
+            gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
+            
+            self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
+            self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
+        }
+        
+    }
     
 }
 
 extension AuthMainViewController: AuthMainViewProtocol {
-    func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String?) {
-        goToGardenGuideViewController(result: result, error: error, provider: provider, id: id)
+    func successfulAuthentication(provider: ProviderType, email: String) {
+        errorLabel.isHidden = true
+        goToGardenGuideViewController(email: email, provider: provider)
     }
+    
+    func failedAuthentication(error: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = error
+    }
+    
 }

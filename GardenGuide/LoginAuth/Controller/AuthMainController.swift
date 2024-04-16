@@ -12,7 +12,9 @@ import GoogleSignIn
 import FirebaseCore
 
 protocol AuthMainViewProtocol: AnyObject {
-    func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String?)
+    //func verifyAuthentication2(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String?)
+    func successfulAuthentication(provider: ProviderType, email: String)
+    func failedAuthentication(error: String)
 }
 
 class AuthMainController {
@@ -48,8 +50,10 @@ class AuthMainController {
           }
           let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                          accessToken: user.accessToken.tokenString)
-            Auth.auth().signIn(with: credential) { result, error in
-                self?.delegate?.verifyAuthentication(result: result, error: error, provider: .google, id: nil)
+            Auth.auth().signIn(with: credential) { [weak self] result, error in
+                self?.verifyAuthentication(result: result, error: error, provider: .google)
+                
+                
             }
         }
     }
@@ -63,7 +67,7 @@ class AuthMainController {
             }
             guard let user = authResult?.user else { return }
             let uid = user.uid
-            self.delegate?.verifyAuthentication(result: authResult, error: error, provider: .anonymous, id: uid)
+            self.verifyAuthentication(result: authResult, error: error, provider: .anonymous, id: uid)
         }
         
     }
@@ -80,7 +84,7 @@ class AuthMainController {
                   if error != nil {
                     // Handle error.
                   }
-                      self.delegate?.verifyAuthentication(result: authResult, error: error, provider: .twitter, id: nil)
+                      self.verifyAuthentication(result: authResult, error: error, provider: .twitter)
                 }
               }
             }
@@ -90,15 +94,47 @@ class AuthMainController {
     //MARK: Email
     func signInWithEmail(_ email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result , error) in
-            self.delegate?.verifyAuthentication(result: result, error: error, provider: .email, id: nil)
+            self.verifyAuthentication(result: result, error: error, provider: .email)
         }
     }
     
-    func singUpWithEmail(_ email: String, password: String) {
+    func signUpWithEmail(_ email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (result , error) in
-            self.delegate?.verifyAuthentication(result: result, error: error, provider: .email, id: nil)
+            self.verifyAuthentication(result: result, error: error, provider: .email)
         }
         
+    }
+    
+    func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String? = nil) {
+        if let result = result, error == nil {
+            let email = id == nil ? (result.user.email ?? result.user.displayName)! : id!
+            delegate?.successfulAuthentication(provider: provider, email: email)
+        } else {
+            let errorMessage = analyzeError(error.debugDescription)
+            delegate?.failedAuthentication(error: errorMessage)
+        }
+        
+    }
+    
+    func analyzeError(_ error: String) -> String {
+        var errorMessage: String = ""
+        switch error {
+        case _ where error.contains(NetworkErrorFirebase.ErrorEmailAlredyInUse.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorEmailAlredyInUse.errorDescription!
+        case _ where error.contains(NetworkErrorFirebase.ErrorWeakPassword.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorWeakPassword.errorDescription!
+        case _ where error.contains(NetworkErrorFirebase.ErrorMissingEmail.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorMissingEmail.errorDescription!
+        case _ where error.contains(NetworkErrorFirebase.ErrorInvalidEmail.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorInvalidEmail.errorDescription!
+        case _ where error.contains(NetworkErrorFirebase.ErrorInvalidPassword.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorInvalidPassword.errorDescription!
+        case _ where error.contains(NetworkErrorFirebase.ErrorWrongPassword.errorCode):
+            errorMessage = NetworkErrorFirebase.ErrorWrongPassword.errorDescription!
+        default:
+            errorMessage = NetworkErrorFirebase.ErrorGeneric.errorDescription!
+        }
+        return errorMessage
     }
         
    
