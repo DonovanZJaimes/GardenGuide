@@ -12,7 +12,6 @@ import GoogleSignIn
 import FirebaseCore
 
 protocol AuthMainViewProtocol: AnyObject {
-    //func verifyAuthentication2(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String?)
     func successfulAuthentication(provider: ProviderType, email: String)
     func failedAuthentication(error: String)
 }
@@ -105,7 +104,7 @@ class AuthMainController {
         
     }
     
-    func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String? = nil) {
+    private func verifyAuthentication(result: AuthDataResult?, error: Error?, provider: ProviderType, id: String? = nil) {
         if let result = result, error == nil {
             let email = id == nil ? (result.user.email ?? result.user.displayName)! : id!
             delegate?.successfulAuthentication(provider: provider, email: email)
@@ -116,7 +115,7 @@ class AuthMainController {
         
     }
     
-    func analyzeError(_ error: String) -> String {
+    private func analyzeError(_ error: String) -> String {
         var errorMessage: String = ""
         switch error {
         case _ where error.contains(NetworkErrorFirebase.ErrorEmailAlredyInUse.errorCode):

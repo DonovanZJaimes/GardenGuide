@@ -61,14 +61,14 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     }
     
     //MARK: Config View
-    func configEmailButtons() {
+    private func configEmailButtons() {
         let emailButtons = [logInButton, signUpButton]
         emailButtons.forEach { button in
             button?.modifyCornerRadius((button?.frame.height)!/7)
         }
         let signInButtons =  [googleButton, twitterButton]
         signInButtons.forEach { button in
-            button?.modifyCornerRadius((button?.frame.height)!/7, withColor: .opaqueSeparator, andWidth: 0.3)
+            button?.modifyCornerRadius((button?.frame.height)!/7, withColor: .opaqueGray, andWidth: 0.3)
         }
     }
     
@@ -145,7 +145,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         delegate.signInWithTwitter()
     }
     
-    
+    //MARK: Actions
     @IBAction func editingEmailTextField(_ sender: UITextField) {
         enableEmailButtons()
         guard let email = sender.text, email.isValidEmail else {
@@ -160,7 +160,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         enableEmailButtons()
     }
     
-    func enableEmailButtons() {
+    private func enableEmailButtons() {
         guard emailTextField.text != "" && passwordTextField.text != "" else {
             signUpButton.isEnabled = false
             logInButton.isEnabled = false
@@ -171,7 +171,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         
     }
     
-    func goToGardenGuideViewController(email: String, provider: ProviderType) {
+    private func goToGardenGuideViewController(email: String, provider: ProviderType) {
         let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
         if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,  let gardenGuideViewController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
             

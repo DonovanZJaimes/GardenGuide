@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */; };
 		5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */; };
+		5D8834AE2BD071AB00A46774 /* String+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834AD2BD071AB00A46774 /* String+ExtensionTests.swift */; };
+		5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834AF2BD07AF100A46774 /* FirebaseAuth */; settings = {ATTRIBUTES = (Required, ); }; };
+		5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */; };
+		5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B32BD07B9900A46774 /* FirebaseFirestore */; };
+		5D8834B62BD07B9900A46774 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B52BD07B9900A46774 /* FirebaseFirestoreSwift */; };
+		5D8834B82BD07C2300A46774 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */; };
+		5D8834BA2BD07C2300A46774 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B92BD07C2300A46774 /* FirebaseRemoteConfigSwift */; };
+		5D8834BC2BD07C6500A46774 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834BB2BD07C6500A46774 /* GoogleSignIn */; };
+		5D8834BE2BD07C6500A46774 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834BD2BD07C6500A46774 /* GoogleSignInSwift */; };
+		5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */; };
 		5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */; };
 		5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */; };
 		5DCE87F62BC4641800F853B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE87F52BC4641800F853B5 /* Assets.xcassets */; };
@@ -35,9 +45,22 @@
 		5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88552BCB261400F853B5 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5D8834A82BD0712600A46774 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DCE87E12BC4641500F853B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DCE87E82BC4641500F853B5;
+			remoteInfo = GardenGuide;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
 		5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebase.swift; sourceTree = "<group>"; };
+		5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GardenGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8834AD2BD071AB00A46774 /* String+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionTests.swift"; sourceTree = "<group>"; };
+		5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
 		5DCE87E92BC4641500F853B5 /* GardenGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GardenGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +80,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5D8834A12BD0712600A46774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */,
+				5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */,
+				5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */,
+				5D8834BE2BD07C6500A46774 /* GoogleSignInSwift in Frameworks */,
+				5D8834BA2BD07C2300A46774 /* FirebaseRemoteConfigSwift in Frameworks */,
+				5D8834B62BD07B9900A46774 /* FirebaseFirestoreSwift in Frameworks */,
+				5D8834B82BD07C2300A46774 /* FirebaseRemoteConfig in Frameworks */,
+				5D8834BC2BD07C6500A46774 /* GoogleSignIn in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E62BC4641500F853B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,10 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D8834A52BD0712600A46774 /* GardenGuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D8834AD2BD071AB00A46774 /* String+ExtensionTests.swift */,
+			);
+			path = GardenGuideTests;
+			sourceTree = "<group>";
+		};
 		5DCE87E02BC4641500F853B5 = {
 			isa = PBXGroup;
 			children = (
 				5DCE87EB2BC4641500F853B5 /* GardenGuide */,
+				5D8834A52BD0712600A46774 /* GardenGuideTests */,
 				5DCE87EA2BC4641500F853B5 /* Products */,
 				5DCE88152BC4A49900F853B5 /* Frameworks */,
 			);
@@ -90,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCE87E92BC4641500F853B5 /* GardenGuide.app */,
+				5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +217,7 @@
 				5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */,
 				5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */,
 				5DCE88552BCB261400F853B5 /* String+Extension.swift */,
+				5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +225,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5D8834A32BD0712600A46774 /* GardenGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D8834AC2BD0712600A46774 /* Build configuration list for PBXNativeTarget "GardenGuideTests" */;
+			buildPhases = (
+				5D8834A02BD0712600A46774 /* Sources */,
+				5D8834A12BD0712600A46774 /* Frameworks */,
+				5D8834A22BD0712600A46774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D8834A92BD0712600A46774 /* PBXTargetDependency */,
+			);
+			name = GardenGuideTests;
+			packageProductDependencies = (
+				5D8834AF2BD07AF100A46774 /* FirebaseAuth */,
+				5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */,
+				5D8834B32BD07B9900A46774 /* FirebaseFirestore */,
+				5D8834B52BD07B9900A46774 /* FirebaseFirestoreSwift */,
+				5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */,
+				5D8834B92BD07C2300A46774 /* FirebaseRemoteConfigSwift */,
+				5D8834BB2BD07C6500A46774 /* GoogleSignIn */,
+				5D8834BD2BD07C6500A46774 /* GoogleSignInSwift */,
+			);
+			productName = GardenGuideTests;
+			productReference = 5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5DCE87E82BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DCE87FD2BC4641800F853B5 /* Build configuration list for PBXNativeTarget "GardenGuide" */;
@@ -216,6 +293,11 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					5D8834A32BD0712600A46774 = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+						TestTargetID = 5DCE87E82BC4641500F853B5;
+					};
 					5DCE87E82BC4641500F853B5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -239,11 +321,19 @@
 			projectRoot = "";
 			targets = (
 				5DCE87E82BC4641500F853B5 /* GardenGuide */,
+				5D8834A32BD0712600A46774 /* GardenGuideTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5D8834A22BD0712600A46774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E72BC4641500F853B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +374,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5D8834A02BD0712600A46774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8834AE2BD071AB00A46774 /* String+ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E52BC4641500F853B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +390,7 @@
 				5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */,
 				5DCE88082BC474BF00F853B5 /* AuthMainViewController.swift in Sources */,
 				5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */,
+				5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */,
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
@@ -303,6 +402,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D8834A92BD0712600A46774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DCE87E82BC4641500F853B5 /* GardenGuide */;
+			targetProxy = 5D8834A82BD0712600A46774 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */ = {
@@ -316,6 +423,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5D8834AA2BD0712600A46774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DonovanZJaimes.GardenGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
+			};
+			name = Debug;
+		};
+		5D8834AB2BD0712600A46774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DonovanZJaimes.GardenGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
+			};
+			name = Release;
+		};
 		5DCE87FB2BC4641800F853B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,6 +634,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5D8834AC2BD0712600A46774 /* Build configuration list for PBXNativeTarget "GardenGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D8834AA2BD0712600A46774 /* Debug */,
+				5D8834AB2BD0712600A46774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5DCE87E42BC4641500F853B5 /* Build configuration list for PBXProject "GardenGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -529,6 +683,46 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D8834AF2BD07AF100A46774 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5D8834B32BD07B9900A46774 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5D8834B52BD07B9900A46774 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		5D8834B92BD07C2300A46774 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		5D8834BB2BD07C6500A46774 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		5D8834BD2BD07C6500A46774 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		5DCE88032BC46BD500F853B5 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

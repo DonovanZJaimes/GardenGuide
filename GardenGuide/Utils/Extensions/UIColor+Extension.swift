@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    @nonobjc class var opaqueSeparatorColor: UIColor {
-        UIColor(named: "Opaque Separator Color")!
+    @nonobjc class var opaqueGray: UIColor {
+        UIColor(named: "OpaqueGray")!
             }
 }
