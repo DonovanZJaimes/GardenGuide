@@ -20,5 +20,176 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/StringExtensionTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "StringExtensionTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - 4b6e1822e82b47b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.__allocating_init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - e5ae6e39d4f5b8c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - e14670b4e63d8a74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.__allocating_init(selector: ObjectiveC.Selector) -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - 14b25c898c02fc31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.init(selector: ObjectiveC.Selector) -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - 568c9ea6614096eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.__allocating_init() -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - 4747713e0a0a6727"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.init() -&gt; GardenGuideTests.StringExtensionTests"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "53E3B709-6A59-484E-ADCF-AD43E28B22C4 - 447b986d580465ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.StringExtensionTests.__deallocating_deinit"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/StringExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33431FD7-BAD7-47B4-B50D-0E900FFF475B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/StringExtensionTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "test_passwordSafeString_checkIfItIsAGoodPassword()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE2E51F0-D50D-464B-BE46-00B647F921A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "AuthMainViewControllerTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E7B5CAA-1B2B-4B17-92FA-8BC0F2F3AA7E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "AuthMainViewControllerTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
