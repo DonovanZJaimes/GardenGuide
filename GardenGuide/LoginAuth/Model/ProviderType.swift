@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum ProviderType: String {
+enum ProviderType: String, CaseIterable {
     case anonymous
     case email
     case google

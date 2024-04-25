@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkErrorFirebase: String, Error {
+enum NetworkErrorFirebase: String, Error, CaseIterable {
     case ErrorEmailAlredyInUse // 17007
     case ErrorWeakPassword // 17026
     case ErrorMissingEmail // 17034

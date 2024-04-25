@@ -19,13 +19,14 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
+    @IBOutlet weak var anonymousButton: UIButton!
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var errorLabel: UILabel!
     
     
     lazy var delegate = AuthMainController(delegate: self, viewController: self)
-    private var password: String? = nil
-    private var email: String? = nil
+    var password: String? = nil
+    var email: String? = nil
     
     
     override func viewDidLoad() {
@@ -171,7 +172,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         
     }
     
-    private func goToGardenGuideViewController(email: String, provider: ProviderType) {
+    func goToGardenGuideViewController(email: String, provider: ProviderType) {
         let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
         if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,  let gardenGuideViewController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
             
@@ -180,6 +181,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
             
             gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
             
+            //self.navigationController?.pushViewController(gardenGuideViewController, animated: true)
             self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
             self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
         }

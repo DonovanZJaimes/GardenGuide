@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SignUpError: String, Error {
+enum SignUpError: String, Error, CaseIterable {
     case invalidPassword
     case invalidEmail
 }
