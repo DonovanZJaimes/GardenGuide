@@ -6,30 +6,39 @@
 //
 
 import XCTest
+@testable import GardenGuide
 
 final class SignUpErrorTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_SignUpError_DetermineNumberOfCases() throws {
+        //Arrange
+        let cases: Int = 2 // The SignUpError has 2 cases
+        //Act
+        //Assert
+        XCTAssertEqual(SignUpError.allCases.count, cases, "The number of cases is incorrect")
+        
     }
+    
+    func test_SignUpError_DetermineTehRawValueOfCases() {
+        //Arrange
+        let signUpErrorPassword = "invalidPassword"
+        let signUpErrorEmail = "invalidEmail"
+        
+        //Act
+        //Assert
+        XCTAssertEqual(signUpErrorEmail, SignUpError.invalidEmail.rawValue, "The case name is incorrect")
+        XCTAssertEqual(signUpErrorPassword, SignUpError.invalidPassword.rawValue, "The case name is incorrect")
+    }
+    
+    func test_SignUpError_DetermineTheLocalizedErrorOfCases() {
+        //Arrange
+        let signUpErrorPassword = "The password must have at least one lowercase letter, one uppercase letter, one number, and one special character"
+        let signUpErrorEmail = "The email address is invalid"
+        
+        //Act
+        //Assert
+        XCTAssertEqual(signUpErrorEmail, SignUpError.invalidEmail.localizedDescription!, "The case localizedDescription is incorrect")
+        XCTAssertEqual(signUpErrorPassword, SignUpError.invalidPassword.localizedDescription!, "The case localizedDescription is incorrect")    }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
