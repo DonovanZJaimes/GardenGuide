@@ -191,5 +191,148 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48D7B07D-396C-4FD5-91CF-411E02CD2F54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D2D86D8-D4F2-4F6C-B889-A4AA36C5CA29"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D2D86D8-D4F2-4F6C-B889-A4AA36C5CA29 - 116ebecffec1c16a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.AuthMainControllerTests.test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously() throws -&gt; ()"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1644">
+               </Location>
+               <Location
+                  uuid = "4D2D86D8-D4F2-4F6C-B889-A4AA36C5CA29 - 116ebecffec1c105"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.AuthMainControllerTests.test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously() throws -&gt; ()"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1397">
+               </Location>
+               <Location
+                  uuid = "4D2D86D8-D4F2-4F6C-B889-A4AA36C5CA29 - 116ebecffec1c14b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.AuthMainControllerTests.test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously() throws -&gt; ()"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "554">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1751322-D954-436A-95C1-D1B7769595B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B1751322-D954-436A-95C1-D1B7769595B2 - 116ebecffec1c2cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.AuthMainControllerTests.test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously() throws -&gt; ()"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1048">
+               </Location>
+               <Location
+                  uuid = "B1751322-D954-436A-95C1-D1B7769595B2 - 116ebecffec1c253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuideTests.AuthMainControllerTests.test_signUpAnonymously_CheckIfYouCanAuthenticateAnonymously() throws -&gt; ()"
+                  moduleName = "GardenGuideTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1014">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "579CF940-5B59-4F21-BD31-90782D1DDBF0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuideTests/LoginAuthTests/AuthMainControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "test_signUpWithEmail_withEmailAndSmallPassword()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

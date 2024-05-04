@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */; };
+		5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */; };
 		5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */; };
 		5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */; };
+		5D7AC04E2BE1A8B3003EF2C9 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */; };
+		5D7AC0502BE1A8B3003EF2C9 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */; };
+		5D7AC0532BE1A971003EF2C9 /* AuthMainSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */; };
 		5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834AF2BD07AF100A46774 /* FirebaseAuth */; settings = {ATTRIBUTES = (Required, ); }; };
 		5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B32BD07B9900A46774 /* FirebaseFirestore */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -61,8 +66,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenViewController.swift; sourceTree = "<group>"; };
+		5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserGarden.storyboard; sourceTree = "<group>"; };
 		5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
 		5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebase.swift; sourceTree = "<group>"; };
+		5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainSnapshotTests.swift; sourceTree = "<group>"; };
 		5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GardenGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
 		5D8834C12BD1B62A00A46774 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
@@ -100,7 +108,9 @@
 				5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */,
 				5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */,
 				5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */,
+				5D7AC0502BE1A8B3003EF2C9 /* SnapshotTesting in Frameworks */,
 				5D8834B82BD07C2300A46774 /* FirebaseRemoteConfig in Frameworks */,
+				5D7AC04E2BE1A8B3003EF2C9 /* InlineSnapshotTesting in Frameworks */,
 				5D8834BC2BD07C6500A46774 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +135,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D14613E2BE2F8B300E85D50 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461422BE2F92F00E85D50 /* Controller */,
+				5D1461412BE2F92800E85D50 /* View */,
+				5D1461402BE2F91800E85D50 /* Model */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		5D14613F2BE2F8E300E85D50 /* UserGardenView */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461452BE2F94900E85D50 /* Controller */,
+				5D1461442BE2F94100E85D50 /* View */,
+				5D1461432BE2F93900E85D50 /* Model */,
+			);
+			path = UserGardenView;
+			sourceTree = "<group>";
+		};
+		5D1461402BE2F91800E85D50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D1461412BE2F92800E85D50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE880B2BC4756300F853B5 /* GardenGuideViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D1461422BE2F92F00E85D50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D1461432BE2F93900E85D50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D1461442BE2F94100E85D50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */,
+				5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D1461452BE2F94900E85D50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D7AC0512BE1A900003EF2C9 /* SnapshopTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */,
+			);
+			path = SnapshopTests;
+			sourceTree = "<group>";
+		};
 		5D8834A52BD0712600A46774 /* GardenGuideTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +230,7 @@
 		5D8834CA2BD316DF00A46774 /* LoginAuthTests */ = {
 			isa = PBXGroup;
 			children = (
+				5D7AC0512BE1A900003EF2C9 /* SnapshopTests */,
 				5D9B18912BD9C03F00E9903F /* Mocks */,
 				5D8834CB2BD3177800A46774 /* ProviderTypeTests.swift */,
 				5D8834CD2BD31BCD00A46774 /* SignUpErrorTests.swift */,
@@ -187,6 +271,8 @@
 		5DCE87EB2BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXGroup;
 			children = (
+				5D14613F2BE2F8E300E85D50 /* UserGardenView */,
+				5D14613E2BE2F8B300E85D50 /* SearchView */,
 				5DCE884F2BC9ECD800F853B5 /* Utils */,
 				5DCE880F2BC47EFB00F853B5 /* LoginAuth */,
 				5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */,
@@ -195,7 +281,6 @@
 				5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */,
 				5DCE87FA2BC4641800F853B5 /* Info.plist */,
 				5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */,
-				5DCE880B2BC4756300F853B5 /* GardenGuideViewController.swift */,
 				5DCE880D2BC4758600F853B5 /* GardenGuide.storyboard */,
 			);
 			path = GardenGuide;
@@ -287,6 +372,8 @@
 				5D8834B32BD07B9900A46774 /* FirebaseFirestore */,
 				5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */,
 				5D8834BB2BD07C6500A46774 /* GoogleSignIn */,
+				5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */,
+				5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */,
 			);
 			productName = GardenGuideTests;
 			productReference = 5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */;
@@ -354,6 +441,7 @@
 			packageReferences = (
 				5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 5DCE87EA2BC4641500F853B5 /* Products */;
 			projectDirPath = "";
@@ -381,6 +469,7 @@
 				5DCE880A2BC474DE00F853B5 /* AuthMain.storyboard in Resources */,
 				5DCE87F62BC4641800F853B5 /* Assets.xcassets in Resources */,
 				5DCE880E2BC4758600F853B5 /* GardenGuide.storyboard in Resources */,
+				5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */,
 				5DCE881E2BC5C8C000F853B5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +508,7 @@
 			files = (
 				5D8834C32BD1CB6B00A46774 /* StringExtensionTests.swift in Sources */,
 				5D8834C62BD30C9600A46774 /* UIColorExtensionTests.swift in Sources */,
+				5D7AC0532BE1A971003EF2C9 /* AuthMainSnapshotTests.swift in Sources */,
 				5D8834CC2BD3177800A46774 /* ProviderTypeTests.swift in Sources */,
 				5D9B18932BD9C1BD00E9903F /* AuthMainViewControllerMock.swift in Sources */,
 				5D8834C82BD3133E00A46774 /* UIButtonExtensionTests.swift in Sources */,
@@ -438,6 +528,7 @@
 				5DCE88082BC474BF00F853B5 /* AuthMainViewController.swift in Sources */,
 				5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */,
 				5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */,
+				5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */,
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
@@ -711,6 +802,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -730,6 +829,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
 		5D8834AF2BD07AF100A46774 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
