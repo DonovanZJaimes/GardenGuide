@@ -109,32 +109,12 @@ class AuthMainController {
             let email = id == nil ? (result.user.email ?? result.user.displayName)! : id!
             delegate?.successfulAuthentication(provider: provider, email: email)
         } else {
-            let errorMessage = analyzeError(error.debugDescription)
+            let errorMessage = NetworkErrorFirebase.ErrorGeneric.analyzeError(error.debugDescription)
             delegate?.failedAuthentication(error: errorMessage)
         }
         
     }
     
-    private func analyzeError(_ error: String) -> String {
-        var errorMessage: String = ""
-        switch error {
-        case _ where error.contains(NetworkErrorFirebase.ErrorEmailAlredyInUse.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorEmailAlredyInUse.errorDescription!
-        case _ where error.contains(NetworkErrorFirebase.ErrorWeakPassword.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorWeakPassword.errorDescription!
-        case _ where error.contains(NetworkErrorFirebase.ErrorMissingEmail.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorMissingEmail.errorDescription!
-        case _ where error.contains(NetworkErrorFirebase.ErrorInvalidEmail.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorInvalidEmail.errorDescription!
-        case _ where error.contains(NetworkErrorFirebase.ErrorInvalidPassword.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorInvalidPassword.errorDescription!
-        case _ where error.contains(NetworkErrorFirebase.ErrorWrongPassword.errorCode):
-            errorMessage = NetworkErrorFirebase.ErrorWrongPassword.errorDescription!
-        default:
-            errorMessage = NetworkErrorFirebase.ErrorGeneric.errorDescription!
-        }
-        return errorMessage
-    }
         
    
 }
