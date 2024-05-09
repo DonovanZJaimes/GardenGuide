@@ -334,5 +334,131 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "378723EB-85BC-411A-B06F-3E7D3ABF5334"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuide/Utils/Utils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "parseJson(jsonName:model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15B41E28-063C-4D3F-A4E6-8A7D08B862F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "15B41E28-063C-4D3F-A4E6-8A7D08B862F4 - 64192f981702276d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuide.CollectionTabsView.collectionView(_: __C.UICollectionView, viewForSupplementaryElementOfKind: Swift.String, at: Foundation.IndexPath) -&gt; __C.UICollectionReusableView"
+                  moduleName = "GardenGuide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "15B41E28-063C-4D3F-A4E6-8A7D08B862F4 - 64192f981702274c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuide.CollectionTabsView.collectionView(_: __C.UICollectionView, viewForSupplementaryElementOfKind: Swift.String, at: Foundation.IndexPath) -&gt; __C.UICollectionReusableView"
+                  moduleName = "GardenGuide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "15B41E28-063C-4D3F-A4E6-8A7D08B862F4 - 64192f981702274c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuide.CollectionTabsView.collectionView(_: __C.UICollectionView, viewForSupplementaryElementOfKind: Swift.String, at: Foundation.IndexPath) -&gt; __C.UICollectionReusableView"
+                  moduleName = "GardenGuide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "215">
+               </Location>
+               <Location
+                  uuid = "15B41E28-063C-4D3F-A4E6-8A7D08B862F4 - 64192f981702274c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GardenGuide.CollectionTabsView.collectionView(_: __C.UICollectionView, viewForSupplementaryElementOfKind: Swift.String, at: Foundation.IndexPath) -&gt; __C.UICollectionReusableView"
+                  moduleName = "GardenGuide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donovanz.jaimes/Desktop/Aplicaciones/Planta/GardenGuide/GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32C1AE4A-C484-4BBD-9F0B-23DE686385E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A41117F0-2BFE-44A2-B891-91648C51D3A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GardenGuide/SearchView/View/CollectionView/CollectionTabsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

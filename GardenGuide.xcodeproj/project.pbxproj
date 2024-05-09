@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */; };
 		5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */; };
+		5D14614C2BEAE30100E85D50 /* CollectionTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14614B2BEAE30100E85D50 /* CollectionTabsView.swift */; };
+		5D1461502BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14614E2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift */; };
+		5D1461512BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D14614F2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib */; };
+		5D1461532BEC185300E85D50 /* SimilarPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461522BEC185300E85D50 /* SimilarPlants.swift */; };
+		5D1461552BEC198500E85D50 /* ResultOfSimilarPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461542BEC198500E85D50 /* ResultOfSimilarPlants.swift */; };
+		5D1461572BEC1A4B00E85D50 /* IsPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461562BEC1A4B00E85D50 /* IsPlant.swift */; };
+		5D1461592BEC1C0400E85D50 /* SuggestedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461582BEC1C0400E85D50 /* SuggestedPlant.swift */; };
+		5D14615B2BEC1D0400E85D50 /* SimilarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14615A2BEC1D0400E85D50 /* SimilarImage.swift */; };
+		5D14615D2BEC1D9700E85D50 /* PlantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14615C2BEC1D9700E85D50 /* PlantDetails.swift */; };
+		5D14615F2BEC211800E85D50 /* Watered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14615E2BEC211800E85D50 /* Watered.swift */; };
+		5D1461632BEC22DC00E85D50 /* PlantsByImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461622BEC22DC00E85D50 /* PlantsByImageSearch.swift */; };
+		5D1461682BEC260D00E85D50 /* SearchViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461672BEC260D00E85D50 /* SearchViewProvider.swift */; };
+		5D14616A2BEC264500E85D50 /* SearchViewProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461692BEC264500E85D50 /* SearchViewProviderMock.swift */; };
+		5D14616C2BEC288B00E85D50 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14616B2BEC288B00E85D50 /* Utils.swift */; };
+		5D14616F2BEC296100E85D50 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14616E2BEC296100E85D50 /* NetworkError.swift */; };
+		5D1461712BEC330C00E85D50 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461702BEC330C00E85D50 /* SearchViewController.swift */; };
+		5D1461732BED61DC00E85D50 /* Intent1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D1461722BED61DC00E85D50 /* Intent1.json */; };
+		5D1461762BED69B900E85D50 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461752BED69B900E85D50 /* SectionHeaderView.swift */; };
 		5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */; };
 		5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */; };
 		5D7AC04E2BE1A8B3003EF2C9 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */; };
@@ -68,6 +86,26 @@
 /* Begin PBXFileReference section */
 		5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenViewController.swift; sourceTree = "<group>"; };
 		5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserGarden.storyboard; sourceTree = "<group>"; };
+		5D14614B2BEAE30100E85D50 /* CollectionTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTabsView.swift; sourceTree = "<group>"; };
+		5D14614E2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsFoundCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D14614F2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantsFoundCollectionViewCell.xib; sourceTree = "<group>"; };
+		5D1461522BEC185300E85D50 /* SimilarPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarPlants.swift; sourceTree = "<group>"; };
+		5D1461542BEC198500E85D50 /* ResultOfSimilarPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOfSimilarPlants.swift; sourceTree = "<group>"; };
+		5D1461562BEC1A4B00E85D50 /* IsPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlant.swift; sourceTree = "<group>"; };
+		5D1461582BEC1C0400E85D50 /* SuggestedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPlant.swift; sourceTree = "<group>"; };
+		5D14615A2BEC1D0400E85D50 /* SimilarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarImage.swift; sourceTree = "<group>"; };
+		5D14615C2BEC1D9700E85D50 /* PlantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetails.swift; sourceTree = "<group>"; };
+		5D14615E2BEC211800E85D50 /* Watered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watered.swift; sourceTree = "<group>"; };
+		5D1461622BEC22DC00E85D50 /* PlantsByImageSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsByImageSearch.swift; sourceTree = "<group>"; };
+		5D1461652BEC24E800E85D50 /* PlantResultByImageSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlantResultByImageSearch.json; sourceTree = "<group>"; };
+		5D1461672BEC260D00E85D50 /* SearchViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProvider.swift; sourceTree = "<group>"; };
+		5D1461692BEC264500E85D50 /* SearchViewProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProviderMock.swift; sourceTree = "<group>"; };
+		5D14616B2BEC288B00E85D50 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5D14616E2BEC296100E85D50 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5D1461702BEC330C00E85D50 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5D1461722BED61DC00E85D50 /* Intent1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Intent1.json; sourceTree = "<group>"; };
+		5D1461742BED621B00E85D50 /* Intent2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Intent2.json; sourceTree = "<group>"; };
+		5D1461752BED69B900E85D50 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
 		5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebase.swift; sourceTree = "<group>"; };
 		5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainSnapshotTests.swift; sourceTree = "<group>"; };
@@ -158,6 +196,8 @@
 		5D1461402BE2F91800E85D50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D1461662BEC257200E85D50 /* Provider */,
+				5D1461622BEC22DC00E85D50 /* PlantsByImageSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +205,7 @@
 		5D1461412BE2F92800E85D50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5D14614A2BEAE27C00E85D50 /* CollectionView */,
 				5DCE880B2BC4756300F853B5 /* GardenGuideViewController.swift */,
 			);
 			path = View;
@@ -173,6 +214,7 @@
 		5D1461422BE2F92F00E85D50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5D1461702BEC330C00E85D50 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +240,74 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D14614A2BEAE27C00E85D50 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5D14614D2BEAE33000E85D50 /* CustomCell */,
+				5D14614B2BEAE30100E85D50 /* CollectionTabsView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		5D14614D2BEAE33000E85D50 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D14614E2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift */,
+				5D14614F2BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib */,
+				5D1461752BED69B900E85D50 /* SectionHeaderView.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		5D1461602BEC21AB00E85D50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461612BEC21EF00E85D50 /* PlantsPerImage */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D1461612BEC21EF00E85D50 /* PlantsPerImage */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461522BEC185300E85D50 /* SimilarPlants.swift */,
+				5D1461542BEC198500E85D50 /* ResultOfSimilarPlants.swift */,
+				5D1461562BEC1A4B00E85D50 /* IsPlant.swift */,
+				5D1461582BEC1C0400E85D50 /* SuggestedPlant.swift */,
+				5D14615A2BEC1D0400E85D50 /* SimilarImage.swift */,
+				5D14615C2BEC1D9700E85D50 /* PlantDetails.swift */,
+				5D14615E2BEC211800E85D50 /* Watered.swift */,
+			);
+			path = PlantsPerImage;
+			sourceTree = "<group>";
+		};
+		5D1461642BEC246F00E85D50 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461652BEC24E800E85D50 /* PlantResultByImageSearch.json */,
+				5D1461722BED61DC00E85D50 /* Intent1.json */,
+				5D1461742BED621B00E85D50 /* Intent2.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		5D1461662BEC257200E85D50 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5D1461672BEC260D00E85D50 /* SearchViewProvider.swift */,
+				5D1461692BEC264500E85D50 /* SearchViewProviderMock.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		5D14616D2BEC292C00E85D50 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5D14616E2BEC296100E85D50 /* NetworkError.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		5D7AC0512BE1A900003EF2C9 /* SnapshopTests */ = {
@@ -271,6 +381,8 @@
 		5DCE87EB2BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXGroup;
 			children = (
+				5D14616D2BEC292C00E85D50 /* ServiceLayer */,
+				5D1461602BEC21AB00E85D50 /* Model */,
 				5D14613F2BE2F8E300E85D50 /* UserGardenView */,
 				5D14613E2BE2F8B300E85D50 /* SearchView */,
 				5DCE884F2BC9ECD800F853B5 /* Utils */,
@@ -333,7 +445,9 @@
 		5DCE884F2BC9ECD800F853B5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5D1461642BEC246F00E85D50 /* Mock */,
 				5DCE88502BC9ECFA00F853B5 /* Extensions */,
+				5D14616B2BEC288B00E85D50 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -465,12 +579,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1461512BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib in Resources */,
 				5DCE87F92BC4641800F853B5 /* LaunchScreen.storyboard in Resources */,
 				5DCE880A2BC474DE00F853B5 /* AuthMain.storyboard in Resources */,
 				5DCE87F62BC4641800F853B5 /* Assets.xcassets in Resources */,
 				5DCE880E2BC4758600F853B5 /* GardenGuide.storyboard in Resources */,
 				5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */,
 				5DCE881E2BC5C8C000F853B5 /* GoogleService-Info.plist in Resources */,
+				5D1461732BED61DC00E85D50 /* Intent1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,18 +640,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */,
+				5D14615B2BEC1D0400E85D50 /* SimilarImage.swift in Sources */,
+				5D1461572BEC1A4B00E85D50 /* IsPlant.swift in Sources */,
+				5D1461532BEC185300E85D50 /* SimilarPlants.swift in Sources */,
 				5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */,
+				5D14616C2BEC288B00E85D50 /* Utils.swift in Sources */,
+				5D14616F2BEC296100E85D50 /* NetworkError.swift in Sources */,
+				5D14615D2BEC1D9700E85D50 /* PlantDetails.swift in Sources */,
+				5D14616A2BEC264500E85D50 /* SearchViewProviderMock.swift in Sources */,
 				5DCE88082BC474BF00F853B5 /* AuthMainViewController.swift in Sources */,
 				5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */,
+				5D14614C2BEAE30100E85D50 /* CollectionTabsView.swift in Sources */,
+				5D1461592BEC1C0400E85D50 /* SuggestedPlant.swift in Sources */,
 				5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */,
 				5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */,
+				5D1461762BED69B900E85D50 /* SectionHeaderView.swift in Sources */,
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
+				5D1461552BEC198500E85D50 /* ResultOfSimilarPlants.swift in Sources */,
+				5D1461632BEC22DC00E85D50 /* PlantsByImageSearch.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
+				5D14615F2BEC211800E85D50 /* Watered.swift in Sources */,
 				5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */,
+				5D1461712BEC330C00E85D50 /* SearchViewController.swift in Sources */,
+				5D1461502BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift in Sources */,
 				5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */,
 				5DCE88522BC9ED1200F853B5 /* UIButton+Extension.swift in Sources */,
 				5DCE88542BC9EEA200F853B5 /* UIColor+Extension.swift in Sources */,
+				5D1461682BEC260D00E85D50 /* SearchViewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
