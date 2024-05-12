@@ -17,17 +17,17 @@ class PlantsFoundCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //General view settings
         backgroundInfoView.layer.cornerRadius = backgroundInfoView.frame.height / 4
         plantImage.layer.cornerRadius = plantImage.frame.width / 10
     }
+    
     
     func configureCell(plant: SuggestedPlant) {
         namePlantLabel.text = plant.name
         probabilityLabel.text = "\(plant.probability)"
         
     }
-    
-    
     
     @IBAction func addPlantToFavorites(_ sender: UIButton) {
         addPlantButton.isSelected.toggle()
