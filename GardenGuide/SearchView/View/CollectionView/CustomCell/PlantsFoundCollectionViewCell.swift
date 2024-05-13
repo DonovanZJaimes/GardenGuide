@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PlantsFoundCollectionViewCell: UICollectionViewCell {
 
@@ -26,6 +27,13 @@ class PlantsFoundCollectionViewCell: UICollectionViewCell {
     func configureCell(plant: SuggestedPlant) {
         namePlantLabel.text = plant.name
         probabilityLabel.text = "\(plant.probability)"
+        guard let urlImage = URL(string: plant.similarImages[0].url) else {
+            plantImage.image = UIImage(systemName: "leaf.fill")
+            plantImage.tintColor = .customGreen
+            plantImage.contentMode = .scaleAspectFit
+            return
+        }
+        plantImage.kf.setImage(with: urlImage)
         
     }
     
