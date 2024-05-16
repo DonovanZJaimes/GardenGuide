@@ -16,6 +16,7 @@ struct PlantDetails: Decodable {
     let image: DescriptionImage
     let edibleParts: [String]?
     let watering: Watered?
+    let propagationMethods: [String]?
 
     enum CodingKeys: String, CodingKey {
         case commonNames = "common_names"
@@ -26,6 +27,7 @@ struct PlantDetails: Decodable {
         case image
         case edibleParts = "edible_parts"
         case watering
+        case propagationMethods = "propagation_methods"
     }
     
     struct Description: Decodable {
