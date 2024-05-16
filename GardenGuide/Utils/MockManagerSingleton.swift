@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct MockManagerSingleton {
+    static var shared =  MockManagerSingleton()
+    var runAppWithMock: Bool = true
+}
