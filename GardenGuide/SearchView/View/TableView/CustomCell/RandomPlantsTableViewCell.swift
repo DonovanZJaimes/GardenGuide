@@ -9,15 +9,27 @@ import UIKit
 
 class RandomPlantsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backgroundUIView: UIView!
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var plantImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //General view settings
+        backgroundUIView.layer.cornerRadius = plantImageView.frame.width / 6//backgroundUIView.frame.height / 6
+        plantImageView.layer.cornerRadius = plantImageView.frame.width / 6
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    func configureCell(plant: SuggestedPlant) {
+        plantNameLabel.text = plant.name
+        guard let urlImage = URL(string: plant.similarImages[0].url) else {
+            plantImageView.image = UIImage(systemName: "leaf.fill")
+            plantImageView.tintColor = .customGreen
+            return
+        }
+        plantImageView.kf.setImage(with: urlImage)
+        
     }
     
 }
