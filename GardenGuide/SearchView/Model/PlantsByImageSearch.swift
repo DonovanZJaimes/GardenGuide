@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct PlantsByImageSearch: Decodable {
+    let isPlant: IsPlant
+    let suggestedPlants: [SuggestedPlant]
+    
+}
