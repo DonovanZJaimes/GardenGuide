@@ -27,6 +27,7 @@ class CollectionTabsView: UIView {
         collection.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.clipsToBounds = false
+        collection.backgroundColor = .customBackgroundColor
         
         //Register Cell
         collection.register(UINib(nibName: "\(PlantsFoundCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(PlantsFoundCollectionViewCell.self)")

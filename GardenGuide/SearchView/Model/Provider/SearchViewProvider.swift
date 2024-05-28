@@ -11,7 +11,7 @@ protocol SearchViewProviderProtocol {
     func getPlantsByImage(imageInBase64String: String) async throws -> PlantsByImageSearch
     func getPlantsByText(_ text: String) async throws -> [SuggestedPlantName]
     
-}
+} 
 class SearchViewProvider: SearchViewProviderProtocol {
     func getPlantsByText(_ text: String) async throws -> [SuggestedPlantName] {
         let queryItem = ["q": text]

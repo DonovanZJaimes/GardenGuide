@@ -63,7 +63,7 @@ class SectionHeaderView: UICollectionReusableView {
         addSubview(stackViewVertical)
         NSLayoutConstraint.activate([
             lineView.heightAnchor.constraint(equalToConstant: 1.5),
-            stackViewVertical.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            stackViewVertical.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             stackViewVertical.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 360),
             stackViewVertical.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             stackViewVertical.heightAnchor.constraint(equalToConstant: 30),
