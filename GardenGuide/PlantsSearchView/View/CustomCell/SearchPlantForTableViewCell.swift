@@ -9,15 +9,18 @@ import UIKit
 
 class SearchPlantForTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var entityNameLabel: UILabel!
+    @IBOutlet weak var matchedNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configureCell(plant: SuggestedPlantName) {
+        entityNameLabel.text = plant.plantName
+        matchedNameLabel.text = plant.matchedIn
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
     
 }
