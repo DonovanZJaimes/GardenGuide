@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct PlantInformation: Decodable {
+    let name: String
+    let similarImages: [SimilarImage]?
+    let details: PlantDetails
+}
