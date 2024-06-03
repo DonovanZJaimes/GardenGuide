@@ -1,0 +1,82 @@
+{
+   "id":"2907498501fc1cd0",
+   "name":"Lilium candidum",
+   "probability":0.9246,
+   "similar_images":[
+      {
+         "id":"3e8d9e1169482d92a575d355cde76918fc893ac2",
+         "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/3e8/d9e1169482d92a575d355cde76918fc893ac2.jpeg",
+         "license_name":"CC BY-SA 4.0",
+         "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+         "citation":"eleonore miguel",
+         "similarity":0.705,
+         "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/3e8/d9e1169482d92a575d355cde76918fc893ac2.small.jpeg"
+      },
+      {
+         "id":"2198916b0b4116e149d5d7c2f366982664e18075",
+         "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/219/8916b0b4116e149d5d7c2f366982664e18075.jpeg",
+         "license_name":"CC BY-SA 4.0",
+         "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+         "citation":"PAULINE DORIDANT",
+         "similarity":0.676,
+         "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/219/8916b0b4116e149d5d7c2f366982664e18075.small.jpeg"
+      }
+   ],
+   "details":{
+      "common_names":[
+         "Madonna lily",
+         "white lily"
+      ],
+      "taxonomy":{
+         "class":"Liliopsida",
+         "genus":"Lilium",
+         "order":"Liliales",
+         "family":"Liliaceae",
+         "phylum":"Tracheophyta",
+         "kingdom":"Plantae"
+      },
+      "url":"https://en.wikipedia.org/wiki/Lilium_candidum",
+      "gbif_id":2753090,
+      "inaturalist_id":223666,
+      "rank":"species",
+      "description":{
+         "value":"Lilium candidum, the Madonna lily or white lily, is a plant in the true lily family. It is native to the Balkans and Middle East, and naturalized in other parts of Europe, including France, Italy, and Ukraine, and in North Africa, the Canary Islands, Mexico, and other regions. It has been cultivated since antiquity, for at least 3,000 years, and has great symbolic value since then for many cultures. It is susceptible to several virus diseases common to lilies, and especially to Botrytis fungus.  One technique to avoid problems with viruses is to grow plants from seed instead of bulblets.",
+         "citation":"https://en.wikipedia.org/wiki/Lilium_candidum",
+         "license_name":"CC BY-SA 3.0",
+         "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "synonyms":[
+         "Lilium album",
+         "Lilium candidum f. peregrinum",
+         "Lilium candidum f. striatum",
+         "Lilium candidum peregrinum",
+         "Lilium candidum striatum",
+         "Lilium candidum subsp. peregrinum",
+         "Lilium candidum var. aureomarginatum",
+         "Lilium candidum var. cernuum",
+         "Lilium candidum var. monstruosum",
+         "Lilium candidum var. peregrinum",
+         "Lilium candidum var. plenum",
+         "Lilium candidum var. purpureostriatum",
+         "Lilium candidum var. purpureum",
+         "Lilium candidum var. rubrolineatum",
+         "Lilium candidum var. salonikae",
+         "Lilium candidum var. striatum",
+         "Lilium candidum var. variegatum",
+         "Lilium peregrinum",
+         "Lilium striatum"
+      ],
+      "image":{
+         "value":"https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/9c5/9c5e34b0bc1a4346a013fa96bb37109e3bdee189.jpg",
+         "citation":"//commons.wikimedia.org/wiki/User:Hectonichus",
+         "license_name":"CC BY-SA 3.0",
+         "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "edible_parts":[
+         "root"
+      ],
+      "watering":null,
+      "language":"en",
+      "entity_id":"2907498501fc1cd0"
+   }
+}
