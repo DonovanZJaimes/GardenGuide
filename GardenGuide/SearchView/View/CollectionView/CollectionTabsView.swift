@@ -122,6 +122,7 @@ extension CollectionTabsView: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let suggestedPlant = plants.suggestedPlants[indexPath.row]
         delegate?.didSelectPlant(index: indexPath.row)
     }
 

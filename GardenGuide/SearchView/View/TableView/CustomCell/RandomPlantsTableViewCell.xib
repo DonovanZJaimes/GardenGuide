@@ -19,7 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fe-91-rey">
                         <rect key="frame" x="15" y="5" width="348" height="95"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="CustonBackgroundCell"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant3" translatesAutoresizingMaskIntoConstraints="NO" id="0Zp-iG-mcU">
                         <rect key="frame" x="22.666666666666671" y="12.666666666666664" width="80" height="80"/>
@@ -31,7 +31,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NL-Kc-Vvf">
                         <rect key="frame" x="122.66666666666667" y="42.333333333333336" width="225.33333333333331" height="20.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" name="CustomDarkGreen"/>
+                        <color key="textColor" name="CustomGreenishGray"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -63,8 +63,11 @@
         <namedColor name="CustomBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="CustomDarkGreen">
-            <color red="0.12156862745098039" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="CustomGreenishGray">
+            <color red="0.56862745098039214" green="0.6470588235294118" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustonBackgroundCell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

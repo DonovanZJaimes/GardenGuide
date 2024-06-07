@@ -23,7 +23,7 @@ class RandomPlantsTableViewCell: UITableViewCell {
     
     func configureCell(plant: SuggestedPlant) {
         plantNameLabel.text = plant.name
-        guard let urlImage = URL(string: plant.similarImages[0].url) else {
+        guard let similarImages = plant.similarImages, let urlImage = URL(string: similarImages[0].url) else {
             plantImageView.image = UIImage(systemName: "leaf.fill")
             plantImageView.tintColor = .customGreen
             return

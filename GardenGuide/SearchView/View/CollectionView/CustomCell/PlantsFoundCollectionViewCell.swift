@@ -27,7 +27,7 @@ class PlantsFoundCollectionViewCell: UICollectionViewCell {
     func configureCell(plant: SuggestedPlant) {
         namePlantLabel.text = plant.name
         probabilityLabel.text = "\(plant.probability)"
-        guard let urlImage = URL(string: plant.similarImages[0].url) else {
+        guard let similarImages = plant.similarImages, let urlImage = URL(string: similarImages[0].url) else {
             plantImage.image = UIImage(systemName: "leaf.fill")
             plantImage.tintColor = .customGreen
             plantImage.contentMode = .scaleAspectFit
