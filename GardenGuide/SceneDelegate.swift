@@ -24,7 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 if let gardenGuideTabBarController = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController, let gardenGuideViewController  = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
                     gardenGuideViewController.email = email
                     gardenGuideViewController.provider = ProviderType.init(rawValue: provider)!
-                    gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
+                    //gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
+                    let navigationController = UINavigationController (rootViewController:  gardenGuideViewController)
+                    gardenGuideTabBarController.viewControllers?[0] = navigationController
                     window.rootViewController = gardenGuideTabBarController
                     self.window = window
                     window.makeKeyAndVisible()
