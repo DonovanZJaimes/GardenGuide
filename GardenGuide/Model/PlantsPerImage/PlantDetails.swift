@@ -9,11 +9,11 @@ import Foundation
 
 struct PlantDetails: Decodable {
     let commonNames: [String]?
-    let url: String
-    let rank: String
-    let description: Description
-    let synonyms: [String]
-    let image: DescriptionImage
+    let url: String?
+    let rank: String?
+    let description: Description?
+    let synonyms: [String]?
+    let image: DescriptionImage?
     let edibleParts: [String]?
     let watering: Watered?
     let propagationMethods: [String]?

@@ -12,7 +12,7 @@ struct SuggestedPlant: Decodable {
     let id: String
     let name: String
     let probability: Double
-    let similarImages: [SimilarImage]
+    let similarImages: [SimilarImage]?
     let details: PlantDetails
 
     enum CodingKeys: String, CodingKey {
