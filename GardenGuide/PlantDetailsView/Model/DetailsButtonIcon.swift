@@ -6,3 +6,10 @@
 //
 
 import Foundation
+//Model for each button view from ButtonIconList
+struct DetailsButtonIcon {
+    let title: String
+    let icon: DetailsButtonIconEnum
+}
+
+
