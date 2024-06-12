@@ -9,15 +9,17 @@ import UIKit
 
 class ButtonInformationListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var backgroundNameView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backgroundNameView.layer.cornerRadius = backgroundNameView.frame.height / 4
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configCell(_ name: String) {
+        nameLabel.text = name
     }
+    
     
 }
