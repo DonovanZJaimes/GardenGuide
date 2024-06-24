@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CommonNamesEntity" representedClassName="CommonNamesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="belongsToPlantDetailsEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantDetailsEntity" inverseName="commonNames" inverseEntity="PlantDetailsEntity"/>
+    </entity>
+    <entity name="EdiblePartsEntity" representedClassName="EdiblePartsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="part" optional="YES" attributeType="String"/>
+        <relationship name="belogsToPlantDetailsEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantDetailsEntity" inverseName="edibleParts" inverseEntity="PlantDetailsEntity"/>
+    </entity>
+    <entity name="PlantDetailsEntity" representedClassName="PlantDetailsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="descriptionUrl" optional="YES" attributeType="String"/>
+        <attribute name="descriptionValue" optional="YES" attributeType="String"/>
+        <attribute name="escriptionImage" optional="YES" attributeType="Binary"/>
+        <attribute name="rank" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="wateringMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wateringMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="belongsToPlantEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="details" inverseEntity="PlantEntity"/>
+        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CommonNamesEntity" inverseName="belongsToPlantDetailsEntity" inverseEntity="CommonNamesEntity"/>
+        <relationship name="edibleParts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EdiblePartsEntity" inverseName="belogsToPlantDetailsEntity" inverseEntity="EdiblePartsEntity"/>
+        <relationship name="propagationMethods" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PropagationMethodsEntity" inverseName="belongsToPlantDetailsEntity" inverseEntity="PropagationMethodsEntity"/>
+        <relationship name="synonyms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SynonymsEntity" inverseName="belongsToPlantDetailsEntity" inverseEntity="SynonymsEntity"/>
+    </entity>
+    <entity name="PlantEntity" representedClassName="PlantEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isAdded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantDetailsEntity" inverseName="belongsToPlantEntity" inverseEntity="PlantDetailsEntity"/>
+        <relationship name="similarImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SimilarImagesEntity" inverseName="belongsToPlantEntity" inverseEntity="SimilarImagesEntity"/>
+        <relationship name="watered" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WateredEntity" inverseName="belongsToPlantEntity" inverseEntity="WateredEntity"/>
+    </entity>
+    <entity name="PropagationMethodsEntity" representedClassName="PropagationMethodsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="method" optional="YES" attributeType="String"/>
+        <relationship name="belongsToPlantDetailsEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantDetailsEntity" inverseName="propagationMethods" inverseEntity="PlantDetailsEntity"/>
+    </entity>
+    <entity name="SimilarImagesEntity" representedClassName="SimilarImagesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="similarity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="belongsToPlantEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="similarImages" inverseEntity="PlantEntity"/>
+    </entity>
+    <entity name="SynonymsEntity" representedClassName="SynonymsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="synonymous" optional="YES" attributeType="String"/>
+        <relationship name="belongsToPlantDetailsEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantDetailsEntity" inverseName="synonyms" inverseEntity="PlantDetailsEntity"/>
+    </entity>
+    <entity name="WateredEntity" representedClassName="WateredEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="nextIrrigation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="numberOfDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wasItWatered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="waterAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="belongsToPlantEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="watered" inverseEntity="PlantEntity"/>
+    </entity>
+</model>
