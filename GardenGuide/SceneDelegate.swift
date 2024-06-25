@@ -10,6 +10,20 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var tabBarItemUserGardenView: UITabBarItem!
+    
+    @objc func updateItemUserGardenView() {
+        let value = Notifications.shared.newPlants.count
+        tabBarItemUserGardenView.badgeValue = String(value)
+    }
+    
+    
+    func configItemUserGardenView(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateItemUserGardenView), name: Notifications.plantsUpdateNotification, object: nil)
+        
+        tabBarItemUserGardenView = (window?.rootViewController as? UITabBarController)?.viewControllers?[1].tabBarItem
+        
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -42,6 +56,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             }
         }
+        
+        configItemUserGardenView()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
