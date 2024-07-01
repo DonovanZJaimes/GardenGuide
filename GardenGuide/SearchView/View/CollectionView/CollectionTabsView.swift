@@ -50,6 +50,7 @@ class CollectionTabsView: UIView {
     //Global variables
     private var plants : PlantsByImageSearch!
     weak private var delegate: CollectionTabsViewDelegate?
+    let dataManager = CoreDataPlant()
     
     
     //MARK: Functions
@@ -89,6 +90,7 @@ extension CollectionTabsView: UICollectionViewDataSource, UICollectionViewDelega
         }
         let suggestedPlant = plants.suggestedPlants[indexPath.row]
         cell.configureCell(plant: suggestedPlant)
+        cell.delegate = self
         
         return cell
     }
@@ -137,6 +139,52 @@ extension CollectionTabsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
+   
+}
+
+extension CollectionTabsView: PlantsFoundCollectionViewCellDelegate {
+    func addPlantToFavorites(name: String, isSelected: Bool) {
+        //determined which plant was selected.
+        var suggestedPlant = plants.suggestedPlants.first!
+        for index in 0 ..< plants.suggestedPlants.count {
+            if plants.suggestedPlants[index].name == name {
+                suggestedPlant = plants.suggestedPlants[index]
+                break
+            }
+        }
+       willThePlantBeAdded(isSelected, plant: suggestedPlant)
+        
+    }
+    
+    //it is checked if the plant is removed or added
+    func willThePlantBeAdded(_ isSelected: Bool, plant: SuggestedPlant) {
+        guard isSelected else {
+            //get all the plants
+            dataManager.save()
+            let plantsEntity = dataManager.fetchPlants()
+            //find the plant to eliminate
+            for index in stride(from: (plantsEntity.count - 1), through: 0, by: -1) {
+                if plantsEntity[index].name == plant.name {
+                    dataManager.deletePlant(plantsEntity[index])
+                    // notify that a plant has been removed
+                    Notifications.shared.newPlants.removeLast()
+                    break
+                }
+            }
+            return
+        }
+        //convert from SuggestedPlant model to PlantInformation
+        let name = plant.name
+        let similarImages = plant.similarImages
+        let details = plant.details
+        var plantInformation = PlantInformation(name: name, similarImages: similarImages, details: details)
+        plantInformation.isAdded = true
+        //Save plant
+        dataManager.savePlant(plant: plantInformation, watered: Constants.irrigationInformation)
+        //notify that a new plant has been added
+        Notifications.shared.newPlants.append(plantInformation)
+    }
+    
    
 }
 

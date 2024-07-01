@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol PlantsFoundCollectionViewCellDelegate: AnyObject {
+    func addPlantToFavorites(name: String, isSelected: Bool)
+}
+
 class PlantsFoundCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var addPlantButton: UIButton!
@@ -15,6 +19,8 @@ class PlantsFoundCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var namePlantLabel: UILabel!
     @IBOutlet weak var probabilityLabel: UILabel!
     @IBOutlet weak var backgroundInfoView: UIView!
+    
+    weak var delegate: PlantsFoundCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +45,7 @@ class PlantsFoundCollectionViewCell: UICollectionViewCell {
     
     @IBAction func addPlantToFavorites(_ sender: UIButton) {
         addPlantButton.isSelected.toggle()
+        delegate?.addPlantToFavorites(name: namePlantLabel.text!, isSelected: addPlantButton.isSelected)
     }
     
 }
