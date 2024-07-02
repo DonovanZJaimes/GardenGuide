@@ -190,7 +190,7 @@ class CoreDataPlant {
     }
 
     //Search and return all similar names of the plant
-    func fetchCommonNames(plantDetails: PlantDetailsEntity) -> [String?] {
+    func fetchCommonNames(plantDetails: PlantDetailsEntity) -> [String]? {
         //We create and configure the request to make the request for the common name array
         let request: NSFetchRequest<CommonNamesEntity> = CommonNamesEntity.fetchRequest()
         request.predicate = NSPredicate(format: "belongsToPlantDetailsEntity = %@", plantDetails)
@@ -201,12 +201,15 @@ class CoreDataPlant {
         } catch let error {
             print("Error fetching common names \(error)")
         }
-        let commonNames = fetchedCommonNames.map { $0.name }
+        guard let _ = fetchedCommonNames.first?.name else {
+            return nil
+        }
+        let commonNames = fetchedCommonNames.map { $0.name ?? "" }
         return commonNames
     }
     
     //Search and return all edible parts of the plant
-    func fetchEdibleParts(plantDetails: PlantDetailsEntity) -> [String?] {
+    func fetchEdibleParts(plantDetails: PlantDetailsEntity) -> [String]? {
         //We create and configure the request to make the request for the edible parts array
         let request: NSFetchRequest<EdiblePartsEntity> = EdiblePartsEntity.fetchRequest()
         request.predicate = NSPredicate(format: "belogsToPlantDetailsEntity = %@", plantDetails)
@@ -217,12 +220,15 @@ class CoreDataPlant {
         } catch let error {
             print("Error fetching edible parts \(error)")
         }
-        let edibleParts = fetchedEdibleParts.map { $0.part }
+        guard let _ = fetchedEdibleParts.first?.part else {
+            return nil
+        }
+        let edibleParts = fetchedEdibleParts.map { $0.part ?? ""}
         return edibleParts
     }
     
     //Search and return all propagation methods of the plant
-    func fetchPropagationMethods(plantDetails: PlantDetailsEntity) -> [String?] {
+    func fetchPropagationMethods(plantDetails: PlantDetailsEntity) -> [String]? {
         //We create and configure the request to make the request for the propagation methods array
         let request: NSFetchRequest<PropagationMethodsEntity> = PropagationMethodsEntity.fetchRequest()
         request.predicate = NSPredicate(format: "belongsToPlantDetailsEntity = %@", plantDetails)
@@ -233,12 +239,15 @@ class CoreDataPlant {
         } catch let error {
             print("Error fetching propagation methods \(error)")
         }
-        let propagationMethods = fetchedPropagationMethods.map { $0.method }
+        guard let _ = fetchedPropagationMethods.first?.method else {
+            return nil
+        }
+        let propagationMethods = fetchedPropagationMethods.map { $0.method ?? ""}
         return propagationMethods
     }
     
     //Search and return all synonyms  of the plant
-    func fetchSynonyms(plantDetails: PlantDetailsEntity) -> [String?] {
+    func fetchSynonyms(plantDetails: PlantDetailsEntity) -> [String]? {
         //We create and configure the request to make the request for the synonyms array
         let request: NSFetchRequest<SynonymsEntity> = SynonymsEntity.fetchRequest()
         request.predicate = NSPredicate(format: "belongsToPlantDetailsEntity = %@", plantDetails)
@@ -249,13 +258,16 @@ class CoreDataPlant {
         } catch let error {
             print("Error fetching synonyms \(error)")
         }
-        let synonyms = fetchedSynonyms.map { $0.synonymous }
+        guard let _ = fetchedSynonyms.first?.synonymous else {
+            return nil
+        }
+        let synonyms = fetchedSynonyms.map { $0.synonymous ?? ""}
         return synonyms
     }
     
     //MARK: search and return similar images
     //Search and return all similar images of the plant
-    func fetchSimilarImages(plant: PlantEntity) -> SimilarImagesEntity? {
+    func fetchSimilarImages(plant: PlantEntity) -> [SimilarImagesEntity] {
         //We create and configure the request to make the request for the similar images
         let request: NSFetchRequest<SimilarImagesEntity> = SimilarImagesEntity.fetchRequest()
         request.predicate = NSPredicate(format: "belongsToPlantEntity = %@", plant)
@@ -266,8 +278,8 @@ class CoreDataPlant {
         } catch let error {
             print("Error fetching similar images \(error)")
         }
-        let similarImages = fetchedSimilarImages.first
-        return similarImages
+        //let similarImages = fetchedSimilarImages.first
+        return fetchedSimilarImages //similarImages
     }
     
     //MARK: Search and return details of plant watering
