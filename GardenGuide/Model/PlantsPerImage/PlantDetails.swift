@@ -41,9 +41,11 @@ struct PlantDetails: Decodable {
     }
     struct DescriptionImage: Decodable {
         let url: String
+        let image: Data?
 
         enum CodingKeys: String, CodingKey {
             case url = "value"
+            case image
         }
     }
 }
