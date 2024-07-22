@@ -1,22 +1,294 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantDetailsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantDetailsViewController" customModule="GardenGuide" customModuleProvider="target">
             <connections>
+                <outlet property="buttonsIconListView" destination="P6m-YJ-B7R" id="o0r-Vc-PKK"/>
+                <outlet property="descriptionTextView" destination="rww-iv-Bca" id="MsV-nC-c8p"/>
+                <outlet property="heartButton" destination="Qe1-MB-2FY" id="dcz-v4-iT2"/>
+                <outlet property="miniPlantImageOne" destination="MlY-9c-saM" id="UfQ-hL-itc"/>
+                <outlet property="miniPlantImageThree" destination="BJf-41-Jxi" id="s10-N0-U5D"/>
+                <outlet property="miniPlantImageTwo" destination="A5j-m1-jJB" id="wzO-qj-A4r"/>
+                <outlet property="plantButtonOne" destination="5CN-V1-6eT" id="92j-TD-77e"/>
+                <outlet property="plantButtonThree" destination="ENG-cn-g94" id="5mh-vg-AEZ"/>
+                <outlet property="plantButtonTwo" destination="g6d-f5-oar" id="5bi-C8-iqq"/>
+                <outlet property="plantImage" destination="ogi-Z9-m7S" id="hsv-gi-WtG"/>
+                <outlet property="plantNameLabel" destination="Spk-7o-pZa" id="DSd-ho-nCL"/>
+                <outlet property="plantWateringViewHeight" destination="gOV-wr-51x" id="rpK-Wl-xYx"/>
+                <outlet property="rankLabel" destination="vTE-HT-3kL" id="Eg7-tG-7Cf"/>
+                <outlet property="titleBackgroundView" destination="xnw-Ns-rBQ" id="VzO-Gu-LFM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-wz-m6P">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-WX-3DN">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="823"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaS-Wg-tbJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant4" translatesAutoresizingMaskIntoConstraints="NO" id="ogi-Z9-m7S">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="350" id="dIt-ep-ffO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D70-ig-Bib">
+                                            <rect key="frame" x="20" y="250" width="200" height="60"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant4" translatesAutoresizingMaskIntoConstraints="NO" id="MlY-9c-saM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="VHn-1v-gMF"/>
+                                                        <constraint firstAttribute="width" constant="60" id="bxK-pc-NR1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant5" translatesAutoresizingMaskIntoConstraints="NO" id="A5j-m1-jJB">
+                                                    <rect key="frame" x="70" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="9hr-rk-Fvc"/>
+                                                        <constraint firstAttribute="height" constant="60" id="ntX-4K-xCW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant6" translatesAutoresizingMaskIntoConstraints="NO" id="BJf-41-Jxi">
+                                                    <rect key="frame" x="140" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="aXU-HY-Jf8"/>
+                                                        <constraint firstAttribute="height" constant="60" id="lbk-ja-eQg"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CN-V1-6eT">
+                                            <rect key="frame" x="20" y="250" width="60" height="60"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="miniPlantImagePressed:" destination="-1" eventType="touchUpInside" id="Teh-SP-ybM"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-f5-oar">
+                                            <rect key="frame" x="90" y="250" width="60" height="60"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="miniPlantImagePressed:" destination="-1" eventType="touchUpInside" id="LQw-q3-8bl"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnw-Ns-rBQ">
+                                            <rect key="frame" x="0.0" y="330" width="393" height="40"/>
+                                            <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Bij-KE-ccs"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe1-MB-2FY">
+                                            <rect key="frame" x="333" y="310" width="40" height="40"/>
+                                            <color key="backgroundColor" name="CustomLightGreen"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="Qa2-zt-HUd"/>
+                                                <constraint firstAttribute="height" constant="40" id="aq1-dn-e9Q"/>
+                                            </constraints>
+                                            <color key="tintColor" name="CustomOpaqueGreen"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="heart" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                            </state>
+                                            <state key="selected" image="heart.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="heartButtonPressed:" destination="-1" eventType="touchUpInside" id="NRg-4o-LMA"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-cn-g94">
+                                            <rect key="frame" x="160" y="250" width="60" height="60"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="miniPlantImagePressed:" destination="-1" eventType="touchUpInside" id="yOd-MY-w1y"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="ENG-cn-g94" firstAttribute="height" secondItem="BJf-41-Jxi" secondAttribute="height" id="4kl-ud-AAS"/>
+                                        <constraint firstItem="ogi-Z9-m7S" firstAttribute="top" secondItem="VaS-Wg-tbJ" secondAttribute="top" id="8PL-R6-fE8"/>
+                                        <constraint firstItem="g6d-f5-oar" firstAttribute="width" secondItem="A5j-m1-jJB" secondAttribute="width" id="Btv-WC-ODO"/>
+                                        <constraint firstAttribute="bottom" secondItem="D70-ig-Bib" secondAttribute="bottom" constant="40" id="DMe-oe-I7K"/>
+                                        <constraint firstAttribute="trailing" secondItem="ogi-Z9-m7S" secondAttribute="trailing" id="DvK-Dw-df4"/>
+                                        <constraint firstItem="D70-ig-Bib" firstAttribute="leading" secondItem="VaS-Wg-tbJ" secondAttribute="leading" constant="20" id="JKh-Jq-HXR"/>
+                                        <constraint firstItem="5CN-V1-6eT" firstAttribute="height" secondItem="MlY-9c-saM" secondAttribute="height" id="LOh-JK-C8r"/>
+                                        <constraint firstItem="ENG-cn-g94" firstAttribute="width" secondItem="BJf-41-Jxi" secondAttribute="width" id="Mxj-sF-C6w"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qe1-MB-2FY" secondAttribute="trailing" constant="20" id="Uvb-IO-mtf"/>
+                                        <constraint firstItem="ENG-cn-g94" firstAttribute="centerY" secondItem="BJf-41-Jxi" secondAttribute="centerY" id="Xjd-Ft-uX2"/>
+                                        <constraint firstItem="g6d-f5-oar" firstAttribute="height" secondItem="A5j-m1-jJB" secondAttribute="height" id="Yvi-ol-Aoa"/>
+                                        <constraint firstAttribute="bottom" secondItem="xnw-Ns-rBQ" secondAttribute="bottom" constant="-20" id="Zvg-ul-oIs"/>
+                                        <constraint firstItem="g6d-f5-oar" firstAttribute="centerX" secondItem="A5j-m1-jJB" secondAttribute="centerX" id="aoj-cr-ewk"/>
+                                        <constraint firstItem="ENG-cn-g94" firstAttribute="centerX" secondItem="BJf-41-Jxi" secondAttribute="centerX" id="gsd-lD-Wy2"/>
+                                        <constraint firstItem="5CN-V1-6eT" firstAttribute="centerY" secondItem="MlY-9c-saM" secondAttribute="centerY" id="hV4-98-QDz"/>
+                                        <constraint firstItem="xnw-Ns-rBQ" firstAttribute="leading" secondItem="VaS-Wg-tbJ" secondAttribute="leading" id="lPk-xV-1E4"/>
+                                        <constraint firstItem="ogi-Z9-m7S" firstAttribute="leading" secondItem="VaS-Wg-tbJ" secondAttribute="leading" id="mDd-A0-NfD"/>
+                                        <constraint firstAttribute="bottom" secondItem="ogi-Z9-m7S" secondAttribute="bottom" id="mQY-aa-tsw"/>
+                                        <constraint firstItem="5CN-V1-6eT" firstAttribute="width" secondItem="MlY-9c-saM" secondAttribute="width" id="nsg-K4-REv"/>
+                                        <constraint firstItem="5CN-V1-6eT" firstAttribute="centerX" secondItem="MlY-9c-saM" secondAttribute="centerX" id="tol-sl-l1n"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qe1-MB-2FY" secondAttribute="bottom" id="wzo-BG-w63"/>
+                                        <constraint firstItem="g6d-f5-oar" firstAttribute="centerY" secondItem="A5j-m1-jJB" secondAttribute="centerY" id="y6A-0V-aHj"/>
+                                        <constraint firstAttribute="trailing" secondItem="xnw-Ns-rBQ" secondAttribute="trailing" id="yc4-Bj-AaJ"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnl-sm-QCa">
+                                    <rect key="frame" x="0.0" y="350" width="393" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lilium Candidum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spk-7o-pZa">
+                                            <rect key="frame" x="20" y="0.0" width="353" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="gkr-lw-nxb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <color key="textColor" name="CustomGreenishGray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Spk-7o-pZa" secondAttribute="bottom" constant="20" id="Q0G-Po-vwP"/>
+                                        <constraint firstItem="Spk-7o-pZa" firstAttribute="top" secondItem="Gnl-sm-QCa" secondAttribute="top" id="atu-EN-YCY"/>
+                                        <constraint firstItem="Spk-7o-pZa" firstAttribute="leading" secondItem="Gnl-sm-QCa" secondAttribute="leading" constant="20" id="dW1-Yn-mo7"/>
+                                        <constraint firstAttribute="trailing" secondItem="Spk-7o-pZa" secondAttribute="trailing" constant="20" id="rxV-Gh-Tno"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-YJ-B7R" customClass="ButtonIconList" customModule="GardenGuide" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="400" width="393" height="70"/>
+                                    <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="RiU-pn-Ghd"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwo-qh-2UA">
+                                    <rect key="frame" x="0.0" y="470" width="393" height="120"/>
+                                    <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="gOV-wr-51x"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-S7-upz">
+                                    <rect key="frame" x="0.0" y="590" width="393" height="233"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank: Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-HT-3kL">
+                                            <rect key="frame" x="20" y="10" width="119" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="kMe-oc-8UN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" name="CustomDarkGreen"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rww-iv-Bca">
+                                            <rect key="frame" x="20" y="39" width="353" height="110"/>
+                                            <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="110" id="Asq-qq-HQb"/>
+                                            </constraints>
+                                            <string key="text">Lilium candidum, the Madonna lily or white lily, is a plant in the true lily family. It is native to the Balkans and Middle East, and naturalized in other parts of Europe, including France, Italy, and Ukraine, and in North Africa, the Canary Islands, Mexico, and other regions. It has been cultivated since antiquity, for at least 3,000 years, and has great symbolic value since then for many cultures. It is susceptible to several virus diseases common to lilies, and especially to Botrytis fungus.  One technique to avoid problems with viruses is to grow plants from seed instead of bulblets.</string>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUk-nD-Lz6">
+                                            <rect key="frame" x="25" y="149" width="87" height="34"/>
+                                            <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="N8k-mZ-dvO"/>
+                                                <constraint firstAttribute="width" constant="87" id="th0-Bg-X4w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Read more">
+                                                <color key="titleColor" name="CustomGreen"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="readMoreButtonPressed:" destination="-1" eventType="touchUpInside" id="vmb-7N-tKL"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="rUk-nD-Lz6" secondAttribute="bottom" constant="50" id="2CQ-2R-fv2"/>
+                                        <constraint firstItem="vTE-HT-3kL" firstAttribute="leading" secondItem="pSj-S7-upz" secondAttribute="leading" constant="20" id="9Nb-QB-y0e"/>
+                                        <constraint firstItem="vTE-HT-3kL" firstAttribute="top" secondItem="pSj-S7-upz" secondAttribute="top" constant="10" id="EpB-ue-iHX"/>
+                                        <constraint firstAttribute="trailing" secondItem="rww-iv-Bca" secondAttribute="trailing" constant="20" id="gRF-2m-fbH"/>
+                                        <constraint firstItem="rUk-nD-Lz6" firstAttribute="leading" secondItem="pSj-S7-upz" secondAttribute="leading" constant="25" id="meY-8T-nvE"/>
+                                        <constraint firstItem="rww-iv-Bca" firstAttribute="leading" secondItem="pSj-S7-upz" secondAttribute="leading" constant="20" id="uYY-dW-gxI"/>
+                                        <constraint firstItem="rUk-nD-Lz6" firstAttribute="top" secondItem="rww-iv-Bca" secondAttribute="bottom" id="wIY-n1-DGW"/>
+                                        <constraint firstItem="rww-iv-Bca" firstAttribute="top" secondItem="vTE-HT-3kL" secondAttribute="bottom" constant="5" id="zjT-dk-jlQ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cGc-WX-3DN" firstAttribute="leading" secondItem="3Tw-YB-KvP" secondAttribute="leading" id="0S2-AG-rEf"/>
+                        <constraint firstItem="cGc-WX-3DN" firstAttribute="top" secondItem="3Tw-YB-KvP" secondAttribute="top" id="7dj-i0-X1d"/>
+                        <constraint firstItem="cGc-WX-3DN" firstAttribute="trailing" secondItem="3Tw-YB-KvP" secondAttribute="trailing" id="NGT-J1-5gO"/>
+                        <constraint firstItem="cGc-WX-3DN" firstAttribute="bottom" secondItem="3Tw-YB-KvP" secondAttribute="bottom" id="NeN-eF-q7N"/>
+                        <constraint firstItem="cGc-WX-3DN" firstAttribute="width" secondItem="wBu-4C-Av9" secondAttribute="width" id="gwB-F5-gS8"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="3Tw-YB-KvP"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="wBu-4C-Av9"/>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="CustomBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rrN-wz-m6P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Y7s-eR-0f9"/>
+                <constraint firstItem="rrN-wz-m6P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f5q-l7-kGy"/>
+                <constraint firstItem="rrN-wz-m6P" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="nFF-Hh-xkU"/>
+                <constraint firstItem="rrN-wz-m6P" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wKP-0s-RqY"/>
+            </constraints>
+            <point key="canvasLocation" x="113.74045801526717" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <image name="Plant4" width="512" height="512"/>
+        <image name="Plant5" width="512" height="512"/>
+        <image name="Plant6" width="960" height="1280"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <namedColor name="CustomBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomDarkGreen">
+            <color red="0.12156862745098039" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.45882352941176469" green="0.69019607843137254" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomGreenishGray">
+            <color red="0.56862745098039214" green="0.6470588235294118" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomLightGreen">
+            <color red="0.41568627450980394" green="0.60784313725490191" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomOpaqueGreen">
+            <color red="0.28627450980392155" green="0.35294117647058826" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
