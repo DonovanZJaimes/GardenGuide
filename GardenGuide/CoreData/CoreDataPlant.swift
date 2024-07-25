@@ -9,9 +9,10 @@ import Foundation
 import CoreData
 
 class CoreDataPlant {
-    private let container: NSPersistentContainer
+    private let container: NSPersistentContainer!
     init(){
-        container = NSPersistentContainer(name: "GardenGuideCoreData")
+        //container = NSPersistentContainer(name: "GardenGuideCoreData")
+        container = NSPersistentContainer(name: "GardenGuideCoreData", managedObjectModel: PersistenceManager.managedObjectModel)
         setUpDataBase()
     }
     
