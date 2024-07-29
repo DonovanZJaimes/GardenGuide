@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
+//MARK: Delegate for PlantDetailsViewController
 protocol ButtonIconListProtocol: AnyObject{
+    //in case of pressing a button
     func didSelectOption(tag : Int)
 }
 
 class ButtonIconList: UIView {
     //MARK: Variables
+    
+    //for the view
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
@@ -23,6 +27,7 @@ class ButtonIconList: UIView {
         return scrollView
     }()
     
+    //for the scrollView
     private let optionsView: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = 10
@@ -49,11 +54,16 @@ class ButtonIconList: UIView {
         super.init(frame: frame)
     }
     
+    //buttons info
     var butonIconList = [DetailsButtonIcon]()
     weak var delegate : ButtonIconListProtocol?
     
     
+   //MARK: methods for view
+    
+    //create a view for the button
     private func buildButton(buttonObject: DetailsButtonIcon, tag: Int) ->  UIView {
+        //create a button
         let button = UIButton(type: .custom)
         button.tag = tag
         button.setImage(UIImage(systemName: buttonObject.icon.rawValue), for: .normal)
@@ -61,12 +71,14 @@ class ButtonIconList: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .customGreen
         
+        //create a label
         let titleLabel = UILabel()
         titleLabel.text = buttonObject.title
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 2
         
+        //create a stackView for the label and button
         let stackButtons: UIStackView = {
             let stackView = UIStackView()
             stackView.axis = .vertical
@@ -84,14 +96,17 @@ class ButtonIconList: UIView {
         return stackButtons
     }
     
+    //create a view of the ButtonIconList
     func buildView() {
+        //add all button views to the horizontal stackView
         _ = optionsView.arrangedSubviews.map({$0.removeFromSuperview()})
         for (i, button) in butonIconList.enumerated() {
             let buttonView = buildButton(buttonObject: button, tag: i)
             optionsView.addArrangedSubview(buttonView)
         }
-        scrollView.addSubview(optionsView)
         
+        //add the stackView to the main scrollview
+        scrollView.addSubview(optionsView)
         NSLayoutConstraint.activate([
             optionsView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
             optionsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -99,8 +114,9 @@ class ButtonIconList: UIView {
         ])
     }
     
-    
+    //button pressed
     @objc func didSelectOption(_ sender: UIButton) {
+        //send what type of button was pressed to PlantDetailsViewController
         delegate?.didSelectOption(tag: sender.tag)
     }
     

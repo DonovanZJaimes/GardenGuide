@@ -36,6 +36,7 @@ class PlantDetailsViewController: UIViewController {
     var suggestedPlant: SuggestedPlant?
     //var numberOfImages = 1
     var hasWatered: Bool = false
+    //Core Data
     let dataManager = CoreDataPlant()
     //Controller for de ViewController
     lazy var controller = PlantDetailsController(delegate: self)
