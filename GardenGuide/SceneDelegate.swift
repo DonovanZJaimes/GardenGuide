@@ -13,6 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var tabBarItemUserGardenView: UITabBarItem!
     
     @objc func updateItemUserGardenView() {
+        /*if Notifications.shared.newPlants.count != nil {
+            //tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
+        }*/
         let value = Notifications.shared.newPlants.count
         tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
     }
