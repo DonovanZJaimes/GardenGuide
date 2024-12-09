@@ -1,0 +1,396 @@
+{
+   "elements":[
+      {
+         "isAdded":true,
+         "name":"Lilium candidum",
+         "watered":{
+            "numberOfDays":5,
+            "waterAmount":100,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation": "2024-11-4T10:30:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"3e8d9e1169482d92a575d355cde76918fc893ac2",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/3e8/d9e1169482d92a575d355cde76918fc893ac2.jpeg",
+               "license_name":"CC BY-SA 4.0",
+               "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+               "citation":"eleonore miguel",
+               "similarity":0.705,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/3e8/d9e1169482d92a575d355cde76918fc893ac2.small.jpeg"
+            },
+            {
+               "id":"2198916b0b4116e149d5d7c2f366982664e18075",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/219/8916b0b4116e149d5d7c2f366982664e18075.jpeg",
+               "license_name":"CC BY-SA 4.0",
+               "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+               "citation":"PAULINE DORIDANT",
+               "similarity":0.676,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/219/8916b0b4116e149d5d7c2f366982664e18075.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":[
+               "Madonna lily",
+               "white lily"
+            ],
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Lilium",
+               "order":"Liliales",
+               "family":"Liliaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Lilium_candidum",
+            "rank":"species",
+            "descriptionUrl": "https://en.wikipedia.org/wiki/Lilium_candidum",
+            "descriptionValue":"Lilium candidum, the Madonna lily or white lily, is a plant in the true lily family. It is native to the Balkans and Middle East, and naturalized in other parts of Europe, including France, Italy, and Ukraine, and in North Africa, the Canary Islands, Mexico, and other regions. It has been cultivated since antiquity, for at least 3,000 years, and has great symbolic value since then for many cultures. It is susceptible to several virus diseases common to lilies, and especially to Botrytis fungus.  One technique to avoid problems with viruses is to grow plants from seed instead of bulblets.",
+            "synonyms":[
+               "Lilium album",
+               "Lilium candidum f. peregrinum",
+               "Lilium candidum f. striatum",
+               "Lilium candidum peregrinum",
+               "Lilium candidum striatum",
+               "Lilium candidum subsp. peregrinum",
+               "Lilium candidum var. aureomarginatum",
+               "Lilium candidum var. cernuum",
+               "Lilium candidum var. monstruosum",
+               "Lilium candidum var. peregrinum",
+               "Lilium candidum var. plenum",
+               "Lilium candidum var. purpureostriatum",
+               "Lilium candidum var. purpureum",
+               "Lilium candidum var. rubrolineatum",
+               "Lilium candidum var. salonikae",
+               "Lilium candidum var. striatum",
+               "Lilium candidum var. variegatum",
+               "Lilium peregrinum",
+               "Lilium striatum"
+            ],
+            "imageUrl":"https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/9c5/9c5e34b0bc1a4346a013fa96bb37109e3bdee189.jpg",
+            "edible_parts":[
+               "root"
+            ],
+            "watering":null,
+            "propagation_methods":[
+               
+            ]
+         }
+      },
+      {
+         "isAdded":true,
+         "name":"Gladiolus",
+         "watered":{
+            "numberOfDays":6,
+            "waterAmount":200,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation": "2024-11-22T10:30:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"efd5d693b280689c6fd77e2996ad4e42907d09d3",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/efd/5d693b280689c6fd77e2996ad4e42907d09d3.jpeg",
+               "similarity":0.414,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/efd/5d693b280689c6fd77e2996ad4e42907d09d3.small.jpeg"
+            },
+            {
+               "id":"f635d673599558a80dba7f0851049b66f1c3db4a",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/f63/5d673599558a80dba7f0851049b66f1c3db4a.jpeg",
+               "license_name":"CC BY 4.0",
+               "license_url":"https://creativecommons.org/licenses/by/4.0/",
+               "citation":"weiss daniel",
+               "similarity":0.403,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/f63/5d673599558a80dba7f0851049b66f1c3db4a.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":[
+               "Gladioli",
+               "Painted Ladies",
+               "Sword Lilies"
+            ],
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Gladiolus",
+               "order":"Asparagales",
+               "family":"Iridaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Gladiolus",
+            "rank":"genus",
+            "descriptionUrl":"https://en.wikipedia.org/wiki/Gladiolus",
+            "descriptionValue": "Gladiolus (from Latin, the diminutive of gladius, a sword) is a genus of perennial cormous flowering plants in the iris family (Iridaceae).\n\nIt is sometimes called the 'sword lily', but is usually called by its generic name (plural gladioli).The genus occurs in Asia, Mediterranean Europe, South Africa, and tropical Africa. The center of diversity is in the Cape Floristic Region. The genera Acidanthera, Anomalesia, Homoglossum, and Oenostachys, formerly considered distinct, are now included in Gladiolus.",
+            "synonyms":[
+               "Acidanthera",
+               "Anisanthus",
+               "Anomalesia",
+               "Antholyza",
+               "Ballosporum",
+               "Bertera",
+               "Cunonia",
+               "Dortania",
+               "Gladanthera",
+               "Hebea",
+               "Homoglad",
+               "Homoglossum",
+               "Hyptissa",
+               "Keitia",
+               "Kentrosiphon",
+               "Liliogladiolus",
+               "Oenostachys",
+               "Ophiolyza",
+               "Petamenes",
+               "Ranisia",
+               "Solenanthus",
+               "Sphaerospora",
+               "Symphydolon",
+               "ladanthera",
+               "omoglad"
+            ],
+            "imageUrl": "https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/343/3439436bdc9913b1a1836018c98a11199be47d69.jpg",
+            "edible_parts":null,
+            "wateringMax": 2,
+            "wateringMin": 2,
+            "propagation_methods":[
+               
+            ]
+         }
+      },
+      {
+         "isAdded":true,
+         "name":"Chlorophytum",
+         "watered":{
+            "numberOfDays":7,
+            "waterAmount":100,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation":  "2024-11-22T10:30:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"ce33139c88b159193f0e74ad8f8e5f63528758ce",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/ce3/3139c88b159193f0e74ad8f8e5f63528758ce.jpeg",
+               "similarity":0.443,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/ce3/3139c88b159193f0e74ad8f8e5f63528758ce.small.jpeg"
+            },
+            {
+               "id":"4f32220ba683a0e467b8f3518bbcc4737a6d9b4a",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/4f3/2220ba683a0e467b8f3518bbcc4737a6d9b4a.jpeg",
+               "similarity":0.443,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/4f3/2220ba683a0e467b8f3518bbcc4737a6d9b4a.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":[
+               "Grass Lilies"
+            ],
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Chlorophytum",
+               "order":"Asparagales",
+               "family":"Asparagaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Chlorophytum",
+            "rank":"genus",
+            "descriptionUrl": "https://en.wikipedia.org/wiki/Chlorophytum",
+            "descriptionValue": "Chlorophytum (, common name spider plant), is a genus of almost 200 species of evergreen perennial flowering plants in the century plant subfamily within the asparagus family. The plants are native to the tropical and subtropical regions of Africa, Australia, and Asia.They grow to 10\u201360 cm tall, with a rosette of long, slender leaves 15\u201375 cm long and 0.5\u20132 cm broad and thick, fleshy tuberous roots. The flowers are small, usually white, produced on sparse panicles up to 120 cm long; in some species the plants also reproduce vegetatively by means of plantlets, tiny plants that take root on touching the ground.Chlorophytum comosum, the common Spider Plant, a native of South Africa, is a very popular houseplant especially in its variegated form 'Vittatum'. It is commonly grown in hanging pots suspended by ropes or wires in bright sunlight.Chlorophytum borivilianum is a native of India and it is used and grown as a medicinal plant.",
+            "synonyms":[
+               "Acrospira",
+               "Asphodelopsis",
+               "Dasystachys",
+               "Debesia",
+               "Hartwegia",
+               "Hollia",
+               "Schidospermum",
+               "Verdickia"
+            ],
+            "imageUrl": "https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/ccc/cccd3fb86120d881bef651effd4bff21d367c1be.jpg",
+            "edible_parts":null,
+            "wateringMax": 2,
+            "wateringMin": 2,
+            "propagation_methods":[
+               
+            ]
+         }
+      },
+      {
+         "isAdded":true,
+         "name":"Alstroemeria",
+         "watered":{
+            "numberOfDays":8,
+            "waterAmount":150,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation": "2024-11-25T10:30:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"44a6fe197d079549ad3b1efcc3f79f78818a9d07",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/44a/6fe197d079549ad3b1efcc3f79f78818a9d07.jpeg",
+               "similarity":0.458,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/44a/6fe197d079549ad3b1efcc3f79f78818a9d07.small.jpeg"
+            },
+            {
+               "id":"67bf28a1eb489f3764cd558e8c228f466dcbe357",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/67b/f28a1eb489f3764cd558e8c228f466dcbe357.jpeg",
+               "similarity":0.451,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/67b/f28a1eb489f3764cd558e8c228f466dcbe357.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":[
+               "Peruvian lilies",
+               "Inca Lilies"
+            ],
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Alstroemeria",
+               "order":"Liliales",
+               "family":"Alstroemeriaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Alstroemeria",
+            "rank":"genus",
+            "descriptionUrl": "https://en.wikipedia.org/wiki/Alstroemeria",
+            "descriptionValue": "Alstroemeria (), commonly called the Peruvian lily or lily of the Incas, is a genus of flowering plants in the family Alstroemeriaceae. They are all native to South America, although some have become naturalized in the United States, Mexico, Australia, New Zealand, Madeira and the Canary Islands. Almost all of the species are restricted to one of two distinct centers of diversity; one in central Chile, the other in eastern Brazil. Species of Alstroemeria from Chile are winter-growing plants, while those of Brazil are summer growing. All are long-lived perennials except A. graminea, a diminutive annual from the Atacama Desert of Chile.",
+            "synonyms":[
+               "Ligtu",
+               "Lilavia",
+               "Priopetalon",
+               "Schickendantzia",
+               "Taltalia"
+            ],
+            "imageUrl": "https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/35e/35eea7f315c2ead06ee2fcea772057cb274bfe5b.jpg",
+            "edible_parts":null,
+            "wateringMax": 2,
+            "wateringMin": 2,
+            "propagation_methods":[
+               
+            ]
+         }
+      },
+      {
+         "isAdded":true,
+         "name":"Tulipa",
+         "watered":{
+            "numberOfDays":9,
+            "waterAmount":200,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation":  "2024-11-25T10:40:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"dc2c70cd03db5a5748ba9b3fd885cfe7e86f494a",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/dc2/c70cd03db5a5748ba9b3fd885cfe7e86f494a.jpg",
+               "license_name":"CC0",
+               "license_url":"https://creativecommons.org/publicdomain/zero/1.0/",
+               "citation":"Anton Johansson",
+               "similarity":0.466,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/dc2/c70cd03db5a5748ba9b3fd885cfe7e86f494a.small.jpg"
+            },
+            {
+               "id":"e62620e77a2d084f8b53a2b97203cc2cf45c680e",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/e62/620e77a2d084f8b53a2b97203cc2cf45c680e.jpeg",
+               "similarity":0.446,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/e62/620e77a2d084f8b53a2b97203cc2cf45c680e.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":null,
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Tulipa",
+               "order":"Liliales",
+               "family":"Liliaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Tulip",
+            "rank":"genus",
+            "descriptionUrl": "https://en.wikipedia.org/wiki/Tulip",
+            "descriptionValue": "Tulips (Tulipa) are a genus of spring-blooming perennial herbaceous bulbiferous geophytes (having bulbs as storage organs). The flowers are usually large, showy and brightly coloured, generally red, pink, yellow, or white (usually in warm colours). They often have a different coloured blotch at the base of the tepals (petals and sepals, collectively), internally. Because of a degree of variability within the populations, and a long history of cultivation, classification has been complex and controversial. The tulip is a member of the lily family, Liliaceae, along with 14 other genera, where it is most closely related to Amana, Erythronium and Gagea in the tribe Lilieae. \nThere are about 75 species, and these are divided among four subgenera. The name \"tulip\" is thought to be derived from a Persian word for turban, which it may have been thought to resemble by those who discovered it. Tulips originally were found in a band stretching from Southern Europe to Central Asia, but since the seventeenth century have become widely naturalised and cultivated (see map). In their natural state they are adapted to steppes and mountainous areas with temperate climates. Flowering in the spring, they become dormant in the summer once the flowers and leaves die back, emerging above ground as a shoot from the underground bulb in early spring.\nGrowing wild over much of the Near East and Central Asia, tulips were cultivated in Byzantine Constantinople as early as 1055. By the 15th century, tulips were among the most prized flowers; becoming the symbol of the later Ottomans. While tulips had probably been cultivated in Persia from the tenth century, they did not come to the attention of Northern Europeans until the sixteenth century, when Northern European diplomats to the Ottoman court observed and reported on them.  They were rapidly introduced into Northern Europe and became a much-sought-after commodity during tulip mania. Tulips were frequently depicted in Dutch Golden Age paintings, and have become associated with the Netherlands, the major producer for world markets, ever since. In the seventeenth century Netherlands, during the time of the tulip mania, an infection of tulip bulbs by the tulip breaking virus created variegated patterns in the tulip flowers that were much admired and valued. While truly broken tulips are not cultivated anymore, the closest available specimens today are part of the group known as the Rembrandts \u2013 so named because Rembrandt painted some of the most admired breaks of his time.Breeding programmes have produced thousands of hybrid and cultivars in addition to the original species (known in horticulture as botanical tulips).  They are popular throughout the world, both as ornamental garden plants and as cut flowers.",
+            "synonyms":[
+               "Eduardoregelia",
+               "Liriactis",
+               "Liriopogon",
+               "Orithyia",
+               "Podonix"
+            ],
+            "imageUrl": "https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/21c/21ccb68c8bf7b1c47650facb1244bf31f824fd21.jpg",
+            "edible_parts":null,
+            "wateringMax": 2,
+            "wateringMin": 2,
+            "propagation_methods":[
+               
+            ]
+         }
+      },
+      {
+         "isAdded":true,
+         "name":"Hemerocallis",
+         "watered":{
+            "numberOfDays":10,
+            "waterAmount":100,
+            "percentage": 1.1,
+            "wasItWatered":true,
+            "nextIrrigation":  "2024-10-28T10:30:00Z"
+         },
+         "similar_images":[
+            {
+               "id":"91ae0861970366bb26ea8b532f67026e7eb2080f",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/91a/e0861970366bb26ea8b532f67026e7eb2080f.jpeg",
+               "license_name":"CC BY 4.0",
+               "license_url":"https://creativecommons.org/licenses/by/4.0/",
+               "citation":"Ulrich Streppel",
+               "similarity":0.509,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/91a/e0861970366bb26ea8b532f67026e7eb2080f.small.jpeg"
+            },
+            {
+               "id":"dd257d799df43bab1ac9fad4cba09fdb23133d55",
+               "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/dd2/57d799df43bab1ac9fad4cba09fdb23133d55.jpeg",
+               "license_name":"CC0",
+               "license_url":"https://creativecommons.org/publicdomain/zero/1.0/",
+               "citation":"theratgod",
+               "similarity":0.46,
+               "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/3/dd2/57d799df43bab1ac9fad4cba09fdb23133d55.small.jpeg"
+            }
+         ],
+         "details":{
+            "common_names":[
+               "Daylily",
+               "daylilies"
+            ],
+            "taxonomy":{
+               "class":"Liliopsida",
+               "genus":"Hemerocallis",
+               "order":"Asparagales",
+               "family":"Asphodelaceae",
+               "phylum":"Tracheophyta",
+               "kingdom":"Plantae"
+            },
+            "url":"https://en.wikipedia.org/wiki/Daylily",
+            "rank":"genus",
+            "descriptionUrl": "https://en.wikipedia.org/wiki/Daylily",
+            "descriptionValue": "A daylily or day lily is a flowering plant in the genus Hemerocallis , a member of the family Asphodelaceae, subfamily Hemerocallidoideae. Despite the common name, it is not in fact a lily. Gardening enthusiasts and horticulturists have long bred daylily species for their attractive flowers. Thousands of cultivars have been registered by local and international Hemerocallis societies. Daylilies are perennial plants, whose name alludes to its flowers, which typically last about a day.",
+            "synonyms":[
+               "Cameraria",
+               "Lilioasphodelus"
+            ],
+            "imageUrl": "https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/279/27917d739adf6346f28345821c157984d28c2ff8.jpg",
+            "edible_parts":null,
+            "wateringMax": 2,
+            "wateringMin": 2,
+            "propagation_methods":[
+               
+            ]
+         }
+      }
+   ]
+}
