@@ -302,6 +302,70 @@ class CoreDataPlant {
     
     
     
+    //MARK: Modify the the plant
+    //Modify the the plant if it is in favorites or not
+    func editPlantToFavorites(withUID uID: UUID, addedtofavorites isSeleted: Bool){
+        //configure the fetchRequest
+        let fetchRequest: NSFetchRequest<PlantEntity>
+        fetchRequest = PlantEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id = %@", uID as CVarArg )
+        fetchRequest.includesPropertyValues = false
+        
+        let context = container.viewContext
+        do {
+            //modify the values of the context
+            let objects = try context.fetch(fetchRequest)
+            for object in objects {
+                object.isAdded = isSeleted
+            }
+            
+        } catch {
+            print("ERROR: \(error)")
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("ERROR: \(error)")
+        }
+    }
+    
+    //Modify the new watering of the plant
+    func modifyPlantWateringChanges(withUID uID: UUID, newIrrigation irrigation: IrrigationInformation){
+        //configure the fetchRequest
+        let fetchRequest: NSFetchRequest<PlantEntity>
+        fetchRequest = PlantEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id = %@", uID as CVarArg )
+        fetchRequest.includesPropertyValues = false
+        
+        //craete a  WateredEntity to mofify
+        let context = container.viewContext
+        let Watered = WateredEntity(context: context)
+        Watered.numberOfDays = irrigation.numberOfDays
+        Watered.waterAmount = irrigation.waterAmount
+        Watered.percentage = irrigation.percentage
+        Watered.wasItWatered = irrigation.wasItWatered
+        Watered.nextIrrigation = irrigation.nextIrrigation
+        
+        //modify the values of the context
+        do {
+            let objects = try context.fetch(fetchRequest)
+            for object in objects {
+                object.watered = Watered
+            }
+            
+        } catch {
+            print("ERROR: \(error)")
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("ERROR: \(error)")
+        }
+    }
+    
+    
     
     //MARK: Remove all plants
     func deletePlants(){
