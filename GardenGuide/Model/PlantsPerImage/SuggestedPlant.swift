@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SuggestedPlant: Decodable {
+struct SuggestedPlant: Decodable, Nameable {
     let id: String
     let name: String
     let probability: Double
@@ -25,3 +25,14 @@ struct SuggestedPlant: Decodable {
 }
 
 
+/**
+ 
+ struct PlantForFirestore: Decodable {
+     let name: String
+     var isAdded: Bool
+     let similarImages: [SimilarImage]?
+     let details: PlantDetailsFirestore
+     let watered: IrrigationInformation
+     
+ }
+ */
