@@ -6,3 +6,7 @@
 //
 
 import Foundation
+struct FavouritePlantInFirestore: Decodable {
+    let name: String
+    let image: String
+}

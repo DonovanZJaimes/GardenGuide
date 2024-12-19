@@ -6,3 +6,15 @@
 //
 
 import Foundation
+struct PlantForFirestore: Decodable {
+    let name: String
+    var isAdded: Bool 
+    let similarImages: [SimilarImage]?
+    let details: PlantDetailsFirestore
+    let watered: IrrigationInformation
+    
+}
+
+struct PlantsForFirestore: Decodable {
+    let elements: [PlantForFirestore]
+}
