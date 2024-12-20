@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var tabBarItemUserGardenView: UITabBarItem!
+    private var firestoreUtilts = FirestoreUtilts()
     
     @objc func updateItemUserGardenView() {
         /*if Notifications.shared.newPlants.count != nil {
@@ -35,15 +36,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             let defaults = UserDefaults.standard
             if let email = defaults.value(forKey: "email") as? String, let provider = defaults.value(forKey: "provider") as? String {
-                
+                firestoreUtilts.modifyUserEmail(email)
+                firestoreUtilts.modifyUserProvider(provider)
                 //MARK: Go to Storyboard with authentication
                 let mainStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
-                if let gardenGuideTabBarController = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController, let gardenGuideViewController  = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
-                    gardenGuideViewController.email = email
-                    gardenGuideViewController.provider = ProviderType.init(rawValue: provider)!
-                    //gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
-                    let navigationController = UINavigationController (rootViewController:  gardenGuideViewController)
-                    gardenGuideTabBarController.viewControllers?[0] = navigationController
+                if let gardenGuideTabBarController = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController{
+                    //-DENTRO DEL IF LET: , let gardenGuideViewController  = mainStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController 
+                    //-gardenGuideViewController.email = email
+                    //-gardenGuideViewController.provider = ProviderType.init(rawValue: provider)!
+                    //ESTE NO gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
+                    //-let navigationController = UINavigationController (rootViewController:  gardenGuideViewController)
+                    //-gardenGuideTabBarController.viewControllers?[0] = navigationController
                     window.rootViewController = gardenGuideTabBarController
                     self.window = window
                     window.makeKeyAndVisible()
