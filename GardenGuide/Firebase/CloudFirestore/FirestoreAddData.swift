@@ -36,12 +36,14 @@ struct FirestoreAddData {
     }
     
     //Saving favourite plants of the user
-    func addPlantOfFavouritesToCloud(_ name: String, image: String) async {
+    func addPlantOfFavouritesToCloud(_ plant: FavouritePlant) async {
         do {
             //save name and image of plant
-            try await db.collection(CoUser).document(FirestoreUtilts.userEmail).collection(CoFavPlants).document(name).setData([
-                "name" : name,
-                "image" : image
+            try await db.collection(CoUser).document(FirestoreUtilts.userEmail).collection(CoFavPlants).document(plant.name).setData([
+                "name" : plant.name,
+                "image" : plant.image,
+                "min" : plant.min,
+                "max" : plant.max
             ])
             print("save plant on Firestore Cloud")
         } catch {
