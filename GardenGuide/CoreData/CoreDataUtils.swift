@@ -168,6 +168,7 @@ struct CoreDataUtils {
                 //Check if the plant has already been modified.
                 guard verifyWatered(plant: plant) else {
                     callback(ResultForFavorites.dontDelete)
+                    print("jijii")
                     return
                 }
                 plant.isAdded = false
@@ -183,6 +184,7 @@ struct CoreDataUtils {
             }
             break
         }
+        Notifications.shared.newFavouritePlant.toggle()
         dataManager.save()
     }
     
@@ -215,6 +217,24 @@ struct CoreDataUtils {
             }
         }
         return isAdded
+    }
+    
+    
+    //MARK: Delete Plants in CoreData
+    //Delete a Plant with name in CoreData
+    public func deletePlant(withName name: String) {
+        //Get PlantEntity to delete
+        let plantsEntity = dataManager.fetchPlants()
+        var plantEntityToDelete: PlantEntity!
+        plantsEntity.forEach { plantEntity in
+            if name == plantEntity.name {
+                plantEntityToDelete = plantEntity
+            }
+        }
+        //delete plantEntity
+        guard let plantEntityToDelete = plantEntityToDelete else {return}
+        dataManager.deletePlant(plantEntityToDelete)
+        
     }
     
     
