@@ -37,7 +37,7 @@ struct FirestoreDeleteData {
             //First: delete the plant's watering information
             try await db.collection(CoUser).document(FirestoreUtilts.userEmail).collection(CoGarPlants).document(plant.name).collection(CoIrrInfo).document(CoIrrInfo).delete()
             //Second: delete the existing similar images
-            if let similarImages = plant.similarImages {
+            if let similarImages = plant.similarImages, similarImages.count >= 1 {
                 for index in 1 ... similarImages.count {
                     let documentSimilarImage = CoSimImage + String(index)
                     try await db.collection(CoUser).document(FirestoreUtilts.userEmail).collection(CoGarPlants).document(plant.name).collection(CoSimImage).document(documentSimilarImage).delete()

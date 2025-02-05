@@ -77,7 +77,7 @@ struct FirestoreAddData {
                 
             ])
             //Save similar images of the plant
-            if let similarImages = plant.similarImages {
+            if let similarImages = plant.similarImages, similarImages.count >= 1 {
                 for index in 1 ... similarImages.count {
                     let documentSimilarImage = CoSimImage + String(index)
                     try await db.collection(CoUser).document(FirestoreUtilts.userEmail).collection(CoGarPlants).document(plant.name).collection(CoSimImage).document(documentSimilarImage).setData([
