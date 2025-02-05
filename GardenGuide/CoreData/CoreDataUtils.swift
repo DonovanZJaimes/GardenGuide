@@ -71,7 +71,9 @@ struct CoreDataUtils {
         //save or update a plant
         plantsEntity.forEach { plantEntity in
             if plantEntity.name == model.name {
-                if !verifyWatered(plant: plantEntity){
+               // if verifyWatered(plant: plantEntity){
+                //if isNewWatered(plant: plantEntity, newWatered: watered) {
+                if watered.numberOfDays != Constants.irrigationInformation.numberOfDays {
                     //update watered
                     updatePlantWatering(name: plantEntity.name!, watered: watered, UID: plantEntity.id)
                 }
@@ -199,7 +201,15 @@ struct CoreDataUtils {
         return true
     }
     
-    
+    private func isNewWatered(plant: PlantEntity, newWatered: IrrigationInformation) -> Bool {
+        let watered = dataManager.fetchWatered(plant: plant)
+        if watered?.numberOfDays == newWatered.numberOfDays {
+            return false
+        } else {
+            return true
+        }
+         
+    }
     
     //MARK: Verification
     //Check if the plant is in favorites

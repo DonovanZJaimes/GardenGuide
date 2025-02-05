@@ -65,7 +65,7 @@ class CoreDataPlant {
         Watered.belongsToPlantEntity = Plant
         
         
-        if let similarImages = plant.similarImages {
+        if let similarImages = plant.similarImages, similarImages.count >= 1 {
             for index in 0 ..< 2 {
                 let SimilarImage = SimilarImagesEntity(context: context)
                 SimilarImage.id = similarImages[index].id
