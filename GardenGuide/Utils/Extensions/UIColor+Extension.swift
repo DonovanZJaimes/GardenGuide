@@ -36,5 +36,8 @@ extension UIColor {
     @nonobjc class var customBackgroundColor: UIColor {
         UIColor(named: "CustomBackgroundColor")!
     }
+    @nonobjc class var customBlue: UIColor {
+        UIColor(named: "CustomBlue")!
+    }
     
 }
