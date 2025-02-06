@@ -2,7 +2,7 @@
    "elements":[
       {
          "isAdded":true,
-         "name":"Lilium candidum",
+         "name":"Lilium candidum2",
          "watered":{
             "numberOfDays":5,
             "waterAmount":100,
@@ -80,7 +80,7 @@
       },
       {
          "isAdded":true,
-         "name":"Gladiolus",
+         "name":"Gladiolus2",
          "watered":{
             "numberOfDays":6,
             "waterAmount":200,
@@ -161,7 +161,7 @@
       },
       {
          "isAdded":true,
-         "name":"Chlorophytum",
+         "name":"Chlorophytum2",
          "watered":{
             "numberOfDays":7,
             "waterAmount":100,
@@ -220,7 +220,7 @@
       },
       {
          "isAdded":true,
-         "name":"Alstroemeria",
+         "name":"Alstroemeria2",
          "watered":{
             "numberOfDays":8,
             "waterAmount":150,
@@ -277,7 +277,7 @@
       },
       {
          "isAdded":true,
-         "name":"Tulipa",
+         "name":"Tulipa2",
          "watered":{
             "numberOfDays":9,
             "waterAmount":200,
@@ -334,7 +334,7 @@
       },
       {
          "isAdded":true,
-         "name":"Hemerocallis",
+         "name":"Hemerocallis2",
          "watered":{
             "numberOfDays":10,
             "waterAmount":100,
