@@ -1,0 +1,250 @@
+
+{
+   "access_token":"IKKQsymeLJhXgbW",
+   "model_version":"plant_id:4.1.2",
+   "custom_id":null,
+   "input":{
+      "latitude":null,
+      "longitude":null,
+      "similar_images":true,
+      "images":[
+         "https://plant.id/media/imgs/68395e5c06c646119626aeb85a9ce7e3.jpg"
+      ],
+      "datetime":"2024-09-05T19:01:42.428650+00:00"
+   },
+   "result":{
+      "classification":{
+         "suggestions":[
+            {
+               "id":"2b6d180066203936",
+               "name":"Schlumbergera truncata",
+               "probability":0.9243,
+               "similar_images":[
+                  {
+                     "id":"36ca5464500767927c6fbdc62b3b5fe5dfe2cc80",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/36c/a5464500767927c6fbdc62b3b5fe5dfe2cc80.jpeg",
+                     "license_name":"CC BY-NC-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-nc-sa/4.0/",
+                     "citation":"FlowerChecker s.r.o.",
+                     "similarity":0.551,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/36c/a5464500767927c6fbdc62b3b5fe5dfe2cc80.small.jpeg"
+                  },
+                  {
+                     "id":"d724c42d0c136355f80bc90f3b840834d1f6ae23",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/d72/4c42d0c136355f80bc90f3b840834d1f6ae23.jpeg",
+                     "license_name":"CC BY-NC-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-nc-sa/4.0/",
+                     "citation":"FlowerChecker s.r.o.",
+                     "similarity":0.538,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/d72/4c42d0c136355f80bc90f3b840834d1f6ae23.small.jpeg"
+                  }
+               ],
+               "details":{
+                  "common_names":[
+                     "false Christmas cactus",
+                     "Crab Cactus",
+                     "Thanksgiving Cactus"
+                  ],
+                  "taxonomy":{
+                     "class":"Magnoliopsida",
+                     "genus":"Schlumbergera",
+                     "order":"Caryophyllales",
+                     "family":"Cactaceae",
+                     "phylum":"Tracheophyta",
+                     "kingdom":"Plantae"
+                  },
+                  "url":"https://en.wikipedia.org/wiki/Schlumbergera_truncata",
+                  "gbif_id":5383983,
+                  "inaturalist_id":51223,
+                  "rank":"species",
+                  "description":{
+                     "value":"Schlumbergera truncata, the false Christmas cactus, is a species of plant in the family Cactaceae. It is endemic to a small area of the coastal mountains of south-eastern Brazil where its natural habitats are subtropical or tropical moist forests. It is the parent or one of the parents of the houseplants called Christmas cactus, Thanksgiving cactus or zygocactus, among other names.",
+                     "citation":"https://en.wikipedia.org/wiki/Schlumbergera_truncata",
+                     "license_name":"CC BY-SA 3.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+                  },
+                  "synonyms":[
+                     "Cactus truncatus",
+                     "Cereus truncatus",
+                     "Cereus truncatus var. altensteinii",
+                     "Epiphyllum altensteinii",
+                     "Epiphyllum bridgesii",
+                     "Epiphyllum delicatum",
+                     "Epiphyllum elegans",
+                     "Epiphyllum guedneyrii",
+                     "Epiphyllum purpurascens",
+                     "Epiphyllum ruckeri",
+                     "Epiphyllum ruckerianum",
+                     "Epiphyllum salmoneum",
+                     "Epiphyllum smithianum",
+                     "Epiphyllum truncatum",
+                     "Epiphyllum truncatum var. altensteinii",
+                     "Epiphyllum truncatum var. bridgesii",
+                     "Epiphyllum truncatum var. wagneri",
+                     "Epiphyllum violaceum",
+                     "Schlumbergera bridgesii",
+                     "Schlumbergera truncata subsp. delicata",
+                     "Schlumbergera truncata var. altensteinii",
+                     "Schlumbergera truncata var. delicata",
+                     "Zygocactus altensteinii",
+                     "Zygocactus bridgesii",
+                     "Zygocactus delicatus",
+                     "Zygocactus truncatus",
+                     "Zygocactus truncatus var. delicatus"
+                  ],
+                  "image":{
+                     "value":"https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/f28/f28b9f9e95444206e7e564b7485d21f05d3bc9bc.jpg",
+                     "citation":"https://commons.wikimedia.org/wiki/File:ZygocactusTruncatus.jpg",
+                     "license_name":"CC BY-SA 3.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+                  },
+                  "edible_parts":null,
+                  "watering":{
+                     "max":2,
+                     "min":1
+                  },
+                  "propagation_methods":null,
+                  "language":"en",
+                  "entity_id":"2b6d180066203936"
+               }
+            },
+            {
+               "id":"5e68fc566e426572",
+               "name":"Schlumbergera russelliana",
+               "probability":0.054,
+               "similar_images":[
+                  {
+                     "id":"492b74bd231e9751b43555fede73efbe1281508b",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/492/b74bd231e9751b43555fede73efbe1281508b.jpeg",
+                     "license_name":"CC BY-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+                     "citation":"Paolo51",
+                     "similarity":0.618,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/492/b74bd231e9751b43555fede73efbe1281508b.small.jpeg"
+                  },
+                  {
+                     "id":"06c480f80ffbb1d6a5f2c3510900eb7e7bc81291",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/06c/480f80ffbb1d6a5f2c3510900eb7e7bc81291.jpeg",
+                     "license_name":"CC BY-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+                     "citation":"William Coville",
+                     "similarity":0.6,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/06c/480f80ffbb1d6a5f2c3510900eb7e7bc81291.small.jpeg"
+                  }
+               ],
+               "details":{
+                  "common_names":null,
+                  "taxonomy":{
+                     "class":"Magnoliopsida",
+                     "genus":"Schlumbergera",
+                     "order":"Caryophyllales",
+                     "family":"Cactaceae",
+                     "phylum":"Tracheophyta",
+                     "kingdom":"Plantae"
+                  },
+                  "url":"https://en.wikipedia.org/wiki/Schlumbergera_russelliana",
+                  "gbif_id":5620092,
+                  "inaturalist_id":339358,
+                  "rank":"species",
+                  "description":{
+                     "value":"Schlumbergera russelliana is a species of plant in the family Cactaceae. It is endemic to a small area of the coastal mountains of south-eastern Brazil where its natural habitat is moist forest. It grows on trees as an epiphyte. It is one of the parents of many of the popular houseplants known as Christmas cactus or Thanksgiving cactus.",
+                     "citation":"https://en.wikipedia.org/wiki/Schlumbergera_russelliana",
+                     "license_name":"CC BY-SA 3.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+                  },
+                  "synonyms":[
+                     "Cereus russellianus",
+                     "Epiphyllum bridgesii",
+                     "Epiphyllum russellianum",
+                     "Epiphyllum truncatum var. bridgesii",
+                     "Phyllocactus russellianus",
+                     "Schlumbergera bridgesii",
+                     "Schlumbergera epiphylloides",
+                     "Schlumbergera russelianum",
+                     "Zygocactus bridgesii"
+                  ],
+                  "image":{
+                     "value":"https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/3d8/3d8f3b89f094055ba84e9e5042217744a9959cb4.jpg",
+                     "citation":null,
+                     "license_name":"CC0",
+                     "license_url":"https://creativecommons.org/publicdomain/zero/1.0/"
+                  },
+                  "edible_parts":null,
+                  "watering":null,
+                  "propagation_methods":null,
+                  "language":"en",
+                  "entity_id":"5e68fc566e426572"
+               }
+            },
+            {
+               "id":"69175a8d4b94fcf1",
+               "name":"Rhipsalidopsis",
+               "probability":0.0216,
+               "similar_images":[
+                  {
+                     "id":"9ff3cd75a93a53dced6ba0a037c4795607ed8250",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/9ff/3cd75a93a53dced6ba0a037c4795607ed8250.jpeg",
+                     "license_name":"CC BY-NC-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-nc-sa/4.0/",
+                     "citation":"FlowerChecker s.r.o.",
+                     "similarity":0.526,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/9ff/3cd75a93a53dced6ba0a037c4795607ed8250.small.jpeg"
+                  },
+                  {
+                     "id":"4bf7394d3915e92de62d540bfa90101277f6f841",
+                     "url":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/4bf/7394d3915e92de62d540bfa90101277f6f841.jpeg",
+                     "license_name":"CC BY-NC-SA 4.0",
+                     "license_url":"https://creativecommons.org/licenses/by-nc-sa/4.0/",
+                     "citation":"FlowerChecker s.r.o.",
+                     "similarity":0.509,
+                     "url_small":"https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/4/4bf/7394d3915e92de62d540bfa90101277f6f841.small.jpeg"
+                  }
+               ],
+               "details":{
+                  "common_names":null,
+                  "taxonomy":{
+                     "class":"Magnoliopsida",
+                     "genus":"Rhipsalidopsis",
+                     "order":"Caryophyllales",
+                     "family":"Cactaceae",
+                     "phylum":"Tracheophyta",
+                     "kingdom":"Plantae"
+                  },
+                  "url":"https://en.wikipedia.org/wiki/Rhipsalidopsis",
+                  "gbif_id":null,
+                  "inaturalist_id":1435379,
+                  "rank":"genus",
+                  "description":{
+                     "value":"Rhipsalidopsis is a small genus of flowering plant in the family Cactaceae, native to southern Brazil. Like other members of the tribe Rhipsalideae, its species are epiphytes, growing on trees.",
+                     "citation":"https://en.wikipedia.org/wiki/Rhipsalidopsis",
+                     "license_name":"CC BY-SA 3.0",
+                     "license_url":"https://creativecommons.org/licenses/by-sa/3.0/"
+                  },
+                  "synonyms":null,
+                  "image":{
+                     "value":"https://plant-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikipedia/74e/74e0e8c81a385af15464d8b83ed8fae4dd89c2aa.jpg",
+                     "citation":"Peter coxhead",
+                     "license_name":"CC0",
+                     "license_url":"https://creativecommons.org/publicdomain/zero/1.0/"
+                  },
+                  "edible_parts":null,
+                  "watering":null,
+                  "propagation_methods":null,
+                  "language":"en",
+                  "entity_id":"69175a8d4b94fcf1"
+               }
+            }
+         ]
+      },
+      "is_plant":{
+         "probability":0.9955432,
+         "threshold":0.5,
+         "binary":true
+      }
+   },
+   "status":"COMPLETED",
+   "sla_compliant_client":true,
+   "sla_compliant_system":true,
+   "created":1725562902.42865,
+   "completed":1725562902.664436
+}
