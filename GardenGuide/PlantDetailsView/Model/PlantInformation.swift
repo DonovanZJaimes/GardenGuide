@@ -7,7 +7,7 @@
 
 import Foundation
 //Information model for PlantDetailsViewController
-struct PlantInformation: Decodable {
+struct PlantInformation: Decodable, Nameable {
     let name: String
     var isAdded: Bool = false
     let similarImages: [SimilarImage]?
