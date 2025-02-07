@@ -7,7 +7,9 @@
 
 import Foundation
 
+//MARK: Provider to get information to the Mock
 class PlantDetailsProviderMock: PlantDetailsProviderProtocol {
+    //Get a PlantInformation model from the Mock
     func getPlantInformation(_ accessToken: String, name: String) async throws -> PlantInformation {
         guard let model = Utils.parseJson(jsonName: "PlantInformationMock", model: SuggestedPlant.self) else{
             throw NetworkError.jsonDecoder

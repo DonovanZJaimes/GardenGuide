@@ -10,7 +10,9 @@ protocol PlantDetailsProviderProtocol {
     func getPlantInformation(_ accessToken: String, name: String) async throws -> PlantInformation
 }
 
+//MARK: Provider to get information to the API
 class PlantDetailsProvider: PlantDetailsProviderProtocol {
+    //Get a PlantInformation model from the API
     func getPlantInformation(_ accessToken: String, name: String) async throws -> PlantInformation {
         let queryItem = ["details":"common_names,url,description,taxonomy,rank,gbif_id,inaturalist_id,image,synonyms,edible_parts,watering,propagation_methods"]
         let requestModel = RequestModel(endpoint: .detail, httpMethod: .GET, queryItems: queryItem, extra: accessToken, postData: nil)
