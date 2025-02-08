@@ -14,6 +14,7 @@ import SafariServices
 class PlantDetailsViewController: UIViewController {
     
     //MARK: Outlets
+    //general
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var miniPlantImageOne: UIImageView!
     @IBOutlet weak var miniPlantImageTwo: UIImageView!
@@ -29,17 +30,30 @@ class PlantDetailsViewController: UIViewController {
     @IBOutlet weak var plantWateringViewHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonsIconListView: ButtonIconList!
     
+    //Irrigation view
+    @IBOutlet weak var amountOfWaterLabel: UILabel!
+    @IBOutlet weak var lastIrrigationLabel: UILabel!
+    @IBOutlet weak var nextIrrigationLabel: UILabel!
+    @IBOutlet weak var irrigationInformationLabel: UILabel!
+    @IBOutlet weak var percentageOfWaterLabel: UILabel!
+    @IBOutlet weak var topLineView: UIView!
+    @IBOutlet weak var bottomLineView: UIView!
+    @IBOutlet weak var wateredView: UIView!
+    
+    
     //MARK: general variables
     var plantInformation: PlantInformation!
     var name: String?
     var accessToken: String?
     var suggestedPlant: SuggestedPlant?
+    var watered: IrrigationInformation?
     //var numberOfImages = 1
     var hasWatered: Bool = false
     //Core Data
     let dataManager = CoreDataPlant()
     //Controller for de ViewController
     lazy var controller = PlantDetailsController(delegate: self)
+    private var firestoreUtilts = FirestoreUtilts()
     
     
     override func viewDidLoad() {
@@ -76,18 +90,6 @@ class PlantDetailsViewController: UIViewController {
         miniPlantImageOne.modifyCornerRadius(5, withColor: .customLightGreen, andWidth: 2)
     }
     
-    //General settings for watering view
-    func configWateredView() {
-        //hide or not
-        switch hasWatered {
-        case true:
-            plantWateringViewHeight.constant = 120
-        case false:
-            plantWateringViewHeight.constant = 0
-        }
-        
-    }
-    
     //Configure ButtonIconList view
     func configHorizontalButtons(){
         //Get Information for ButtonIconList
@@ -96,6 +98,70 @@ class PlantDetailsViewController: UIViewController {
         buttonsIconListView.delegate = self
         //Build ButtonIconList
         buttonsIconListView.buildView()
+    }
+    
+    
+    //MARK: General settings for watering view
+    
+    //hide or show the watered view
+    func configWateredView() {
+        //hide or not
+        switch hasWatered {
+        case true:
+            wateredView.isHidden = false
+            plantWateringViewHeight.constant = 130
+            configWateredViewLabels()
+        case false:
+            wateredView.isHidden = true
+            topLineView.isHidden = true
+            bottomLineView.isHidden = true
+            plantWateringViewHeight.constant = 0
+        }
+    }
+    
+    // Config the watered view labels
+    func configWateredViewLabels() {
+        guard let watered = watered else {return}
+        //config Labels
+        amountOfWaterLabel.text = String(watered.waterAmount) + " ml"
+        let (date, color) = setNextIrrigationLabel(date: watered.nextIrrigation)
+        nextIrrigationLabel.text = date
+        nextIrrigationLabel.textColor = color
+        let lastIrrigation = Calendar.current.date(byAdding: .day, value: -Int(watered.numberOfDays), to: watered.nextIrrigation)
+        lastIrrigationLabel.text = lastIrrigation?.formatted(date: .abbreviated, time: .omitted)
+        irrigationInformationLabel.text = "The plant is watered every \(watered.numberOfDays) days with \(watered.waterAmount) ml of water."
+        
+        percentageOfWaterLabel.text = calculateWaterPercentage(lastIrrigation: lastIrrigation!)
+    }
+    
+    //Get design information of a label
+    func setNextIrrigationLabel(date: Date) -> (String, UIColor) {
+        let today = Calendar.current.startOfDay(for: .now)
+        let numericDate = date.formatted(date: .abbreviated, time: .omitted)
+        let timeSeconds = today.timeIntervalSince(date)
+        let days: Int  = abs(Int((((timeSeconds / 60) / 60 ) / 24 )))
+        guard today <= date else {
+            let dayOrDays = days == 1 ? "day" : "days"
+            let title = "\(days) " + dayOrDays + " late, " + numericDate
+            return (title, .red)
+        }
+        if days <= 1{
+            return ("Today", .label)
+        } else {
+            return (numericDate, .label)
+        }
+    }
+    
+    //Obtain remaining water percentage
+    func calculateWaterPercentage(lastIrrigation: Date) -> String {
+        var percentage = 0
+        if nextIrrigationLabel.text!.localizedStandardContains("late") || nextIrrigationLabel.text!.localizedStandardContains("Today") {
+            return "\(percentage) %"
+        }
+        let seconds = lastIrrigation.timeIntervalSinceNow
+        let days = abs( (( seconds / 24 ) / 60 ) / 60 )
+        percentage = Int( (100.0 / Double(watered!.numberOfDays) ) * (Double(watered!.numberOfDays) - days))
+        return "\(percentage) %"
     }
     
     
@@ -113,6 +179,8 @@ class PlantDetailsViewController: UIViewController {
         } else {
             descriptionTextView.text = ""
         }
+        //Update heartButton
+        heartButton.isSelected = CoreDataUtils.shared.plantIsInFavorites(plantInformation)
     }
     
     //configure viewController imagesView
@@ -170,30 +238,11 @@ class PlantDetailsViewController: UIViewController {
     }
     
     
-    //MARK: Methods to Core Data
-    func savePlantCoreData() {
-        //Create Plant
-        plantInformation.isAdded = true
-        //Save plant
-        dataManager.savePlant(plant: plantInformation, watered: Constants.irrigationInformation)
-        //notify that a new plant has been added
-        Notifications.shared.newPlants.append(plantInformation)
-    }
-    
-    func checkIfThePlantWillBeSaved(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "The plant is already saved", message: "Do you want to save again?", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){ action in
-            // notify that a plant has been removed
-            Notifications.shared.newPlants.removeLast()
-        }
+    //MARK: Alert Controller
+    func sendMessageToUser(_ sender: UIButton, text: String) {
+        let alertController = UIAlertController(title: "The plant is already saved", message: text, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
         alertController.addAction(cancelAction)
-        
-        let saveAction = UIAlertAction(title: "Yes", style: .default) { action in
-            self.savePlantCoreData()
-        }
-        alertController.addAction(saveAction)
-        
         alertController.popoverPresentationController?.sourceView = sender
         present(alertController, animated: true)
     }
@@ -203,70 +252,41 @@ class PlantDetailsViewController: UIViewController {
     //MARK: viewController actions
     
     @IBAction func heartButtonPressed(_ sender: UIButton) {
-        //check button status
-        sender.isSelected.toggle()
-        guard sender.isSelected else {
-            //if the button is no longer selected
-            if let plant = dataManager.returnLastSavedPlant() {
-                dataManager.deletePlant(plant)
+        //save or delete the plant from the favourites in CoreData
+        CoreDataUtils.shared.addPlantToFavorites(name: plantInformation.name, selectedForFavorites: !sender.isSelected) { text in
+            print(text.rawValue)
+            //Perform an action depending on the result
+            let favouritePlant = FavouritePlant(name: plantInformation.name, image: plantInformation.details.image?.url ?? Constants.imagePlant, min: self.plantInformation.details.watering?.min ?? 1, max: plantInformation.details.watering?.max ?? 1)
+            switch text {
+            case .save:
+                sender.isSelected = true
+                controller.favouritePlantIsKept(true, withName: plantInformation.name, image: plantInformation.details.image?.url ?? Constants.imagePlant, plant: favouritePlant)
+                break
+            case .dontDelete:
+                sendMessageToUser(sender, text: text.rawValue)
+                heartButton.isSelected = true
+                break
+            case .alreadySaved:
+                sendMessageToUser(sender, text: text.rawValue)
+                break
+            case .alreadyDelete:
+                sendMessageToUser(sender, text: text.rawValue)
+            case .delete:
+                controller.favouritePlantIsKept(false, withName: plantInformation.name, image: plantInformation.details.image?.url ?? Constants.imagePlant, plant: favouritePlant)
+                sender.isSelected = false
             }
-            return
         }
-        //in case the button is selected
-        let plants = dataManager.fetchPlants()
-        var isAdded = false
-        plants.forEach {
-            isAdded = $0.name == plantInformation.name ? true : false
-        }
-        //We check if the plant was already saved previously
-        guard !isAdded else {
-            checkIfThePlantWillBeSaved(sender)
-            return
-        }
-        //in case you have not saved the same plant previously
-        savePlantCoreData()
     }
     
-
+    //display the view in safari to show the plant information
     @IBAction func readMoreButtonPressed(_ sender: UIButton) {
         //Open a safari page for more information about the plant
-        /*guard let urlString = plantInformation.details.url, let url = URL(string: urlString)  else {
+        guard let urlString = plantInformation.details.url, let url = URL(string: urlString)  else {
             sender.isEnabled = true
             return
         }
         let safariController = SFSafariViewController(url: url)
         present(safariController, animated: true)
-        */
-        
-        print("SIMPLE")
-        let Plants = dataManager.fetchPlants()
-        print(Plants.count)
-        for index in 0 ..< Plants.count {
-            print("SIGUIENTE")
-            let plant = Plants[index]
-            print(plant.name!)
-            print(plant.isAdded)
-            let details = dataManager.fetchPlantDetails(plant: plant)
-            print(details!.rank!)
-            let commonNames = dataManager.fetchCommonNames(plantDetails: details!)
-            print(commonNames)
-            let synoni = dataManager.fetchSynonyms(plantDetails: details!)
-            print(synoni)
-            let edibleP = dataManager.fetchEdibleParts(plantDetails: details!)
-            print(edibleP)
-            let propaMe = dataManager.fetchPropagationMethods(plantDetails: details!)
-            print(propaMe)
-            
-            
-            let Watered = dataManager.fetchWatered(plant: plant)
-            print(Watered?.nextIrrigation)
-            
-            let SimilarImages = dataManager.fetchSimilarImages(plant: plant)
-            print(SimilarImages.first?.url)
-            
-        }
-     
-        
     }
     
     
@@ -302,6 +322,8 @@ extension PlantDetailsViewController: PlantDetailsControllerDelegate {
     func obtainedPlantInformation() {
         //Get plant information
         self.plantInformation = controller.plantInformation
+        //Verify if plant is saved in CoreData
+        CoreDataUtils.shared.saveNewPlant(plantInformation)
         //Update viewController information
         updateLabels()
         updateImages()

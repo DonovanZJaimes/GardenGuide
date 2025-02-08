@@ -12,12 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantDetailsViewController" customModule="GardenGuide" customModuleProvider="target">
             <connections>
+                <outlet property="amountOfWaterLabel" destination="uM2-uq-0LW" id="f6p-KE-n5f"/>
+                <outlet property="bottomLineView" destination="CuJ-NX-3T8" id="WBK-aB-agG"/>
                 <outlet property="buttonsIconListView" destination="P6m-YJ-B7R" id="o0r-Vc-PKK"/>
                 <outlet property="descriptionTextView" destination="rww-iv-Bca" id="MsV-nC-c8p"/>
                 <outlet property="heartButton" destination="Qe1-MB-2FY" id="dcz-v4-iT2"/>
+                <outlet property="irrigationInformationLabel" destination="LGt-5g-4Ki" id="O2r-Pw-o4b"/>
+                <outlet property="lastIrrigationLabel" destination="n6K-hC-M3Q" id="Ghv-3d-Wlc"/>
                 <outlet property="miniPlantImageOne" destination="MlY-9c-saM" id="UfQ-hL-itc"/>
                 <outlet property="miniPlantImageThree" destination="BJf-41-Jxi" id="s10-N0-U5D"/>
                 <outlet property="miniPlantImageTwo" destination="A5j-m1-jJB" id="wzO-qj-A4r"/>
+                <outlet property="nextIrrigationLabel" destination="fUj-3H-W9L" id="GaM-9V-Yt6"/>
+                <outlet property="percentageOfWaterLabel" destination="3XJ-5c-QXK" id="3GS-B6-c7g"/>
                 <outlet property="plantButtonOne" destination="5CN-V1-6eT" id="92j-TD-77e"/>
                 <outlet property="plantButtonThree" destination="ENG-cn-g94" id="5mh-vg-AEZ"/>
                 <outlet property="plantButtonTwo" destination="g6d-f5-oar" id="5bi-C8-iqq"/>
@@ -26,7 +32,9 @@
                 <outlet property="plantWateringViewHeight" destination="gOV-wr-51x" id="rpK-Wl-xYx"/>
                 <outlet property="rankLabel" destination="vTE-HT-3kL" id="Eg7-tG-7Cf"/>
                 <outlet property="titleBackgroundView" destination="xnw-Ns-rBQ" id="VzO-Gu-LFM"/>
+                <outlet property="topLineView" destination="Fjv-EO-CEw" id="z3X-bk-EAq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wateredView" destination="Mwo-qh-2UA" id="fpW-n3-LDr"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,7 +46,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-WX-3DN">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="823"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="833"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaS-Wg-tbJ">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
@@ -177,14 +185,100 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwo-qh-2UA">
-                                    <rect key="frame" x="0.0" y="470" width="393" height="120"/>
+                                    <rect key="frame" x="0.0" y="470" width="393" height="130"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-ac-vEq">
+                                            <rect key="frame" x="20" y="25" width="265" height="61"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zxS-QT-erw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of water:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-1L-Rg4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last irrigation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKm-As-Owc">
+                                                            <rect key="frame" x="0.0" y="22" width="93" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next irrigation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9G-MP-6oy">
+                                                            <rect key="frame" x="0.0" y="44" width="91.333333333333329" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MUb-ji-PHW">
+                                                    <rect key="frame" x="121" y="0.0" width="144" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uM2-uq-0LW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 Jan 2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6K-hC-M3Q">
+                                                            <rect key="frame" x="0.0" y="22" width="73.333333333333329" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 day late 15 Jan 2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUj-3H-W9L">
+                                                            <rect key="frame" x="0.0" y="44" width="144" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The plant is watered every 4 days with 100 ml of water." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGt-5g-4Ki">
+                                            <rect key="frame" x="20" y="91" width="353" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="CustomBlue"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FVI-Tb-Dht">
+                                            <rect key="frame" x="311.66666666666669" y="25" width="61.333333333333314" height="16"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.halffull" translatesAutoresizingMaskIntoConstraints="NO" id="Rs1-mQ-5tx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                    <color key="tintColor" name="CustomBlue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="16" id="UZM-v8-eum"/>
+                                                        <constraint firstAttribute="height" constant="16" id="tsD-KG-4ej"/>
+                                                    </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-5c-QXK">
+                                                    <rect key="frame" x="21.000000000000004" y="0.0" width="40.333333333333343" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                     <color key="backgroundColor" name="CustomBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="gOV-wr-51x"/>
+                                        <constraint firstItem="FVI-Tb-Dht" firstAttribute="top" secondItem="Mwo-qh-2UA" secondAttribute="top" constant="25" id="0YA-bh-TXa"/>
+                                        <constraint firstAttribute="trailing" secondItem="LGt-5g-4Ki" secondAttribute="trailing" constant="20" id="8Ji-pf-0t6"/>
+                                        <constraint firstItem="LGt-5g-4Ki" firstAttribute="leading" secondItem="Mwo-qh-2UA" secondAttribute="leading" constant="20" id="CcZ-Ty-Wum"/>
+                                        <constraint firstItem="LGt-5g-4Ki" firstAttribute="top" secondItem="W6e-ac-vEq" secondAttribute="bottom" constant="5" id="Ose-VA-HLR"/>
+                                        <constraint firstItem="W6e-ac-vEq" firstAttribute="leading" secondItem="Mwo-qh-2UA" secondAttribute="leading" constant="20" id="Zgf-8H-75m"/>
+                                        <constraint firstAttribute="height" constant="130" id="gOV-wr-51x"/>
+                                        <constraint firstItem="W6e-ac-vEq" firstAttribute="top" secondItem="Mwo-qh-2UA" secondAttribute="top" constant="25" id="gVY-5e-Ynh"/>
+                                        <constraint firstAttribute="trailing" secondItem="FVI-Tb-Dht" secondAttribute="trailing" constant="20" id="lyr-fj-y8c"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-S7-upz">
-                                    <rect key="frame" x="0.0" y="590" width="393" height="233"/>
+                                    <rect key="frame" x="0.0" y="600" width="393" height="233"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank: Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-HT-3kL">
                                             <rect key="frame" x="20" y="10" width="119" height="24"/>
@@ -237,13 +331,33 @@
                                 </view>
                             </subviews>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjv-EO-CEw">
+                            <rect key="frame" x="9.6666666666666572" y="480" width="373.66666666666674" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="sbV-m7-hcg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuJ-NX-3T8">
+                            <rect key="frame" x="9.6666666666666572" y="599" width="373.66666666666674" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="WzI-IT-3cS"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="cGc-WX-3DN" firstAttribute="leading" secondItem="3Tw-YB-KvP" secondAttribute="leading" id="0S2-AG-rEf"/>
+                        <constraint firstItem="CuJ-NX-3T8" firstAttribute="bottom" secondItem="Mwo-qh-2UA" secondAttribute="bottom" id="2Gd-dk-eit"/>
                         <constraint firstItem="cGc-WX-3DN" firstAttribute="top" secondItem="3Tw-YB-KvP" secondAttribute="top" id="7dj-i0-X1d"/>
+                        <constraint firstItem="Fjv-EO-CEw" firstAttribute="centerX" secondItem="Mwo-qh-2UA" secondAttribute="centerX" id="IyH-5D-0xx"/>
                         <constraint firstItem="cGc-WX-3DN" firstAttribute="trailing" secondItem="3Tw-YB-KvP" secondAttribute="trailing" id="NGT-J1-5gO"/>
                         <constraint firstItem="cGc-WX-3DN" firstAttribute="bottom" secondItem="3Tw-YB-KvP" secondAttribute="bottom" id="NeN-eF-q7N"/>
+                        <constraint firstItem="CuJ-NX-3T8" firstAttribute="width" secondItem="Mwo-qh-2UA" secondAttribute="width" multiplier="0.95" id="RhY-OP-0tq"/>
+                        <constraint firstItem="Fjv-EO-CEw" firstAttribute="width" secondItem="Mwo-qh-2UA" secondAttribute="width" multiplier="0.95" id="fm4-GY-Qt1"/>
                         <constraint firstItem="cGc-WX-3DN" firstAttribute="width" secondItem="wBu-4C-Av9" secondAttribute="width" id="gwB-F5-gS8"/>
+                        <constraint firstItem="CuJ-NX-3T8" firstAttribute="centerX" secondItem="Mwo-qh-2UA" secondAttribute="centerX" id="uU1-MB-eVV"/>
+                        <constraint firstItem="Fjv-EO-CEw" firstAttribute="top" secondItem="Mwo-qh-2UA" secondAttribute="top" constant="10" id="x8M-B7-lqo"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="3Tw-YB-KvP"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="wBu-4C-Av9"/>
@@ -264,10 +378,14 @@
         <image name="Plant4" width="512" height="512"/>
         <image name="Plant5" width="512" height="512"/>
         <image name="Plant6" width="960" height="1280"/>
+        <image name="drop.halffull" width="7" height="11"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <namedColor name="CustomBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomBlue">
+            <color red="0.29019607843137257" green="0.43137254901960786" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CustomDarkGreen">
             <color red="0.12156862745098039" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -286,6 +404,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
