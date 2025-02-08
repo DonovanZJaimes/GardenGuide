@@ -107,4 +107,18 @@ protocol PlantDetailsControllerDelegate: AnyObject {
          }
      }
      
+     //MARK: Favourite Plant on Firestore
+     func favouritePlantIsKept(_ option: Bool, withName name: String, image: String, plant: FavouritePlant){
+         Task {
+             await makeMethodsForFirestoreCloud{
+                 switch option {
+                 case true:
+                     await FirestoreAddData.shared.addPlantOfFavouritesToCloud(plant)
+                 case false:
+                     await FirestoreDeleteData.shared.deletePlantOfFavouritesToCloud(name)
+                 }
+             }
+         }
+     }
+     
 }
