@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+//Protocol to do delegate
 protocol AddIrrigationViewControllerDelegate: AnyObject {
     func addFavouritePlantToGardenPlant(_ favouritePlant: FavouritePlant, irrigationInformation: IrrigationInformation)
     func updatePlantWatering(name: String,  irrigationInformation: IrrigationInformation )
@@ -15,6 +16,7 @@ protocol AddIrrigationViewControllerDelegate: AnyObject {
 
 class AddIrrigationViewController: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet var minLabel: UILabel!
     @IBOutlet var maxLabel: UILabel!
     @IBOutlet var minProgressView: UIProgressView!
@@ -27,6 +29,7 @@ class AddIrrigationViewController: UIViewController {
     @IBOutlet var finalDescriptionLabel: UILabel!
     @IBOutlet var AddingPlantButton: UIButton!
     
+    //MARK: general variables
     var amountOfWaterPickerView = UIPickerView()
     var irrigationCalendarView = UICalendarView()
     var favouritPlant: FavouritePlant!
@@ -35,6 +38,7 @@ class AddIrrigationViewController: UIViewController {
     var irrigationInformation: IrrigationInformation? = nil
     weak var delegate: AddIrrigationViewControllerDelegate?
     
+    //extra input view
     lazy var irrigationCalendar: UICalendarView = {
         let selectionBehavior = UICalendarSelectionSingleDate(delegate: self)
         let calendar = UICalendarView()
@@ -58,6 +62,9 @@ class AddIrrigationViewController: UIViewController {
         updateButtonGarden()
     }
     
+    
+    //MARK: General methods
+    
     func configUISheetPresentationController() {
         //Determine the form the type of presentation that the viewController will have
         guard let presentationController = presentationController as? UISheetPresentationController else {return}
@@ -67,6 +74,7 @@ class AddIrrigationViewController: UIViewController {
         presentationController.preferredCornerRadius = 30
     }
     
+    //configure the diferent views to present the general view
     func configGeneralView() {
         //labels
         nameLabel.text = favouritPlant.name
@@ -115,8 +123,8 @@ class AddIrrigationViewController: UIViewController {
         nextWateringTextField.inputView = irrigationCalendar
     }
     
+    //determine the type of humidity of the plant by means of a number
     func determineHumidity(_ Humidity: Int) -> String {
-        //determine the type of humidity of the plant by means of a number
         switch Humidity {
         case 1:
             return "dry"
@@ -127,8 +135,8 @@ class AddIrrigationViewController: UIViewController {
         }
     }
     
+    //determine the progressView by means of humidity
     func determineProgressView(_ Humidity: Int) -> Float {
-        //determine the progressView by means of humidity
         switch Humidity {
         case 1:
             return 0.0
@@ -139,6 +147,7 @@ class AddIrrigationViewController: UIViewController {
         }
     }
     
+    //determine the state of the views based on TextFields
     func updateButtonGarden() {
         let title = self.irrigationInformation == nil ? "Adding a plant to my garden" : "Update Plant Watering"
         AddingPlantButton.setTitle(title, for: .normal)
@@ -154,6 +163,7 @@ class AddIrrigationViewController: UIViewController {
         
     }
     
+    //obtain the title according to the selected options of the view
     func setUpFinalDescription() -> String {
         let secondsInterval = Date().timeIntervalSince(self.nextIrrigation!)
         let daysInterval = abs(Int(secondsInterval / (60 * 60 * 24) ) ) + 1
@@ -162,11 +172,16 @@ class AddIrrigationViewController: UIViewController {
         let finalDescription = "Every \(daysInterval) " + days + " you should water your plant with an amount of " + amount!
         return finalDescription
     }
-
+    
+    
+    //MARK: ViewController Actions
+    
     @IBAction func AddingPlantToMyGarden(_ sender: UIButton) {
+        //get the new IrrigationInformation
         let daysInterval = abs(Int(Date().timeIntervalSince(self.nextIrrigation!) / (60 * 60 * 24) ) ) + 1
         let waterAmount = Int16((amountOfWaterTextField.text?.replacingOccurrences(of: " ml", with: ""))! ) ?? 0
         let irrigationInformation = IrrigationInformation(numberOfDays: Int16(daysInterval), waterAmount: waterAmount, percentage: 1, wasItWatered: false, nextIrrigation: self.nextIrrigation!)
+        //determines whether the information will be used to update a plant or will be used to add a new GardenPlant
         if self.irrigationInformation == nil {
             delegate?.addFavouritePlantToGardenPlant(favouritPlant, irrigationInformation: irrigationInformation)
         } else {
@@ -176,7 +191,9 @@ class AddIrrigationViewController: UIViewController {
     }
 }
 
+//MARK: Extension of PickerView
 extension AddIrrigationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    //data Source methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -199,6 +216,7 @@ extension AddIrrigationViewController: UIPickerViewDelegate, UIPickerViewDataSou
         }
     }
     
+    //delegate methods
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard component == 0 else {return}
         amountOfWaterTextField.text = amountsOfWater[row] + " ml"
@@ -207,6 +225,7 @@ extension AddIrrigationViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
 }
 
+//MARK: Extension of UICalendar delegate
 extension AddIrrigationViewController: UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         nextWateringTextField.text = dateComponents?.date?.formatted(date: .abbreviated, time: .omitted)
