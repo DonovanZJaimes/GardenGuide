@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,18 +16,79 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="of9-U7-9da">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fO8-eJ-Qd0">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IX-ba-Udh">
+                                <rect key="frame" x="91.666666666666686" y="321" width="210" height="210"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-KL-gqm">
+                                        <rect key="frame" x="5" y="5" width="200" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Czw-vZ-cHf">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="152.33333333333334"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Search for plants in the search section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw4-9A-oDi">
+                                                <rect key="frame" x="0.0" y="154.33333333333331" width="200" height="45.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <color key="textColor" name="CustomLightGreen"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="DZc-2r-Yz7"/>
+                                            <constraint firstAttribute="width" constant="200" id="TVJ-my-lJw"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="SJm-09-ghZ"/>
+                                    <constraint firstAttribute="height" constant="210" id="XCl-VT-KdL"/>
+                                    <constraint firstItem="7MP-KL-gqm" firstAttribute="leading" secondItem="7IX-ba-Udh" secondAttribute="leading" constant="5" id="mPF-0o-ZM0"/>
+                                    <constraint firstItem="7MP-KL-gqm" firstAttribute="top" secondItem="7IX-ba-Udh" secondAttribute="top" constant="5" id="mlJ-pF-rSc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="of9-U7-9da" secondAttribute="trailing" id="U7f-NP-6je"/>
+                            <constraint firstItem="7IX-ba-Udh" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VyL-Mm-re8"/>
+                            <constraint firstItem="of9-U7-9da" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wr2-om-tcA"/>
+                            <constraint firstItem="7IX-ba-Udh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dkU-td-dS5"/>
+                            <constraint firstItem="of9-U7-9da" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jQx-7J-8fC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="of9-U7-9da" secondAttribute="bottom" id="vWe-rZ-WrD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="of9-U7-9da" id="0iW-Oc-mnw"/>
+                        <outlet property="imageLabel" destination="uw4-9A-oDi" id="AYP-pK-uJC"/>
+                        <outlet property="imageView" destination="7IX-ba-Udh" id="ViX-6D-NR3"/>
+                        <outlet property="imageViewHeight" destination="XCl-VT-KdL" id="ktt-2Z-ZxY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-2"/>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="SearchImage" width="512" height="512"/>
+        <namedColor name="CustomBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomLightGreen">
+            <color red="0.41568627450980394" green="0.60784313725490191" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
