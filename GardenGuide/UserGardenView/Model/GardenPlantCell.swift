@@ -6,3 +6,11 @@
 //
 
 import Foundation
+struct GardenPlantCell: Hashable {
+    let name: String
+    var quantityOfWater: Int
+    let image: String
+    let irrigationStatus: IrrigationStatus
+    var nextIrrigation: Date
+    
+}

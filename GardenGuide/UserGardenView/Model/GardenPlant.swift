@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct GardenPlant: Decodable {
+    let plantInformation: PlantInformation
+    var watered: IrrigationInformation
+}
