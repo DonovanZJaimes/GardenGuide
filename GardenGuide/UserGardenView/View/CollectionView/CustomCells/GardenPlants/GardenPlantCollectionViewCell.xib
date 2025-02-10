@@ -1,21 +1,157 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GardenPlantCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GardenPlantCollectionViewCell" customModule="GardenGuide" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="431" height="198"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <rect key="frame" x="0.0" y="0.0" width="431" height="198"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPI-Y9-Qrh">
+                        <rect key="frame" x="0.0" y="59" width="431" height="105"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZn-9j-qW8">
+                                <rect key="frame" x="0.0" y="5" width="416" height="95"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QuY-kw-mOQ">
+                                        <rect key="frame" x="7.6666666666666572" y="7.6666666666666714" width="388.33333333333337" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant3" translatesAutoresizingMaskIntoConstraints="NO" id="DDT-ZF-ggs">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="DDT-ZF-ggs" secondAttribute="height" multiplier="1:1" id="HhN-ps-NyB"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GBv-Is-rNh">
+                                                <rect key="frame" x="95.000000000000014" y="15.666666666666654" width="248.33333333333337" height="48.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rL-rZ-Jav">
+                                                        <rect key="frame" x="0.0" y="0.0" width="248.33333333333334" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="CustomGreenishGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fat-02-r97">
+                                                        <rect key="frame" x="0.0" y="28.333333333333343" width="248.33333333333334" height="20.333333333333329"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" image="drop.degreesign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dNj-nT-aRh">
+                                                                <rect key="frame" x="0.0" y="-1.3333333333333357" width="17" height="21"/>
+                                                                <color key="tintColor" name="CustomLightGreen"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-V5-obO">
+                                                                <rect key="frame" x="22.000000000000014" y="0.0" width="226.33333333333337" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.halffull" translatesAutoresizingMaskIntoConstraints="NO" id="o9x-p9-iYd">
+                                                <rect key="frame" x="358.33333333333331" y="25" width="30" height="30"/>
+                                                <color key="tintColor" name="CustomGreen"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="o9x-p9-iYd" secondAttribute="height" multiplier="1:1" id="Dna-zz-avp"/>
+                                                    <constraint firstAttribute="height" constant="30" id="eS6-jr-7O3"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRu-GG-i5h">
+                                        <rect key="frame" x="364.66666666666669" y="31" width="33" height="33"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="selectDropImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="iQy-FS-Px5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMG-AQ-f0q">
+                                        <rect key="frame" x="97.666666666666671" y="47" width="60.000000000000014" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7D0-h5-dbg"/>
+                                            <constraint firstAttribute="width" constant="60" id="RmR-tH-IWX"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="modifyPlantIrrigationButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="94J-MV-f0D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="CustonBackgroundCell"/>
+                                <constraints>
+                                    <constraint firstItem="QuY-kw-mOQ" firstAttribute="top" secondItem="zZn-9j-qW8" secondAttribute="top" constant="7.5" id="6Up-T6-uJc"/>
+                                    <constraint firstItem="QuY-kw-mOQ" firstAttribute="leading" secondItem="zZn-9j-qW8" secondAttribute="leading" constant="7.5" id="BoJ-Ox-tEo"/>
+                                    <constraint firstItem="OMG-AQ-f0q" firstAttribute="bottom" secondItem="GBv-Is-rNh" secondAttribute="bottom" constant="5" id="EOw-5A-Ibd"/>
+                                    <constraint firstAttribute="bottom" secondItem="QuY-kw-mOQ" secondAttribute="bottom" constant="7.5" id="Lmi-2S-wzF"/>
+                                    <constraint firstItem="HRu-GG-i5h" firstAttribute="width" secondItem="o9x-p9-iYd" secondAttribute="width" multiplier="1.1" id="MMt-bn-1tM"/>
+                                    <constraint firstItem="OMG-AQ-f0q" firstAttribute="leading" secondItem="GBv-Is-rNh" secondAttribute="leading" constant="-5" id="XKw-Yt-UTB"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuY-kw-mOQ" secondAttribute="trailing" constant="20" id="Yvq-45-kRv"/>
+                                    <constraint firstItem="HRu-GG-i5h" firstAttribute="centerX" secondItem="o9x-p9-iYd" secondAttribute="centerX" id="Zsd-qA-SYh"/>
+                                    <constraint firstItem="HRu-GG-i5h" firstAttribute="centerY" secondItem="o9x-p9-iYd" secondAttribute="centerY" id="dYU-Fk-mpe"/>
+                                    <constraint firstItem="HRu-GG-i5h" firstAttribute="height" secondItem="o9x-p9-iYd" secondAttribute="height" multiplier="1.1" id="rUQ-0R-lQB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zZn-9j-qW8" firstAttribute="top" secondItem="rPI-Y9-Qrh" secondAttribute="top" constant="5" id="2pf-C0-S5J"/>
+                            <constraint firstAttribute="bottom" secondItem="zZn-9j-qW8" secondAttribute="bottom" constant="5" id="Ry8-53-T64"/>
+                            <constraint firstAttribute="trailing" secondItem="zZn-9j-qW8" secondAttribute="trailing" constant="15" id="haE-xI-MWf"/>
+                            <constraint firstItem="zZn-9j-qW8" firstAttribute="leading" secondItem="rPI-Y9-Qrh" secondAttribute="leading" id="je0-BL-aDB"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="rPI-Y9-Qrh" secondAttribute="top" id="4wP-kn-uaD"/>
+                <constraint firstItem="rPI-Y9-Qrh" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="IxI-PU-ZcP"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="rPI-Y9-Qrh" secondAttribute="trailing" id="SIK-2v-5z4"/>
+                <constraint firstItem="rPI-Y9-Qrh" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="Yxx-Ui-hqS"/>
+            </constraints>
+            <size key="customSize" width="431" height="198"/>
+            <connections>
+                <outlet property="backgroundUIView" destination="zZn-9j-qW8" id="lAj-UX-NOS"/>
+                <outlet property="dropImage" destination="o9x-p9-iYd" id="jKq-ay-bh2"/>
+                <outlet property="irrigationButtonWidthConstraint" destination="RmR-tH-IWX" id="oA1-c7-QyR"/>
+                <outlet property="namePlantLabel" destination="2rL-rZ-Jav" id="yvv-Ga-lbN"/>
+                <outlet property="plantImage" destination="DDT-ZF-ggs" id="Xhj-Kv-F3K"/>
+                <outlet property="quantityOfWaterLabel" destination="ciS-V5-obO" id="8sG-qe-Zrl"/>
+            </connections>
+            <point key="canvasLocation" x="-255.72519083969465" y="206.33802816901411"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="Plant3" width="620" height="680"/>
+        <image name="drop.degreesign" catalog="system" width="103" height="128"/>
+        <image name="drop.halffull" width="7" height="11"/>
+        <namedColor name="CustomBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.45882352941176469" green="0.69019607843137254" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomGreenishGray">
+            <color red="0.56862745098039214" green="0.6470588235294118" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomLightGreen">
+            <color red="0.41568627450980394" green="0.60784313725490191" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustonBackgroundCell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
