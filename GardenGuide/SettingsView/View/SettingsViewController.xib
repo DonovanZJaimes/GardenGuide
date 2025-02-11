@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="GardenGuide" customModuleProvider="target">
             <connections>
+                <outlet property="borrarboton" destination="63h-55-tWT" id="Nzl-0e-8fM"/>
                 <outlet property="bottomLineView" destination="Xyx-kV-cKz" id="J2b-Qg-9iO"/>
                 <outlet property="editGardenPlantsSwitch" destination="4Kf-cx-LKI" id="J6L-nw-c46"/>
                 <outlet property="emailTextField" destination="hdz-OK-Ch6" id="8P6-u1-Jjr"/>
@@ -128,6 +129,15 @@
                         <constraint firstAttribute="height" constant="1" id="sML-vY-7CR"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63h-55-tWT">
+                    <rect key="frame" x="159" y="463" width="75" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="borrarAccion:" destination="-1" eventType="touchUpInside" id="xDd-rJ-2NV"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="CustomBackgroundColor"/>
