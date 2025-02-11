@@ -7,15 +7,18 @@
 
 import Foundation
 
+//MARK: Delegate for SearchView
 protocol SearchViewControllerDelegate: AnyObject {
     func getPlantsResultsPerImage()
 }
 
+//MARK: Controller for SearchView
 @MainActor class SearchViewController {
     var provider: SearchViewProviderProtocol
     weak var delegate: SearchViewControllerDelegate?
     var plantResults : PlantsByImageSearch!
     let dataManager = CoreDataPlant()
+    
     
     init(provider: SearchViewProviderProtocol = SearchViewProvider(), delegate: SearchViewControllerDelegate) {
         self.provider = provider
@@ -27,6 +30,8 @@ protocol SearchViewControllerDelegate: AnyObject {
         #endif
     }
     
+    //MARK: General methods
+    //get a model from the Provider
     func getPlantsByImage(imageInBase64String: String) async {
         do {
             let plants = try await provider.getPlantsByImage(imageInBase64String: imageInBase64String)
@@ -38,33 +43,25 @@ protocol SearchViewControllerDelegate: AnyObject {
         }
     }
     
+    //get random plants from the CoreData
     func getRandomPlants() -> [SuggestedPlant] {
+        //Get the plants form the CoreData
         let plants = dataManager.fetchPlants()
-        var plantsEntity: [PlantEntity] = [plants[(plants.count - 1)]]
-        //add 50 plants maximum
-        for index in stride(from: (plants.count - 1), through: 0, by: -1) {
-            if index == 50 {
-                break
-            }
-            //add plants without repeating them
-            var flag = true
-            plantsEntity.forEach { plantEntity in
-                if plantEntity.name == plants[index].name {
-                    flag = false
-                }
-                
-            }
-            if flag {
-                plantsEntity.append(plants[index])
-            }
-        }
-        
         // Mix and convert the arrangement
-        let randomPlantsEntity = plantsEntity.shuffled()
+        let randomPlantsEntity = plants.shuffled()
         let randomSuggestedPlants = convertPlantEntityModelToSuggestedPlant(randomPlantsEntity)
         return randomSuggestedPlants
     }
     
+    //save User To Firestore Cloud
+    func saveUserToFirestoreCloud(email: String, provider: String) async  {
+        await makeMethodsForFirestoreCloud {
+                await FirestoreAddData.shared.addUserToCloud(with: email, andProvider: provider)
+            }
+    }
+    
+    //MARK: auxiliary methods
+    //Convert one model to another
     func convertPlantEntityModelToSuggestedPlant(_ plantsEntity: [PlantEntity]) -> [SuggestedPlant]{
         var suggestedPlants = [SuggestedPlant]()
         for index in 0 ..< plantsEntity.count {
@@ -100,6 +97,7 @@ protocol SearchViewControllerDelegate: AnyObject {
         return suggestedPlants
     }
     
+   
 
     
 }
