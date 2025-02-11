@@ -8,12 +8,14 @@
 import Foundation
 import FirebaseAuth
 
+//MARK: Delegate for SettingView
 protocol SettingsControllerDelegate: AnyObject {
     func userInformationWasObtained (providerType: ProviderType, email: String)
     func successfulAuthentication(provider: ProviderType, email: String)
     func failedAuthentication(error: String)
 }
 
+//MARK: Controller for SettingView
 class SettingsController {
     weak var delegate: SettingsControllerDelegate?
     var provider: SettingsProvider
@@ -23,22 +25,20 @@ class SettingsController {
         self.provider = provider
     }
     
+    //MARK: General methods
+    
+    //get user's email and provider
     func obtainUserInformation() {
         let (providerType, email) = provider.getUserProvider()
         delegate?.userInformationWasObtained(providerType: providerType, email: email)
     }
     
-    func tryToGetTheSameAnonymousAccount(completion: @escaping (User?) -> Void) {
-        Auth.auth().signInAnonymously { (authResult, error) in
-            if let result = authResult, error == nil {
-                completion(result.user)
-            }
-        }
-    }
-    
+    //try to sign Up with anonymously account
     func signUpWithEmail(_ email: String, password: String, user: User?, uid: String) {
+        //in case the user account has not expired
         guard let user = user else {
             tryToGetTheSameAnonymousAccount { user in
+                //check if it is the same anonymously account
                 guard let user = user, user.uid == uid else {
                     self.delegate?.failedAuthentication(error: "The anonymous account provided is malformed or has expired.")
                     return
@@ -51,7 +51,16 @@ class SettingsController {
        
     }
     
+    private func tryToGetTheSameAnonymousAccount(completion: @escaping (User?) -> Void) {
+        Auth.auth().signInAnonymously { (authResult, error) in
+            if let result = authResult, error == nil {
+                completion(result.user)
+            }
+        }
+    }
+    
     private func signUpWithCredential(email: String, password: String, user: User) {
+        //try to get new credential on Firebase
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         user.link(with: credential) { (authResult, error) in
             guard error == nil else {
