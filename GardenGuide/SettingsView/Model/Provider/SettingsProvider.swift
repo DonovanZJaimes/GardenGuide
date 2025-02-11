@@ -8,7 +8,7 @@
 import Foundation
 class SettingsProvider {
     let defaults = UserDefaults.standard
-    
+    //get user's email and provider
     func getUserProvider() -> (ProviderType, String) {
         var userProviderType: ProviderType!
         var userEmail: String!
