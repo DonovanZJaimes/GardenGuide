@@ -24,6 +24,7 @@ class SectionTitleView: UITableViewHeaderFooterView {
     let lineView: UIView = {
         let lineView = UIView()
         lineView.backgroundColor = .lightGray
+        lineView.alpha = 0.0
         return lineView
     }()
 
