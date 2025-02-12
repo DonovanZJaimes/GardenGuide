@@ -7,8 +7,10 @@
 
 import Foundation
 import UIKit
+//MARK: Delegate To GardenGuide
 protocol CollectionTabsViewDelegate: AnyObject {
     func didSelectPlant(index: Int)
+    func savePlantMessage(_ text: String, sender: UIButton)
 }
 
 class CollectionTabsView: UIView {
@@ -103,8 +105,8 @@ extension CollectionTabsView: UICollectionViewDataSource, UICollectionViewDelega
             var binaryText = ""
             var probablyText = "..."
             if let _ = plants  {
-                binaryText =  plants.isPlant.binary == true ? " that the image is a plant" : "that the image is not a plant"
-                probablyText =  "\(plants.isPlant.probability) " + "% probability"
+                binaryText =  plants.isPlant.binary == true ? " that the image is a plant" : " The image is probably not a plant"
+                probablyText = plants.isPlant.binary == true ? "\(plants.isPlant.probability) " + "% probability" : ""
             }
             //Configure header
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(SectionHeaderView.self)", for: indexPath) as! SectionHeaderView
@@ -124,7 +126,7 @@ extension CollectionTabsView: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let suggestedPlant = plants.suggestedPlants[indexPath.row]
+        _ = plants.suggestedPlants[indexPath.row]
         delegate?.didSelectPlant(index: indexPath.row)
     }
 
@@ -142,49 +144,55 @@ extension CollectionTabsView: UICollectionViewDelegateFlowLayout {
    
 }
 
+//MARK: Delegate extension of PlantsFoundCollectionViewCell
 extension CollectionTabsView: PlantsFoundCollectionViewCellDelegate {
-    func addPlantToFavorites(name: String, isSelected: Bool) {
-        //determined which plant was selected.
-        var suggestedPlant = plants.suggestedPlants.first!
-        for index in 0 ..< plants.suggestedPlants.count {
-            if plants.suggestedPlants[index].name == name {
-                suggestedPlant = plants.suggestedPlants[index]
+    func addPlantToFavorites(name: String, image: String, isSelected: Bool, sender: UIButton, plant: FavouritePlant) -> Bool {
+        var isSelect: Bool = true
+        //save or delete the plant from the favourites in CoreData
+        CoreDataUtils.shared.addPlantToFavorites(name: name, selectedForFavorites: isSelected) { text in
+            print(text.rawValue)
+            //Perform an action depending on the result
+            switch text {
+            case .save:
+                isSelect = true
+                //save plant on Firestore Cloud
+                favouritePlantIsKept(true, withName: name, image: image, plant: plant)
                 break
+            case .dontDelete:
+                delegate?.savePlantMessage(text.rawValue, sender: sender)
+                isSelect = true
+                break
+            case .alreadySaved:
+                isSelect = true
+                delegate?.savePlantMessage(text.rawValue, sender: sender)
+                break
+            case .alreadyDelete:
+                isSelect = false
+                delegate?.savePlantMessage(text.rawValue, sender: sender)
+            case .delete:
+                //delete plant on Firestore Cloud
+                favouritePlantIsKept(false, withName: name, image: image, plant: plant)
+                isSelect = false
             }
         }
-       willThePlantBeAdded(isSelected, plant: suggestedPlant)
-        
+        return isSelect
     }
     
-    //it is checked if the plant is removed or added
-    func willThePlantBeAdded(_ isSelected: Bool, plant: SuggestedPlant) {
-        guard isSelected else {
-            //get all the plants
-            dataManager.save()
-            let plantsEntity = dataManager.fetchPlants()
-            //find the plant to eliminate
-            for index in stride(from: (plantsEntity.count - 1), through: 0, by: -1) {
-                if plantsEntity[index].name == plant.name {
-                    dataManager.deletePlant(plantsEntity[index])
-                    // notify that a plant has been removed
-                    Notifications.shared.newPlants.removeLast()
-                    break
+    //MARK: Favourite Plant on Firestore
+    func favouritePlantIsKept(_ option: Bool, withName name: String, image: String, plant: FavouritePlant){
+        Task {
+            await makeMethodsForFirestoreCloud{
+                switch option {
+                case true:
+                    await FirestoreAddData.shared.addPlantOfFavouritesToCloud(plant)
+                case false:
+                    await FirestoreDeleteData.shared.deletePlantOfFavouritesToCloud(name)
                 }
             }
-            return
         }
-        //convert from SuggestedPlant model to PlantInformation
-        let name = plant.name
-        let similarImages = plant.similarImages
-        let details = plant.details
-        var plantInformation = PlantInformation(name: name, similarImages: similarImages, details: details)
-        plantInformation.isAdded = true
-        //Save plant
-        dataManager.savePlant(plant: plantInformation, watered: Constants.irrigationInformation)
-        //notify that a new plant has been added
-        Notifications.shared.newPlants.append(plantInformation)
     }
     
-   
+    
+
 }
 
