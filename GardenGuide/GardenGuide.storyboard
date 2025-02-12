@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +14,7 @@
         <!--Garden-->
         <scene sceneID="w36-JE-Eo6">
             <objects>
-                <navigationController id="sxi-bS-J5H" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UserGardenNC" id="sxi-bS-J5H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Garden" image="camera.macro" catalog="system" selectedImage="camera.macro" id="NTk-JC-QIf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Juy-gC-LTV">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -51,26 +52,25 @@
                                     <constraint firstAttribute="height" constant="250" id="zoX-Yw-A7Z"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JnR-gL-tRr">
-                                <rect key="frame" x="20" y="70" width="167" height="59"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JnR-gL-tRr">
+                                <rect key="frame" x="20" y="70" width="131.66666666666666" height="56.666666666666657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2v-LZ-5gW">
-                                        <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2v-LZ-5gW">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="CustomLightGreen"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garden Guide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSc-3L-FYm">
-                                        <rect key="frame" x="0.0" y="25.333333333333325" width="167" height="33.666666666666657"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garden Guide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CC-Ld-vFP">
+                                        <rect key="frame" x="0.0" y="30.333333333333329" width="131.66666666666666" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" name="CustomGreenishGray"/>
                                         <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="2" height="-1"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-Uq-mEe">
-                                <rect key="frame" x="14" y="134" width="365" height="56"/>
+                                <rect key="frame" x="14" y="131.66666666666666" width="365" height="56"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="SkP-2G-2N8">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="56"/>
@@ -86,7 +86,7 @@
                                         <rect key="frame" x="310" y="0.0" width="55" height="56"/>
                                         <color key="tintColor" name="CustomYellow"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="camera" catalog="system">
+                                        <state key="normal" image="camera.viewfinder" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                         </state>
                                         <connections>
@@ -96,7 +96,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vSu-cK-KjG">
-                                <rect key="frame" x="354" y="71.666666666666671" width="25" height="22.333333333333329"/>
+                                <rect key="frame" x="354" y="71.333333333333329" width="25" height="22.333333333333329"/>
                                 <color key="tintColor" name="CustomDarkGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vSu-cK-KjG" secondAttribute="height" multiplier="1:1" id="PgE-3j-QeD"/>
@@ -112,16 +112,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT7-8d-msi">
-                                <rect key="frame" x="0.0" y="215" width="393" height="200"/>
+                                <rect key="frame" x="0.0" y="212.66666666666663" width="393" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJk-cr-ROU">
-                                        <rect key="frame" x="125.66666666666669" y="170" width="142" height="30"/>
+                                        <rect key="frame" x="118" y="170.00000000000003" width="157" height="30"/>
                                         <color key="backgroundColor" name="CustomDarkGreen"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="les-ke-uQ5"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="     Look for Plants     ">
+                                        <state key="normal" title="     Search for Plants     ">
                                             <color key="titleColor" name="CustomGreenishGray"/>
                                         </state>
                                         <connections>
@@ -175,17 +175,8 @@
                                     <constraint firstAttribute="bottom" secondItem="cJk-cr-ROU" secondAttribute="bottom" id="iLy-Az-kSA"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLF-hh-GUk">
-                                <rect key="frame" x="310" y="102" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
-                                <connections>
-                                    <action selector="closeSession:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e8M-5N-mWN"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-0W-396">
-                                <rect key="frame" x="0.0" y="420" width="393" height="349"/>
+                                <rect key="frame" x="0.0" y="417.66666666666674" width="393" height="351.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="90y-nw-OOz">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="634"/>
@@ -210,7 +201,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-It-cTm">
-                                                <rect key="frame" x="0.0" y="280" width="393" height="354"/>
+                                                <rect key="frame" x="0.0" y="279.99999999999994" width="393" height="354.00000000000006"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-JP-7N1">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="354"/>
@@ -242,14 +233,32 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="b36-HH-tdc"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="eHj-5H-dqM"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-zf-p9q">
+                                <rect key="frame" x="14" y="131.66666666666666" width="300" height="56"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="searchForSomethingWithSearchController:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="l02-2e-S0y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLF-hh-GUk">
+                                <rect key="frame" x="14" y="178" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="closeSession:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e8M-5N-mWN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yaU-zf-p9q" firstAttribute="height" secondItem="SkP-2G-2N8" secondAttribute="height" id="2cZ-fX-Di4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YE0-Uq-mEe" secondAttribute="trailing" constant="14" id="DkX-Q9-qm8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kT7-8d-msi" secondAttribute="trailing" id="LdO-gN-EMz"/>
                             <constraint firstItem="YE0-Uq-mEe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="LtO-7S-vJS"/>
                             <constraint firstItem="6n3-vB-YVj" firstAttribute="centerY" secondItem="vSu-cK-KjG" secondAttribute="centerY" id="Nix-xP-bVU"/>
+                            <constraint firstItem="yaU-zf-p9q" firstAttribute="width" secondItem="SkP-2G-2N8" secondAttribute="width" id="OBC-EA-OA7"/>
                             <constraint firstItem="tCn-Zr-wjy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OKk-bg-Npu"/>
                             <constraint firstItem="6n3-vB-YVj" firstAttribute="centerX" secondItem="vSu-cK-KjG" secondAttribute="centerX" id="Oth-eP-Tef"/>
                             <constraint firstItem="fNf-0W-396" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PGH-Th-T4T"/>
@@ -260,8 +269,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tCn-Zr-wjy" secondAttribute="trailing" id="bgi-t5-Qyp"/>
                             <constraint firstItem="fNf-0W-396" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="dX2-RH-emi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vSu-cK-KjG" secondAttribute="trailing" constant="14" id="fbF-g4-Ref"/>
+                            <constraint firstItem="yaU-zf-p9q" firstAttribute="centerY" secondItem="SkP-2G-2N8" secondAttribute="centerY" id="jbc-DV-mus"/>
                             <constraint firstItem="6n3-vB-YVj" firstAttribute="height" secondItem="vSu-cK-KjG" secondAttribute="height" id="kIN-lH-pvm"/>
                             <constraint firstItem="tCn-Zr-wjy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="of8-xE-DRy"/>
+                            <constraint firstItem="yaU-zf-p9q" firstAttribute="centerX" secondItem="SkP-2G-2N8" secondAttribute="centerX" id="ryw-g5-OeD"/>
                             <constraint firstItem="fNf-0W-396" firstAttribute="top" secondItem="kT7-8d-msi" secondAttribute="bottom" constant="5" id="t8k-Li-q9O"/>
                             <constraint firstItem="YE0-Uq-mEe" firstAttribute="top" secondItem="JnR-gL-tRr" secondAttribute="bottom" constant="5" id="tWr-MQ-NiC"/>
                             <constraint firstItem="vSu-cK-KjG" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="70" id="uEl-SQ-PTH"/>
@@ -271,6 +282,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CHd-V7-ISQ"/>
                     <connections>
+                        <outlet property="SearchBarButton" destination="yaU-zf-p9q" id="R80-41-WNd"/>
                         <outlet property="backgroundImageView" destination="tCn-Zr-wjy" id="lFY-xs-KQB"/>
                         <outlet property="cameraButton" destination="TaX-oC-0mL" id="SVK-27-H8y"/>
                         <outlet property="cameraMeteringImageView" destination="NPI-Eb-WjA" id="VlM-a2-j9o"/>
@@ -316,7 +328,7 @@
         <!--Search-->
         <scene sceneID="HYm-L5-hum">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4AS-ND-wky" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GardenGuideNC" automaticallyAdjustsScrollViewInsets="NO" id="4AS-ND-wky" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="IIx-R3-gxN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pg0-xh-cFX">
@@ -336,9 +348,9 @@
     <resources>
         <image name="BackgroundImage1" width="1104" height="736"/>
         <image name="Plant1" width="1024" height="636"/>
-        <image name="camera" catalog="system" width="128" height="93"/>
         <image name="camera.macro" catalog="system" width="128" height="114"/>
         <image name="camera.metering.center.weighted.average" catalog="system" width="128" height="93"/>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="xmark.circle" catalog="system" width="128" height="123"/>

@@ -14,6 +14,7 @@ import FirebaseFirestore
 
 class GardenGuideViewController: UIViewController {
 
+    //MARK: Outlets
     @IBOutlet weak var closeSessionButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var plantImageView: UIImageView!
@@ -31,46 +32,51 @@ class GardenGuideViewController: UIViewController {
     @IBOutlet weak var plantBackgroundViewButton: UIButton!
     @IBOutlet weak var plantsCollectionView: CollectionTabsView!
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
+    @IBOutlet weak var SearchBarButton: UIButton!
     
-    
-    var email: String = ""
-    var provider: ProviderType = .none
-    var currentSelectedImage = SelectImageFor.plant
-    lazy var controller = SearchViewController(delegate: self)
-    var randomPlants: [SuggestedPlant] = []
-    
+    //MARK: general Enums
+    //ImagePicker selected image view states
     enum ViewStateVisibility {
         case show
         case hide
     }
     
+    //Image used for ImagePicker
     enum SelectImageFor {
         case plant
         case user
     }
+    
+    //MARK: general variables
+    var email: String = ""
+    var provider: ProviderType = .none
+    //var user: User? = nil
+    var currentSelectedImage = SelectImageFor.plant
+    //Controller for de ViewController
+    lazy var controller = SearchViewController(delegate: self)
+    //SearchController for de ViewController
+    let searchController = UISearchController(searchResultsController: PlantSearchListViewController())
+    //Plants for the tableView
+    var randomPlants: [SuggestedPlant] = []
+    //CoreData
+    let dataManager = CoreDataPlant()
+    let defaults = UserDefaults.standard
+    //Cloud Firestore
+    private let db = Firestore.firestore()
+    private var firestoreUtilts = FirestoreUtilts()
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(email)
-        print(provider)
-        saveUser(email: email, provider: provider)
-        
+        configUser()
         setUpView()
         plantBackgroundViewVisibility(.hide)
-        //print(heightCollectionView.constant)
-        //heightCollectionView.constant = 0.0
-        //plantsCollectionView.isHidden = true
-        //searchForPlantsByImage()
         setUpTableView()
-        
-        heightCollectionView.constant = 0.0
-        plantsCollectionView.isHidden = true
-        Task {
-            randomPlants = try await getPlantsByImage(imageInBase64String:"")
-            tableView.reloadData()
-        }
-        
+        collectionViewVisibility(.hide)
+        setupSearchController()
+        updateTheTableViewData()
+        remoteConfigWithFirebase()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,11 +89,11 @@ class GardenGuideViewController: UIViewController {
         self.tableView.removeObserver(self, forKeyPath: "contentSize")
     }
     
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentSize"
-        {
-            if object is UITableView
-            {
+        //Change the height of the table view
+        if keyPath == "contentSize"{
+            if object is UITableView{
                 if let newValue = change?[.newKey] {
                     let newSize = newValue as! CGSize
                     self.heightTableView.constant = newSize.height
@@ -97,19 +103,54 @@ class GardenGuideViewController: UIViewController {
     }
     
     
+    //MARK: UserDefaults Methods
+    //Configure user values
+    func configUser(){
+        //getting information from defaults
+        if let email = defaults.value(forKey: "email") as? String, let provider = defaults.value(forKey: "provider") as? String, let providerType = ProviderType.init(rawValue: provider) {
+            self.email = email
+            self.provider =  providerType
+            print("User with email: " + email + "and provider: " + provider)
+        }
+        //save data
+        saveUser(email: email, provider: provider)
+        firestoreUtilts.modifyUserEmail(email)
+        firestoreUtilts.modifyUserProvider(provider.rawValue)
+        //save user on Firestore Cloud
+        Task {
+            await controller.saveUserToFirestoreCloud(email: email, provider: provider.rawValue)
+        }
+    }
+    
+    //Save the values of the information
+    func saveUser(email: String, provider: ProviderType) {
+        let defaults = UserDefaults.standard
+        defaults.set(email, forKey: "email")
+        defaults.set(provider.rawValue, forKey: "provider")
+        defaults.synchronize()
+        print("User saved.  User with email: " + email + "and provider: " + provider.rawValue)
+    }
+    
+    
+    //MARK: General methods
     
     //Modify the radio and border of images and buttons
     func setUpView() {
-        backgroundImageView.layer.cornerRadius = backgroundImageView.frame.width / 15
+        //Buttons
         lookForPlantsButton.modifyCornerRadius(lookForPlantsButton.frame.height / 3)
+        //Images
+        backgroundImageView.layer.cornerRadius = backgroundImageView.frame.width / 15
         userImageView.layer.cornerRadius = userImageView.bounds.height / 2
         let borderColor: UIColor = .customDarkGreen
         userImageView.layer.borderColor = borderColor.cgColor
         userImageView.layer.borderWidth = 1.5
+        //Modify color of tabBarItem
+        tabBarController?.tabBar.tintColor = .customGreen
     }
     
     //Modify the visibility of a background view
     func plantBackgroundViewVisibility(_ state: ViewStateVisibility) {
+        //Hide or show the view that contains the image plant to search for more similar plants
         switch state {
         case .show:
             plantBackgroundView.isHidden = false
@@ -120,11 +161,11 @@ class GardenGuideViewController: UIViewController {
         }
     }
     
+    //Set Up TableView
     func setUpTableView() {
         //Delegate and Data Sourse
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.isHidden = false
         
         //Register Cell
         tableView.register(UINib(nibName: "\(RandomPlantsTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(RandomPlantsTableViewCell.self)")
@@ -136,177 +177,79 @@ class GardenGuideViewController: UIViewController {
         tableView.separatorColor = .clear
     }
     
-    func getPlantsByImage(imageInBase64String: String) async throws -> [SuggestedPlant] {
-        guard let model = Utils.parseJson(jsonName: "PlantResultsByImageSearch", model: SimilarPlants.self) else{
-            print("No se pudo convertir")
-            throw NetworkError.jsonDecoder
+    //Hide or show the collectionView
+    func collectionViewVisibility(_ state: ViewStateVisibility) {
+        switch state {
+        case .show:
+            plantsCollectionView.isHidden = false
+            heightCollectionView.constant = 280.0
+        case .hide:
+            heightCollectionView.constant = 0.0
+            plantsCollectionView.isHidden = true
         }
-        let suggestedPlants = model.result.classification.suggestedPlants
-        return suggestedPlants
     }
     
+    //set up SearchController
+    func setupSearchController() {
+        //Config searchController
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = true
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        //Config searchBar
+        searchController.searchBar.placeholder = "Search Plants"
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.isHidden = true
+        
+        // Customize the color of the “Cancel” button
+        let cancelButtonAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.customGreen // Change the color here
+        ]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+        
+    }
     
+    //update TableView view
+    func updateTheTableViewData(){
+        //Get random plants from previous searches in coreData
+        randomPlants = controller.getRandomPlants()
+        if randomPlants.count == 0 {
+            print("Does not have recents searches")
+        } else {
+            tableView.reloadData()
+        }
+    }
+    
+    //Get similar plants from the image
     private func searchForPlantsByImage(){
         let imageToBase64 = convertImageToBase64String(image: plantImageView.image!)
         Task{ [weak self] in
+            //get plants
             await self?.controller.getPlantsByImage(imageInBase64String: imageToBase64)
         }
     }
     
-    
-    
-    
-    
-    
-    func saveUser(email: String, provider: ProviderType) {
-        let defaults = UserDefaults.standard
-        defaults.set(email, forKey: "email")
-        defaults.set(provider.rawValue, forKey: "provider")
-        defaults.synchronize()
-        print("usuario guardado")
-    }
-    func removeUser() {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: "email")
-        defaults.removeObject(forKey: "provider")
-        defaults.synchronize()
-        print("usuario eliminado")
+    //conver an image to a base 64 string
+    func convertImageToBase64String (image: UIImage) -> String {
+        return image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }
     
-    @IBAction func closeSession(_ sender: Any) {
-        /*removeUser()
-        switch provider {
-        case .email:
-            firabaseLogOut()
-        case .google:
-            GIDSignIn.sharedInstance.signOut()
-            firabaseLogOut()
-        case .none:
-            print("Guadra datos plis")
-        case .anonymous:
-            firabaseLogOut()
-        case .twitter:
-            firabaseLogOut()
-        }
-        
-        let authStoryboard = UIStoryboard(name: "AuthMain", bundle: .main)
-        if let authMainViewController = authStoryboard.instantiateViewController(withIdentifier: "AuthMainVC") as? AuthMainViewController {
-            view.window?.windowScene?.keyWindow?.rootViewController = authMainViewController
-            view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
-        }*/
-        //MARK: POST
-        /*
-        let img = convertImageToBase64String(image: plantImageView.image!)
-        lab.text = "{\n    \"images\": [\"data:image/jpg;base64," + img + "\"],\n   \"similar_images\": true\n}"
-        
-        let parameters = "{\n    \"images\": [\"data:image/jpg;base64," + img + "\"],\n   \"similar_images\": true\n}"
-        
-        let postData = parameters.data(using: .utf8)
-
-            var request = URLRequest(url: URL(string: "https://plant.id/api/v3/identification?details=common_names,url,description,taxonomy,rank,gbif_id,inaturalist_id,image,synonyms,edible_parts,watering")!,timeoutInterval: Double.infinity)
-            request.addValue("uUAV0pEcCMm8if3lJcgcpok2DzWOtaW8owfKFyrCa4FnD9yQNN", forHTTPHeaderField: "Api-Key")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            request.httpMethod = "POST"
-            request.httpBody = postData
-
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-              guard let data = data else {
-                print(String(describing: error))
-                return
-              }
-                print("AAAAAAAAAAAAAA")
-              print(String(data: data, encoding: .utf8)!)
-            }
-
-            task.resume()
-*/
-        
-        //MARK: GET PLANTS
-        
-        var request5 = URLRequest(url: URL(string: "https://plant.id/api/v3/kb/plants/name_search?q=tulipa")!,timeoutInterval: Double.infinity)
-        request5.addValue("uUAV0pEcCMm8if3lJcgcpok2DzWOtaW8owfKFyrCa4FnD9yQNN", forHTTPHeaderField: "Api-Key")
-        request5.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        request5.httpMethod = "GET"
-
-        let task5 = URLSession.shared.dataTask(with: request5) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            return
-          }
-            print("BBBBBBBBBB")
-          print(String(data: data, encoding: .utf8)!)
-        }
-
-        task5.resume()
-        
-        
-    //MARK: GET DETAIL
-        /*
-        var request = URLRequest(url: URL(string: "https://plant.id/api/v3/kb/plants/XGhdakFxY1pPeHNHMVRSM1xkQHZWYwoyU2RNelAyTXk-?details=common_names,url,description,taxonomy,rank,gbif_id,inaturalist_id,image,synonyms,edible_parts,watering,propagation_methods")!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("uUAV0pEcCMm8if3lJcgcpok2DzWOtaW8owfKFyrCa4FnD9yQNN", forHTTPHeaderField: "Api-Key")
-
-         
-         
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            return
-          }
-            print("CCCCCCCCCCCCCCCCCCC")
-          print(String(data: data, encoding: .utf8)!)
-        }
-
-        task.resume()
-
-        */
-    }
-    
-    private func firabaseLogOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-          try firebaseAuth.signOut()
-            print("se cerro")
-        } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
-        }
-    }
-    
-    
-    //MARK: IBActions
-    @IBAction func closePlantBackgroundView(_ sender: UIButton) {
-        plantBackgroundViewVisibility(.hide)
-    }
-    
-    @IBAction func userButtonTapped(_ sender: UIButton) {
-        currentSelectedImage = .user
-        selectImage(for: .user, sender: sender)
-    }
-    
-    @IBAction func lookForPlantsButtonTapped(_ sender: UIButton) {
-        plantsCollectionView.isHidden = false
-        heightCollectionView.constant = 280.0
-        searchForPlantsByImage()
-        
-    }
-    
-    @IBAction func cameraButtonTapped(_ sender: UIButton) {
-        currentSelectedImage = .plant
-        selectImage(for: .plant, sender: sender)
-    }
-    
-    func selectImage(for state: SelectImageFor, sender: UIButton) {
+    //AlertController to select image from camera or gallery
+    private func selectImage(for state: SelectImageFor, sender: UIButton) {
+        //config ImagePickerController
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        //create a AlertController
         let title = ((state == .plant ) ? "Camera or Galery" : "Galery" )
         let alertController = UIAlertController(title: title, message: "Choose one", preferredStyle: .alert)
+        
+        //create a AlertActions
+        /**To Cancel**/
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alertController.addAction(cancelAction)
-        
+        /**For the Camera**/
         if state == SelectImageFor.plant {
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
@@ -317,7 +260,7 @@ class GardenGuideViewController: UIViewController {
             }
             
         }
-        
+        /**For the Gallery**/
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
                 imagePicker.sourceType = .photoLibrary
@@ -327,19 +270,101 @@ class GardenGuideViewController: UIViewController {
             alertController.addAction(photoLibraryAction)
         }
         
+        //present the alertController
         alertController.popoverPresentationController?.sourceView = sender
         present(alertController, animated: true)
-        
     }
     
+    //hide or show views to display the searchController
+    private func prepareViewForSearchController(isActive: Bool) {
+        searchController.searchBar.isHidden.toggle()
+        switch isActive {
+        case true:
+            greetingLabel.alpha = 0.0
+            userImageView.alpha = 0.0
+            plantsSearchBar.alpha = 0.0
+            cameraButton.alpha = 0.0
+        case false:
+            greetingLabel.alpha = 1.0
+            userImageView.alpha = 1.0
+            plantsSearchBar.alpha = 1.0
+            cameraButton.alpha = 1.0
+        }
+    }
+    
+    //MARK: Firebase Methods
+   
+    //test FirebaseRemoteConfig with one button
+    private func remoteConfigWithFirebase() {
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 60
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.configSettings = settings
+        remoteConfig.setDefaults(["show_error_button":NSNumber(true)])
+        // hide or show the button
+        remoteConfig.fetchAndActivate{ (status, error) in
+            if status != .error {
+                let showErrorButton = remoteConfig.configValue(forKey: "show_error_button").boolValue
+                
+                DispatchQueue.main.async {
+                    self.closeSessionButton.isHidden = !showErrorButton
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: ViewController @IBActions
+    
+    //config action with FirebaseRemoteConfig
+    @IBAction func closeSession(_ sender: Any) {
+        print("TEST 3 WITH FirebaseRemoteConfig")
+        print("Button displayed with FirebaseRemoteConfig")
+    }
+    
+    @IBAction func closePlantBackgroundView(_ sender: UIButton) {
+        plantBackgroundViewVisibility(.hide)
+    }
+    
+    //select user image with ImagePicker
+    @IBAction func userButtonTapped(_ sender: UIButton) {
+        currentSelectedImage = .user
+        selectImage(for: .user, sender: sender)
+    }
+    
+    //present image plant with imagePicker
+    @IBAction func lookForPlantsButtonTapped(_ sender: UIButton) {
+        collectionViewVisibility(.show)
+        //search results with API or Mock
+        searchForPlantsByImage()
+    }
+    
+    //select plant image with ImagePicker
+    @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        currentSelectedImage = .plant
+        selectImage(for: .plant, sender: sender)
+    }
+    
+    //active SearchController
+    @IBAction func searchForSomethingWithSearchController(_ sender: Any) {
+        // Simulates the user pressing the search button
+        if !searchController.isActive {
+            searchController.isActive = true
+        }
+        searchController.searchBar.becomeFirstResponder()
+        prepareViewForSearchController(isActive: true)
+    }
 }
 
-//MARK: Extension ImagePickerController
+
+//MARK: Extension of ImagePickerController
 extension GardenGuideViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //select image
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
+        //Placing the selected image on the user or the plant
         switch currentSelectedImage {
         case .plant:
             plantImageView.image = image
@@ -347,43 +372,73 @@ extension GardenGuideViewController: UINavigationControllerDelegate, UIImagePick
         case .user:
             userImageView.image = image
         }
-        dismiss(animated: true)    }
-    
-    func convertImageToBase64String (image: UIImage) -> String {
-        return image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
-    }
-    
-    
-}
-//MARK: Extension CollectionTabsViewDelegate
-extension GardenGuideViewController: CollectionTabsViewDelegate {
-    func didSelectPlant(index: Int) {
-        print("WWW",index)
+        dismiss(animated: true)
     }
 }
 
+
+//MARK: Extension of CollectionTabsViewDelegate
+extension GardenGuideViewController: CollectionTabsViewDelegate {
+    func savePlantMessage(_ text: String, sender: UIButton) {
+        sendMessageToUser(sender, text: text)
+    }
+    
+    func didSelectPlant(index: Int) {
+        //Display the plant selected on PlantDetailsViewController
+        let vc = PlantDetailsViewController()
+        vc.suggestedPlant = controller.plantResults.suggestedPlants[index]
+        present(vc, animated: true)
+    }
+    
+    //create and present the AlertController
+    func sendMessageToUser(_ sender: UIButton, text: String) {
+        //create
+        let alertController = UIAlertController(title: "The plant is already saved", message: text, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+        alertController.addAction(cancelAction)
+        //present
+        alertController.popoverPresentationController?.sourceView = sender
+        present(alertController, animated: true)
+    }
+}
+
+
+//MARK: Extension of SearchViewControllerDelegate
 extension GardenGuideViewController: SearchViewControllerDelegate {
+    //Display the plants in CollectionView
     func getPlantsResultsPerImage() {
         guard  let plants = controller.plantResults else {
             return
         }
-        //print(plants)
-        //heightCollectionView.constant = 280.0
         plantsCollectionView.isHidden = false
         plantsCollectionView.buildView(delegate: self, plants: plants)
+        savePlantsInCoreData(plants)
     }
     
-    
+    func savePlantsInCoreData(_ plants: PlantsByImageSearch){
+        guard CoreDataUtils.shared.savePlantsByImageSearch else { 
+            print("New plants are not saved in the history")
+            return }
+        plants.suggestedPlants.forEach { suggestedPlant in
+            CoreDataUtils.shared.saveNewPlant(suggestedPlant)
+        }
+        
+    }
 }
-//MARK: Extension TableViewDelegate and TableViewDataSource
+
+
+//MARK: Extension of TableViewDelegate and TableViewDataSource
 extension GardenGuideViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        randomPlants.count
+        let plants = randomPlants.count
+        return plants
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //get data
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(RandomPlantsTableViewCell.self)", for: indexPath) as! RandomPlantsTableViewCell
         let plant = randomPlants[indexPath.row]
+        //config cell with data
         cell.configureCell(plant: plant)
         cell.accessoryType = .disclosureIndicator
         cell.backgroundColor = .customBackgroundColor
@@ -405,69 +460,46 @@ extension GardenGuideViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("EEEE",indexPath)
+        //Display the plant selected on PlantDetailsViewController
+        let vc = PlantDetailsViewController()
+        vc.suggestedPlant = randomPlants[indexPath.row]
+        present(vc, animated: true)
     }
-    
-    
-    
-}
-/*
- 
- //@IBOutlet weak var errorButton: UIButton!
- //@IBOutlet weak var infoLabel: UITextField!
- private let db = Firestore.firestore()
- 
- override func viewDidLoad() {
-     super.viewDidLoad()
-     print(email)
-     print(provider)
-     saveUser(email: email, provider: provider)
-     
-     /*let remoteConfig = RemoteConfig.remoteConfig()
-     remoteConfig.fetchAndActivate{ (status, error) in
-         if status != .error {
-             let showErrorButton = remoteConfig.configValue(forKey: "show_error_button").boolValue
-             let errorButtonText = remoteConfig.configValue(forKey: "error_Button_text").stringValue
-             
-             DispatchQueue.main.async {
-                 self.errorButton.isHidden = !showErrorButton
-                 self.errorButton.setTitle(errorButtonText, for: .normal)
-             }
-             
-         }
-         
-     }*/
-     
- }
- 
-@IBAction func ConfigError(_ sender: Any) {
-    fatalError("Crash was triggered")
 }
 
 
-@IBAction func saveButton(_ sender: Any) {
-    view.endEditing(true)
-    db.collection("users").document(email).setData([
-        "provider": provider.rawValue,
-        "text": infoLabel.text ?? ""
-    ])
-}
-
-@IBAction func recuperarButton(_ sender: Any) {
-    view.endEditing(true)
-    db.collection("users").document(email).getDocument { (documentSnapshot, error) in
-        if let document = documentSnapshot, error == nil {
-            if let text = document.get("text") as? String {
-                self.infoLabel.text = text
-            } else {
-                self.infoLabel.text = ""
-            }
+//MARK: Extension SearchBar, SearchResults and SearchController
+extension GardenGuideViewController: UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchString = searchController.searchBar.text,
+              searchString.isEmpty == false else {
+            return
         }
+        //instantiate plantSearchListViewController
+        let plantSearchListViewController = searchController.searchResultsController as? PlantSearchListViewController
+        plantSearchListViewController?.delegate = self
+        //Send the word to the method to do the search for the plants and display them in the tableView
+        plantSearchListViewController?.searchListOfPlants(word: searchString)
+        
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        //SearchController is going to be discarded
+        prepareViewForSearchController(isActive: false)
+    }
+    
+}
+
+//MARK: Extension PlantSearchListViewControllerDelegate
+extension GardenGuideViewController: PlantSearchListViewControllerDelegate {
+    func plantSearchListViewController(_ controller: PlantSearchListViewController, accessToken: String, name: String) {
+        searchController.searchBar.resignFirstResponder()
+        //initialise and present the PlantDetailsViewController
+        let vc = PlantDetailsViewController()
+        vc.accessToken = accessToken
+        vc.name = name
+        present(vc, animated: true)
+        prepareViewForSearchController(isActive: false)
     }
 }
 
-@IBAction func removeButton(_ sender: Any) {
-    view.endEditing(true)
-    db.collection("users").document(email).delete()
-}
- */
