@@ -13,6 +13,7 @@ import FirebaseRemoteConfig
 
 class AuthMainViewController: UIViewController, AuthUIDelegate {
 
+    //MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
@@ -23,7 +24,7 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var errorLabel: UILabel!
     
-    
+    //MARK: general variables
     lazy var delegate = AuthMainController(delegate: self, viewController: self)
     var password: String? = nil
     var email: String? = nil
@@ -32,26 +33,11 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configEmailButtons()
+        configTextFields()
         enableEmailButtons()
         errorLabel.isHidden = true
+        remoteConfigWithFirebase()
         
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 60
-        
-        let remoteConfig = RemoteConfig.remoteConfig()
-        remoteConfig.configSettings = settings
-        remoteConfig.setDefaults(["show_Sign_In_Button": NSNumber(true), "error_Button_text":NSString("MuestrameError"), "show_error_button":NSNumber(true)])
-        
-        
-        remoteConfig.fetchAndActivate{ (status, error) in
-            if status != .error {
-                let showSignInButton = remoteConfig.configValue(forKey: "show_Sign_In_Button").boolValue
-                
-                DispatchQueue.main.async {
-                    self.signInButton.isHidden = !showSignInButton
-                }
-            }
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -61,7 +47,9 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         errorLabel.isHidden = true
     }
     
-    //MARK: Config View
+    //MARK: General methods
+    
+    //Config View
     private func configEmailButtons() {
         let emailButtons = [logInButton, signUpButton]
         emailButtons.forEach { button in
@@ -70,6 +58,54 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         let signInButtons =  [googleButton, twitterButton]
         signInButtons.forEach { button in
             button?.modifyCornerRadius((button?.frame.height)!/7, withColor: .opaqueGray, andWidth: 0.3)
+        }
+    }
+    
+    private func configTextFields() {
+        let textFields: [UITextField] = [passwordTextField, emailTextField]
+        textFields.forEach { textField in
+            textField.autocorrectionType = .no
+            textField.inputView = nil
+            textField.inputAccessoryView = nil
+            textField.spellCheckingType = .no
+        }
+        passwordTextField.textContentType = .oneTimeCode
+        
+    }
+    
+    func goToGardenGuideViewController(email: String, provider: ProviderType) {
+        let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
+        if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,
+           let gardenGuideNavigationController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideNC") as? UINavigationController,
+           let gardenGuideViewController = gardenGuideNavigationController.viewControllers.first as? GardenGuideViewController,
+           let userGardenNavigationController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "UserGardenNC") as? UINavigationController {
+            
+            gardenGuideViewController.email = email
+            gardenGuideViewController.provider = provider
+            
+            gardenGuideTabBarController.setViewControllers([gardenGuideNavigationController, userGardenNavigationController], animated: false)
+            
+            self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
+            self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
+        }
+        
+    }
+    
+    func remoteConfigWithFirebase(){
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 60
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.configSettings = settings
+        remoteConfig.setDefaults(["show_Sign_In_Button": NSNumber(true), "error_Button_text":NSString("MuestrameError"), "show_error_button":NSNumber(true)])
+        //present or hide the button
+        remoteConfig.fetchAndActivate{ (status, error) in
+            if status != .error {
+                let showSignInButton = remoteConfig.configValue(forKey: "show_Sign_In_Button").boolValue
+                
+                DispatchQueue.main.async {
+                    self.signInButton.isHidden = !showSignInButton
+                }
+            }
         }
     }
     
@@ -172,25 +208,16 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
         
     }
     
-    func goToGardenGuideViewController(email: String, provider: ProviderType) {
-        let gardenGuideStoryboard = UIStoryboard(name: "GardenGuide", bundle: .main)
-        if let gardenGuideTabBarController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideTBC") as? UITabBarController,  let gardenGuideViewController = gardenGuideStoryboard.instantiateViewController(withIdentifier: "GardenGuideVC") as? GardenGuideViewController {
-            
-            gardenGuideViewController.email = email
-            gardenGuideViewController.provider = provider
-            
-            gardenGuideTabBarController.viewControllers?[0] = gardenGuideViewController
-            
-            //self.navigationController?.pushViewController(gardenGuideViewController, animated: true)
-            self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
-            self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
-        }
-        
-    }
+    
     
 }
 
+//MARK: Extension of AuthMainController
 extension AuthMainViewController: AuthMainViewProtocol {
+    func sendUser(_ user: User) {
+        Notifications.shared.user = user
+    }
+    
     func successfulAuthentication(provider: ProviderType, email: String) {
         errorLabel.isHidden = true
         goToGardenGuideViewController(email: email, provider: provider)

@@ -14,6 +14,7 @@ import FirebaseCore
 protocol AuthMainViewProtocol: AnyObject {
     func successfulAuthentication(provider: ProviderType, email: String)
     func failedAuthentication(error: String)
+    func sendUser(_ user: User)
 }
 
 class AuthMainController {
@@ -66,7 +67,9 @@ class AuthMainController {
             }
             guard let user = authResult?.user else { return }
             let uid = user.uid
+            self.delegate?.sendUser(user)
             self.verifyAuthentication(result: authResult, error: error, provider: .anonymous, id: uid)
+            
         }
         
     }
