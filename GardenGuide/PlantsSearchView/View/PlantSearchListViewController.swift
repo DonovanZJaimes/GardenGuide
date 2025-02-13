@@ -14,6 +14,7 @@ protocol PlantSearchListViewControllerDelegate: AnyObject {
 
 class PlantSearchListViewController: UIViewController {
     
+    //MARK: general variables
     var tableView = UITableView()
     lazy var controller = PlantSearchListController(delegate: self)
     var plantsList = [SuggestedPlantName]()
@@ -24,7 +25,7 @@ class PlantSearchListViewController: UIViewController {
         configureTableView()
     }
     
-    //MARK: Methods
+    //MARK: gerenal Methods
     func configureTableView() {
         view.addSubview(tableView)
         //DataSource and Delegate
@@ -75,8 +76,10 @@ extension PlantSearchListViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //get data
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(SearchPlantForTableViewCell.self)", for: indexPath) as! SearchPlantForTableViewCell
         let plant = plantsList[indexPath.row]
+        //config cell with data
         cell.configureCell(plant: plant)
         cell.accessoryType = .disclosureIndicator
         return cell

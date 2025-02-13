@@ -11,7 +11,7 @@ protocol PlantSearchListControllerDelegate: AnyObject {
     func getListOfPlantNamesByText()
 }
 
-//MARK: Controller
+//MARK: Controller of PlantSearchView
 @MainActor class PlantSearchListController {
     var provider: PlantSearchListProviderProtocol
     weak var delegate: PlantSearchListControllerDelegate?
@@ -27,6 +27,7 @@ protocol PlantSearchListControllerDelegate: AnyObject {
         #endif
     }
     
+    //MARK: General methods
     
     func lookForPlants(word: String)  {
         Task {

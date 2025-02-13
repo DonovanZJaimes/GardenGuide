@@ -9,6 +9,7 @@ import UIKit
 
 class SearchPlantForTableViewCell: UITableViewCell {
 
+    //MARK: Outlets
     @IBOutlet weak var entityNameLabel: UILabel!
     @IBOutlet weak var matchedNameLabel: UILabel!
     
@@ -16,6 +17,7 @@ class SearchPlantForTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    //MARK: Methods to Cell
     func configureCell(plant: SuggestedPlantName) {
         entityNameLabel.text = plant.plantName
         matchedNameLabel.text = plant.matchedIn
