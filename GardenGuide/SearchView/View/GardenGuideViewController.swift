@@ -354,7 +354,9 @@ class GardenGuideViewController: UIViewController {
         if !searchController.isActive {
             searchController.isActive = true
         }
-        
+        DispatchQueue.main.async {
+            self.searchController.searchBar.becomeFirstResponder()
+        }
         prepareViewForSearchController(isActive: true)
     }
 }

@@ -224,7 +224,7 @@ class UserGardenController {
     }
     
     //get FavouritePlant array without plants with specific name
-    func getNewFavouritePlants(without names: [String]) -> [FavouritePlant] {
+    func getNewFavouritePlants(without names: [String], andAdd oldFavouritePlants: [FavouritePlant]) -> [FavouritePlant] {
         //get the FavouritePlant array
         var favouritePlants = [FavouritePlant]()
         var plants = dataManager.fetchPlants()
@@ -243,7 +243,17 @@ class UserGardenController {
             favouritePlants.append(newFavouritePlant)
         }
         
-        return favouritePlants
+        //eliminating repetitive plants
+        var totalFavouritePlants = favouritePlants
+        let favouritePlantNames = Set(favouritePlants.map({ $0.name }))
+        
+        for plant in  oldFavouritePlants {
+            if !favouritePlantNames.contains(plant.name) {
+                totalFavouritePlants.append(plant)
+            }
+        }
+        
+        return totalFavouritePlants
     }
     
    

@@ -320,7 +320,7 @@ class UserGardenViewController: UIViewController{
         gardenPlants.forEach { gardenPlant in
             gardenPlantNames.append(gardenPlant.plantInformation.name)
         }
-        let newFavouritePlants = controller.getNewFavouritePlants(without: gardenPlantNames)
+        let newFavouritePlants = controller.getNewFavouritePlants(without: gardenPlantNames, andAdd: favouritePlants)
         
         //update the new FavouritePlants
         favouritePlants = newFavouritePlants
