@@ -56,6 +56,7 @@ class AddIrrigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUISheetPresentationController()
+        configTextFields()
         configGeneralView()
         setUpPickerView()
         setUpCalendarView()
@@ -72,6 +73,12 @@ class AddIrrigationViewController: UIViewController {
         presentationController.selectedDetentIdentifier = .large
         presentationController.prefersGrabberVisible = true
         presentationController.preferredCornerRadius = 30
+    }
+    
+    private func configTextFields() {
+        nextWateringTextField.autocorrectionType = .no
+        amountOfWaterTextField.autocorrectionType = .no
+        nextWateringTextField.spellCheckingType = .no
     }
     
     //configure the diferent views to present the general view
@@ -121,6 +128,7 @@ class AddIrrigationViewController: UIViewController {
     
     func setUpCalendarView() {
         nextWateringTextField.inputView = irrigationCalendar
+        irrigationCalendar.heightAnchor.constraint(equalToConstant: 500).isActive = true
     }
     
     //determine the type of humidity of the plant by means of a number

@@ -202,6 +202,9 @@ class GardenGuideViewController: UIViewController {
         searchController.searchBar.placeholder = "Search Plants"
         searchController.searchBar.barStyle = .black
         searchController.searchBar.isHidden = true
+        searchController.searchBar.autocorrectionType = .no
+        searchController.searchBar.keyboardType = .default
+        searchController.searchBar.spellCheckingType = .no
         
         // Customize the color of the “Cancel” button
         let cancelButtonAttributes: [NSAttributedString.Key: Any] = [
@@ -351,7 +354,7 @@ class GardenGuideViewController: UIViewController {
         if !searchController.isActive {
             searchController.isActive = true
         }
-        searchController.searchBar.becomeFirstResponder()
+        
         prepareViewForSearchController(isActive: true)
     }
 }

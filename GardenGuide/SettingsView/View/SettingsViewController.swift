@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configUISheetPresentationController()
+        configTextFields()
         editGardenPlantsSwitch.isOn = isEditingMode
         logViewStatus = .hide
         controller.obtainUserInformation()
@@ -72,6 +73,17 @@ class SettingsViewController: UIViewController{
         presentationController.selectedDetentIdentifier = .large
         presentationController.prefersGrabberVisible = true
         presentationController.preferredCornerRadius = 30
+    }
+    
+    private func configTextFields() {
+        let textFields: [UITextField] = [passwordTextField, emailTextField]
+        textFields.forEach { textField in
+            textField.autocorrectionType = .no
+            textField.textContentType = .oneTimeCode
+            textField.inputView = nil
+            textField.inputAccessoryView = nil
+            textField.spellCheckingType = .no
+        }
     }
     
     //update the log view based on the selected status
