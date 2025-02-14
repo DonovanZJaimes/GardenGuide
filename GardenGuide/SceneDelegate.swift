@@ -14,20 +14,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var firestoreUtilts = FirestoreUtilts()
     
     @objc func updateItemUserGardenView() {
-        /*if Notifications.shared.newPlants.count != nil {
-            //tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
-        }*/
+        guard let _ = tabBarItemUserGardenView else {
+            print("tabBarItemUserGardenView is not yet initialized.")
+            return
+        }
+        print("ya se inicializo")
         let value = Notifications.shared.newPlants.count
         tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
+         
     }
     
     
-    func configItemUserGardenView(){
+    public func configItemUserGardenView(){
+       
         NotificationCenter.default.addObserver(self, selector: #selector(updateItemUserGardenView), name: Notifications.plantsUpdateNotification, object: nil)
-        
-        tabBarItemUserGardenView = (window?.rootViewController as? UITabBarController)?.viewControllers?[1].tabBarItem
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+               if let tabBarController = self.window?.rootViewController as? UITabBarController {
+                   if tabBarController.viewControllers?.count ?? 0 > 1 {
+                       self.tabBarItemUserGardenView = tabBarController.viewControllers?[1].tabBarItem
+                   }
+               }
+           }
     }
+    
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -50,6 +59,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     window.rootViewController = gardenGuideTabBarController
                     self.window = window
                     window.makeKeyAndVisible()
+                    
+                    
+                    // We use DispatchQueue.main.async to make sure the view is ready before calling configItemUserGardenView
+                    DispatchQueue.main.async {
+                        // We call the configuration function after the view is loaded
+                        self.configItemUserGardenView()
+                    }
                 }
             } else {
                 

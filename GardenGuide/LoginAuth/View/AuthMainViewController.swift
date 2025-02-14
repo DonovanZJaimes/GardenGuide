@@ -87,6 +87,12 @@ class AuthMainViewController: UIViewController, AuthUIDelegate {
             
             self.view.window?.windowScene?.keyWindow?.rootViewController = gardenGuideTabBarController
             self.view.window?.windowScene?.keyWindow?.makeKeyAndVisible()
+            
+            DispatchQueue.main.async {
+                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    sceneDelegate.configItemUserGardenView()
+                }
+            }
         }
         
     }
