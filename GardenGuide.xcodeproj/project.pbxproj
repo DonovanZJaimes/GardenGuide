@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0AB8AF2CC6F41E00610D8E /* GardenPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8AE2CC6F41E00610D8E /* GardenPlant.swift */; };
+		5D0AB8B32CC6F47000610D8E /* IrrigationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8B22CC6F47000610D8E /* IrrigationStatus.swift */; };
+		5D0AB8BE2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8BD2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift */; };
+		5D0AB8C02CC6FCA700610D8E /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8BF2CC6FCA700610D8E /* HeaderCollectionReusableView.swift */; };
+		5D0AB8C22CC6FD2200610D8E /* LineCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8C12CC6FD2200610D8E /* LineCollectionReusableView.swift */; };
+		5D0AB8C42CC6FDB900610D8E /* UserGardenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8C32CC6FDB900610D8E /* UserGardenController.swift */; };
+		5D0AB8C72CC6FFA300610D8E /* UserGardenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8C62CC6FFA300610D8E /* UserGardenProvider.swift */; };
+		5D0AB8C92CC7003C00610D8E /* UserGardenProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8C82CC7003C00610D8E /* UserGardenProviderMock.swift */; };
+		5D0AB8CB2CC7005900610D8E /* UserGardenProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8CA2CC7005900610D8E /* UserGardenProviderProtocol.swift */; };
+		5D0AB8CF2CC7038D00610D8E /* FavouritePlantsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0AB8CE2CC7038D00610D8E /* FavouritePlantsMock.json */; };
+		5D0AB8D12CC708F400610D8E /* FavouritePlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8D02CC708F400610D8E /* FavouritePlant.swift */; };
+		5D0AB8D32CC99F8300610D8E /* GardenPlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8D22CC99F8300610D8E /* GardenPlantCell.swift */; };
 		5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */; };
 		5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */; };
 		5D14614C2BEAE30100E85D50 /* CollectionTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14614B2BEAE30100E85D50 /* CollectionTabsView.swift */; };
@@ -30,6 +42,11 @@
 		5D14617D2BF2C69D00E85D50 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D14617C2BF2C69D00E85D50 /* Kingfisher */; };
 		5D14617F2BF2CEEB00E85D50 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14617E2BF2CEEB00E85D50 /* RequestModel.swift */; };
 		5D1461812BF2CF1C00E85D50 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1461802BF2CF1C00E85D50 /* ServiceLayer.swift */; };
+		5D23F1B72C5055EA002A8499 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23F1B62C5055EA002A8499 /* PersistenceManager.swift */; };
+		5D2945AF2D12158B006A33D8 /* AddIrrigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945AE2D12158B006A33D8 /* AddIrrigationViewController.xib */; };
+		5D2945B02D12158B006A33D8 /* AddIrrigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945AD2D12158B006A33D8 /* AddIrrigationViewController.swift */; };
+		5D2945B22D179C4B006A33D8 /* FavouritePlantsNameMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945B12D179C4A006A33D8 /* FavouritePlantsNameMock.json */; };
+		5D53AAE72D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D53AAE62D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json */; };
 		5D595BA92C4078C9004564A5 /* PlantDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595B952C4078C8004564A5 /* PlantDetailsController.swift */; };
 		5D595BAA2C4078C9004564A5 /* PlantDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595B972C4078C8004564A5 /* PlantDetailsProvider.swift */; };
 		5D595BAB2C4078C9004564A5 /* PlantDetailsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595B982C4078C8004564A5 /* PlantDetailsProviderMock.swift */; };
@@ -66,24 +83,29 @@
 		5D595BEB2C407CFF004564A5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BE92C407CFF004564A5 /* Notifications.swift */; };
 		5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */; };
 		5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */; };
-		5D7AC04E2BE1A8B3003EF2C9 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */; };
-		5D7AC0502BE1A8B3003EF2C9 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */; };
-		5D7AC0532BE1A971003EF2C9 /* AuthMainSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */; };
-		5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834AF2BD07AF100A46774 /* FirebaseAuth */; settings = {ATTRIBUTES = (Required, ); }; };
-		5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */; settings = {ATTRIBUTES = (Required, ); }; };
-		5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B32BD07B9900A46774 /* FirebaseFirestore */; settings = {ATTRIBUTES = (Required, ); }; };
-		5D8834B82BD07C2300A46774 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */; settings = {ATTRIBUTES = (Required, ); }; };
-		5D8834BC2BD07C6500A46774 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8834BB2BD07C6500A46774 /* GoogleSignIn */; settings = {ATTRIBUTES = (Required, ); }; };
+		5D8828152D3AF0B4005FB93C /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8828142D3AF0B4005FB93C /* UILabel+Extension.swift */; };
 		5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */; };
-		5D8834C32BD1CB6B00A46774 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834C12BD1B62A00A46774 /* StringExtensionTests.swift */; };
-		5D8834C62BD30C9600A46774 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834C52BD30C9600A46774 /* UIColorExtensionTests.swift */; };
-		5D8834C82BD3133E00A46774 /* UIButtonExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834C72BD3133E00A46774 /* UIButtonExtensionTests.swift */; };
-		5D8834CC2BD3177800A46774 /* ProviderTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834CB2BD3177800A46774 /* ProviderTypeTests.swift */; };
-		5D8834CE2BD31BCD00A46774 /* SignUpErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834CD2BD31BCD00A46774 /* SignUpErrorTests.swift */; };
-		5D8834D02BD3208D00A46774 /* NetworkErrorFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834CF2BD3208D00A46774 /* NetworkErrorFirebaseTests.swift */; };
-		5D8834D22BD3271900A46774 /* AuthMainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8834D12BD3271900A46774 /* AuthMainViewControllerTests.swift */; };
-		5D9B18902BD5CC7E00E9903F /* AuthMainControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B188F2BD5CC7E00E9903F /* AuthMainControllerTests.swift */; };
-		5D9B18932BD9C1BD00E9903F /* AuthMainViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B18922BD9C1BD00E9903F /* AuthMainViewControllerMock.swift */; };
+		5D8A724F2D40374700C4F955 /* SettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A724E2D40374700C4F955 /* SettingsProvider.swift */; };
+		5D8F14FE2D3C4C5D00393906 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8F14FD2D3C4C5D00393906 /* SettingsViewController.xib */; };
+		5D8F14FF2D3C4C5D00393906 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F14FC2D3C4C5D00393906 /* SettingsViewController.swift */; };
+		5D8F15022D3C4CD900393906 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F15012D3C4CD900393906 /* SettingsController.swift */; };
+		5D92FEB62CCC36CF0016BF31 /* PlantsForFirestoreMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D92FEB52CCC36CF0016BF31 /* PlantsForFirestoreMock.json */; };
+		5D92FEB82CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D92FEB72CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift */; };
+		5D92FEBA2CD031240016BF31 /* ItemPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D92FEB92CD031240016BF31 /* ItemPlant.swift */; };
+		5DBBB6B32C94E29D0035E3B8 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */; };
+		5DBBB6B52C9A2E170035E3B8 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B42C9A2E170035E3B8 /* Nameable.swift */; };
+		5DBBB6B92CA88FF00035E3B8 /* FirestoreAddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B82CA88FF00035E3B8 /* FirestoreAddData.swift */; };
+		5DBBB6BC2CACA6A00035E3B8 /* PlantForFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6BB2CACA6A00035E3B8 /* PlantForFirestore.swift */; };
+		5DBBB6BE2CACAD9D0035E3B8 /* FirestoreUtilts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6BD2CACAD9D0035E3B8 /* FirestoreUtilts.swift */; };
+		5DBBB6C02CAF4A070035E3B8 /* FirestoreEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6BF2CAF4A070035E3B8 /* FirestoreEditData.swift */; };
+		5DBBB6C22CB0929D0035E3B8 /* FirestoreDeleteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6C12CB0929D0035E3B8 /* FirestoreDeleteData.swift */; };
+		5DBBB6C42CB09A310035E3B8 /* FirestoreGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6C32CB09A310035E3B8 /* FirestoreGetData.swift */; };
+		5DBBB6C62CB1CFBF0035E3B8 /* FavouritePlantInFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6C52CB1CFBE0035E3B8 /* FavouritePlantInFirestore.swift */; };
+		5DBFAC542CBDC8260026ABA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DBFAC532CBDC8260026ABA9 /* GoogleService-Info.plist */; };
+		5DBFAC6D2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBFAC6B2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.swift */; };
+		5DBFAC6E2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBFAC6C2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.xib */; };
+		5DBFAC712CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBFAC6F2CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.swift */; };
+		5DBFAC722CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBFAC702CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.xib */; };
 		5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */; };
 		5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */; };
 		5DCE87F92BC4641800F853B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */; };
@@ -97,7 +119,6 @@
 		5DCE88172BC4A49900F853B5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88162BC4A49900F853B5 /* FirebaseAuth */; };
 		5DCE881A2BC5C69100F853B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88192BC5C69100F853B5 /* GoogleSignIn */; };
 		5DCE881C2BC5C69100F853B5 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE881B2BC5C69100F853B5 /* GoogleSignInSwift */; };
-		5DCE881E2BC5C8C000F853B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */; };
 		5DCE88402BC8547500F853B5 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE883F2BC8547500F853B5 /* FirebaseCrashlytics */; };
 		5DCE88432BC86B4900F853B5 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88422BC86B4900F853B5 /* FirebaseRemoteConfig */; };
 		5DCE88452BC86B4900F853B5 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCE88442BC86B4900F853B5 /* FirebaseRemoteConfigSwift */; };
@@ -107,19 +128,22 @@
 		5DCE88522BC9ED1200F853B5 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */; };
 		5DCE88542BC9EEA200F853B5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */; };
 		5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88552BCB261400F853B5 /* String+Extension.swift */; };
+		5DE5C4B32CB9CC490012DA15 /* PlantDetailsFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE5C4B22CB9CC480012DA15 /* PlantDetailsFirestore.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5D8834A82BD0712600A46774 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5DCE87E12BC4641500F853B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5DCE87E82BC4641500F853B5;
-			remoteInfo = GardenGuide;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		5D0AB8AE2CC6F41E00610D8E /* GardenPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlant.swift; path = GardenGuide/UserGardenView/Model/GardenPlant.swift; sourceTree = SOURCE_ROOT; };
+		5D0AB8B22CC6F47000610D8E /* IrrigationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrrigationStatus.swift; sourceTree = "<group>"; };
+		5D0AB8BD2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		5D0AB8BF2CC6FCA700610D8E /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		5D0AB8C12CC6FD2200610D8E /* LineCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionReusableView.swift; sourceTree = "<group>"; };
+		5D0AB8C32CC6FDB900610D8E /* UserGardenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenController.swift; sourceTree = "<group>"; };
+		5D0AB8C62CC6FFA300610D8E /* UserGardenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenProvider.swift; sourceTree = "<group>"; };
+		5D0AB8C82CC7003C00610D8E /* UserGardenProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenProviderMock.swift; sourceTree = "<group>"; };
+		5D0AB8CA2CC7005900610D8E /* UserGardenProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenProviderProtocol.swift; sourceTree = "<group>"; };
+		5D0AB8CE2CC7038D00610D8E /* FavouritePlantsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavouritePlantsMock.json; sourceTree = "<group>"; };
+		5D0AB8D02CC708F400610D8E /* FavouritePlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlant.swift; sourceTree = "<group>"; };
+		5D0AB8D22CC99F8300610D8E /* GardenPlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCell.swift; sourceTree = "<group>"; };
 		5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGardenViewController.swift; sourceTree = "<group>"; };
 		5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserGarden.storyboard; sourceTree = "<group>"; };
 		5D14614B2BEAE30100E85D50 /* CollectionTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTabsView.swift; sourceTree = "<group>"; };
@@ -142,6 +166,11 @@
 		5D1461792BF179B400E85D50 /* PlantResultsByImageSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlantResultsByImageSearch.json; sourceTree = "<group>"; };
 		5D14617E2BF2CEEB00E85D50 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		5D1461802BF2CF1C00E85D50 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		5D23F1B62C5055EA002A8499 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		5D2945AD2D12158B006A33D8 /* AddIrrigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIrrigationViewController.swift; sourceTree = "<group>"; };
+		5D2945AE2D12158B006A33D8 /* AddIrrigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIrrigationViewController.xib; sourceTree = "<group>"; };
+		5D2945B12D179C4A006A33D8 /* FavouritePlantsNameMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavouritePlantsNameMock.json; sourceTree = "<group>"; };
+		5D53AAE62D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavouritePlantsUsingTextSearch.json; sourceTree = "<group>"; };
 		5D595B952C4078C8004564A5 /* PlantDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailsController.swift; sourceTree = "<group>"; };
 		5D595B972C4078C8004564A5 /* PlantDetailsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailsProvider.swift; sourceTree = "<group>"; };
 		5D595B982C4078C8004564A5 /* PlantDetailsProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailsProviderMock.swift; sourceTree = "<group>"; };
@@ -178,18 +207,29 @@
 		5D595BE92C407CFF004564A5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5D7A65FA2BCDB8A100BE0341 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
 		5D7A65FC2BCDB91D00BE0341 /* NetworkErrorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebase.swift; sourceTree = "<group>"; };
-		5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainSnapshotTests.swift; sourceTree = "<group>"; };
-		5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GardenGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8828142D3AF0B4005FB93C /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
-		5D8834C12BD1B62A00A46774 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		5D8834C52BD30C9600A46774 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
-		5D8834C72BD3133E00A46774 /* UIButtonExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensionTests.swift; sourceTree = "<group>"; };
-		5D8834CB2BD3177800A46774 /* ProviderTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTypeTests.swift; sourceTree = "<group>"; };
-		5D8834CD2BD31BCD00A46774 /* SignUpErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpErrorTests.swift; sourceTree = "<group>"; };
-		5D8834CF2BD3208D00A46774 /* NetworkErrorFirebaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebaseTests.swift; sourceTree = "<group>"; };
-		5D8834D12BD3271900A46774 /* AuthMainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainViewControllerTests.swift; sourceTree = "<group>"; };
-		5D9B188F2BD5CC7E00E9903F /* AuthMainControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainControllerTests.swift; sourceTree = "<group>"; };
-		5D9B18922BD9C1BD00E9903F /* AuthMainViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainViewControllerMock.swift; sourceTree = "<group>"; };
+		5D8A724E2D40374700C4F955 /* SettingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProvider.swift; sourceTree = "<group>"; };
+		5D8F14FC2D3C4C5D00393906 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5D8F14FD2D3C4C5D00393906 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		5D8F15012D3C4CD900393906 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		5D92FEB52CCC36CF0016BF31 /* PlantsForFirestoreMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlantsForFirestoreMock.json; sourceTree = "<group>"; };
+		5D92FEB72CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrrigationInformationForFirestore.swift; sourceTree = "<group>"; };
+		5D92FEB92CD031240016BF31 /* ItemPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPlant.swift; sourceTree = "<group>"; };
+		5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
+		5DBBB6B42C9A2E170035E3B8 /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		5DBBB6B82CA88FF00035E3B8 /* FirestoreAddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAddData.swift; sourceTree = "<group>"; };
+		5DBBB6BB2CACA6A00035E3B8 /* PlantForFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantForFirestore.swift; sourceTree = "<group>"; };
+		5DBBB6BD2CACAD9D0035E3B8 /* FirestoreUtilts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUtilts.swift; sourceTree = "<group>"; };
+		5DBBB6BF2CAF4A070035E3B8 /* FirestoreEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEditData.swift; sourceTree = "<group>"; };
+		5DBBB6C12CB0929D0035E3B8 /* FirestoreDeleteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDeleteData.swift; sourceTree = "<group>"; };
+		5DBBB6C32CB09A310035E3B8 /* FirestoreGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreGetData.swift; sourceTree = "<group>"; };
+		5DBBB6C52CB1CFBE0035E3B8 /* FavouritePlantInFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlantInFirestore.swift; sourceTree = "<group>"; };
+		5DBFAC532CBDC8260026ABA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DBFAC6B2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlantCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DBFAC6C2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritePlantCollectionViewCell.xib; sourceTree = "<group>"; };
+		5DBFAC6F2CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DBFAC702CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		5DCE87E92BC4641500F853B5 /* GardenGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GardenGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,28 +240,14 @@
 		5DCE880B2BC4756300F853B5 /* GardenGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenGuideViewController.swift; sourceTree = "<group>"; };
 		5DCE880D2BC4758600F853B5 /* GardenGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GardenGuide.storyboard; sourceTree = "<group>"; };
 		5DCE88102BC4876E00F853B5 /* ProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
-		5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DCE884D2BC885AE00F853B5 /* AuthMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainController.swift; sourceTree = "<group>"; };
 		5DCE88512BC9ED1200F853B5 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DCE88552BCB261400F853B5 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5DE5C4B22CB9CC480012DA15 /* PlantDetailsFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsFirestore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5D8834A12BD0712600A46774 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D8834B22BD07B4A00A46774 /* FirebaseAnalytics in Frameworks */,
-				5D8834B02BD07AF100A46774 /* FirebaseAuth in Frameworks */,
-				5D8834B42BD07B9900A46774 /* FirebaseFirestore in Frameworks */,
-				5D7AC0502BE1A8B3003EF2C9 /* SnapshotTesting in Frameworks */,
-				5D8834B82BD07C2300A46774 /* FirebaseRemoteConfig in Frameworks */,
-				5D7AC04E2BE1A8B3003EF2C9 /* InlineSnapshotTesting in Frameworks */,
-				5D8834BC2BD07C6500A46774 /* GoogleSignIn in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DCE87E62BC4641500F853B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +269,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D0AB8B02CC6F43600610D8E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5D0AB8C32CC6FDB900610D8E /* UserGardenController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D0AB8B12CC6F44200610D8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D0AB8C52CC6FF6C00610D8E /* Provider */,
+				5D0AB8AE2CC6F41E00610D8E /* GardenPlant.swift */,
+				5D0AB8D02CC708F400610D8E /* FavouritePlant.swift */,
+				5D0AB8D22CC99F8300610D8E /* GardenPlantCell.swift */,
+				5D0AB8B22CC6F47000610D8E /* IrrigationStatus.swift */,
+				5D92FEB92CD031240016BF31 /* ItemPlant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D0AB8B42CC6F6E800610D8E /* SupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				5D0AB8BD2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift */,
+				5D0AB8BF2CC6FCA700610D8E /* HeaderCollectionReusableView.swift */,
+				5D0AB8C12CC6FD2200610D8E /* LineCollectionReusableView.swift */,
+			);
+			path = SupplementaryViews;
+			sourceTree = "<group>";
+		};
+		5D0AB8C52CC6FF6C00610D8E /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5D0AB8CA2CC7005900610D8E /* UserGardenProviderProtocol.swift */,
+				5D0AB8C62CC6FFA300610D8E /* UserGardenProvider.swift */,
+				5D0AB8C82CC7003C00610D8E /* UserGardenProviderMock.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		5D14613E2BE2F8B300E85D50 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,9 +323,9 @@
 		5D14613F2BE2F8E300E85D50 /* UserGardenView */ = {
 			isa = PBXGroup;
 			children = (
-				5D1461452BE2F94900E85D50 /* Controller */,
+				5D0AB8B02CC6F43600610D8E /* Controller */,
 				5D1461442BE2F94100E85D50 /* View */,
-				5D1461432BE2F93900E85D50 /* Model */,
+				5D0AB8B12CC6F44200610D8E /* Model */,
 			);
 			path = UserGardenView;
 			sourceTree = "<group>";
@@ -290,27 +357,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5D1461432BE2F93900E85D50 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5D1461442BE2F94100E85D50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5D2945AC2D1214FB006A33D8 /* ComplementaryViews */,
+				5DBFAC662CC1BF500026ABA9 /* CollectionView */,
 				5D1461462BE2FAAA00E85D50 /* UserGardenViewController.swift */,
 				5D1461482BE2FACE00E85D50 /* UserGarden.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5D1461452BE2F94900E85D50 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		5D14614A2BEAE27C00E85D50 /* CollectionView */ = {
@@ -335,6 +390,7 @@
 		5D1461602BEC21AB00E85D50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DBBB6BA2CACA5090035E3B8 /* PlantsForFirestore */,
 				5D595BC32C407A65004564A5 /* PlantsPerText */,
 				5D595BBF2C407A5E004564A5 /* Irrigation */,
 				5D1461612BEC21EF00E85D50 /* PlantsPerImage */,
@@ -362,6 +418,10 @@
 				5D595BE22C407CD8004564A5 /* PlantNameResultsUsingTextSearch.json */,
 				5D595BE02C407CD2004564A5 /* PlantInformationMock.json */,
 				5D1461792BF179B400E85D50 /* PlantResultsByImageSearch.json */,
+				5D0AB8CE2CC7038D00610D8E /* FavouritePlantsMock.json */,
+				5D92FEB52CCC36CF0016BF31 /* PlantsForFirestoreMock.json */,
+				5D2945B12D179C4A006A33D8 /* FavouritePlantsNameMock.json */,
+				5D53AAE62D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -383,6 +443,14 @@
 				5D1461802BF2CF1C00E85D50 /* ServiceLayer.swift */,
 			);
 			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		5D2945AC2D1214FB006A33D8 /* ComplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				5D8F14F22D3C4A9C00393906 /* Watered */,
+			);
+			path = ComplementaryViews;
 			sourceTree = "<group>";
 		};
 		5D595B962C4078C8004564A5 /* Controller */ = {
@@ -458,6 +526,8 @@
 			children = (
 				5D595BB82C4079DD004564A5 /* CoreDataPlant.swift */,
 				5D595BB92C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld */,
+				5D23F1B62C5055EA002A8499 /* PersistenceManager.swift */,
+				5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -550,60 +620,129 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		5D7AC0512BE1A900003EF2C9 /* SnapshopTests */ = {
+		5D8F14F22D3C4A9C00393906 /* Watered */ = {
 			isa = PBXGroup;
 			children = (
-				5D7AC0522BE1A971003EF2C9 /* AuthMainSnapshotTests.swift */,
+				5D2945AD2D12158B006A33D8 /* AddIrrigationViewController.swift */,
+				5D2945AE2D12158B006A33D8 /* AddIrrigationViewController.xib */,
 			);
-			path = SnapshopTests;
+			path = Watered;
 			sourceTree = "<group>";
 		};
-		5D8834A52BD0712600A46774 /* GardenGuideTests */ = {
+		5D8F14F82D3C4BE300393906 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				5D8834CA2BD316DF00A46774 /* LoginAuthTests */,
-				5D8834C92BD316C100A46774 /* ExtensionsTests */,
+				5D8F14FB2D3C4C1F00393906 /* View */,
+				5D8F14FA2D3C4C1300393906 /* Model */,
+				5D8F14F92D3C4C0500393906 /* Controller */,
 			);
-			path = GardenGuideTests;
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
-		5D8834C92BD316C100A46774 /* ExtensionsTests */ = {
+		5D8F14F92D3C4C0500393906 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D8834C12BD1B62A00A46774 /* StringExtensionTests.swift */,
-				5D8834C52BD30C9600A46774 /* UIColorExtensionTests.swift */,
-				5D8834C72BD3133E00A46774 /* UIButtonExtensionTests.swift */,
+				5D8F15012D3C4CD900393906 /* SettingsController.swift */,
 			);
-			path = ExtensionsTests;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		5D8834CA2BD316DF00A46774 /* LoginAuthTests */ = {
+		5D8F14FA2D3C4C1300393906 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D7AC0512BE1A900003EF2C9 /* SnapshopTests */,
-				5D9B18912BD9C03F00E9903F /* Mocks */,
-				5D8834CB2BD3177800A46774 /* ProviderTypeTests.swift */,
-				5D8834CD2BD31BCD00A46774 /* SignUpErrorTests.swift */,
-				5D8834CF2BD3208D00A46774 /* NetworkErrorFirebaseTests.swift */,
-				5D8834D12BD3271900A46774 /* AuthMainViewControllerTests.swift */,
-				5D9B188F2BD5CC7E00E9903F /* AuthMainControllerTests.swift */,
+				5D8F15002D3C4C9B00393906 /* Provider */,
 			);
-			path = LoginAuthTests;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5D9B18912BD9C03F00E9903F /* Mocks */ = {
+		5D8F14FB2D3C4C1F00393906 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5D9B18922BD9C1BD00E9903F /* AuthMainViewControllerMock.swift */,
+				5D8F14FC2D3C4C5D00393906 /* SettingsViewController.swift */,
+				5D8F14FD2D3C4C5D00393906 /* SettingsViewController.xib */,
 			);
-			path = Mocks;
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D8F15002D3C4C9B00393906 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A724E2D40374700C4F955 /* SettingsProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		5DBBB6B62CA88EE30035E3B8 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBB6B72CA88EFE0035E3B8 /* CloudFirestore */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		5DBBB6B72CA88EFE0035E3B8 /* CloudFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBB6B82CA88FF00035E3B8 /* FirestoreAddData.swift */,
+				5DBBB6BD2CACAD9D0035E3B8 /* FirestoreUtilts.swift */,
+				5DBBB6BF2CAF4A070035E3B8 /* FirestoreEditData.swift */,
+				5DBBB6C12CB0929D0035E3B8 /* FirestoreDeleteData.swift */,
+				5DBBB6C32CB09A310035E3B8 /* FirestoreGetData.swift */,
+			);
+			path = CloudFirestore;
+			sourceTree = "<group>";
+		};
+		5DBBB6BA2CACA5090035E3B8 /* PlantsForFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBB6BB2CACA6A00035E3B8 /* PlantForFirestore.swift */,
+				5DBBB6C52CB1CFBE0035E3B8 /* FavouritePlantInFirestore.swift */,
+				5DE5C4B22CB9CC480012DA15 /* PlantDetailsFirestore.swift */,
+				5D92FEB72CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift */,
+			);
+			path = PlantsForFirestore;
+			sourceTree = "<group>";
+		};
+		5DBFAC632CC1BEC20026ABA9 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				5D0AB8B42CC6F6E800610D8E /* SupplementaryViews */,
+				5DBFAC652CC1BF2D0026ABA9 /* GardenPlants */,
+				5DBFAC642CC1BEF10026ABA9 /* FavouritePlants */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		5DBFAC642CC1BEF10026ABA9 /* FavouritePlants */ = {
+			isa = PBXGroup;
+			children = (
+				5DBFAC6B2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.swift */,
+				5DBFAC6C2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.xib */,
+			);
+			path = FavouritePlants;
+			sourceTree = "<group>";
+		};
+		5DBFAC652CC1BF2D0026ABA9 /* GardenPlants */ = {
+			isa = PBXGroup;
+			children = (
+				5DBFAC6F2CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.swift */,
+				5DBFAC702CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.xib */,
+			);
+			path = GardenPlants;
+			sourceTree = "<group>";
+		};
+		5DBFAC662CC1BF500026ABA9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5DBFAC632CC1BEC20026ABA9 /* CustomCells */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		5DCE87E02BC4641500F853B5 = {
 			isa = PBXGroup;
 			children = (
 				5DCE87EB2BC4641500F853B5 /* GardenGuide */,
-				5D8834A52BD0712600A46774 /* GardenGuideTests */,
 				5DCE87EA2BC4641500F853B5 /* Products */,
 				5DCE88152BC4A49900F853B5 /* Frameworks */,
 			);
@@ -613,7 +752,6 @@
 			isa = PBXGroup;
 			children = (
 				5DCE87E92BC4641500F853B5 /* GardenGuide.app */,
-				5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -621,21 +759,23 @@
 		5DCE87EB2BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXGroup;
 			children = (
-				5D595BD12C407B84004564A5 /* PlantsSearchView */,
+				5DBBB6B62CA88EE30035E3B8 /* Firebase */,
 				5D595BBA2C4079DD004564A5 /* CoreData */,
-				5D595BA82C4078C8004564A5 /* PlantDetailsView */,
 				5D14616D2BEC292C00E85D50 /* ServiceLayer */,
 				5D1461602BEC21AB00E85D50 /* Model */,
-				5D14613F2BE2F8E300E85D50 /* UserGardenView */,
-				5D14613E2BE2F8B300E85D50 /* SearchView */,
 				5DCE884F2BC9ECD800F853B5 /* Utils */,
+				5D595BA82C4078C8004564A5 /* PlantDetailsView */,
+				5D14613F2BE2F8E300E85D50 /* UserGardenView */,
+				5D8F14F82D3C4BE300393906 /* SettingsView */,
+				5D14613E2BE2F8B300E85D50 /* SearchView */,
+				5D595BD12C407B84004564A5 /* PlantsSearchView */,
 				5DCE880F2BC47EFB00F853B5 /* LoginAuth */,
 				5DCE87EC2BC4641500F853B5 /* AppDelegate.swift */,
 				5DCE87EE2BC4641500F853B5 /* SceneDelegate.swift */,
 				5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */,
 				5D595BB62C4078E8004564A5 /* Assets.xcassets */,
+				5DBFAC532CBDC8260026ABA9 /* GoogleService-Info.plist */,
 				5DCE87FA2BC4641800F853B5 /* Info.plist */,
-				5DCE881D2BC5C8C000F853B5 /* GoogleService-Info.plist */,
 				5DCE880D2BC4758600F853B5 /* GardenGuide.storyboard */,
 			);
 			path = GardenGuide;
@@ -688,12 +828,13 @@
 		5DCE884F2BC9ECD800F853B5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5DCE88502BC9ECFA00F853B5 /* Extensions */,
+				5D1461642BEC246F00E85D50 /* Mock */,
 				5D595BE82C407CFF004564A5 /* MockManagerSingleton.swift */,
 				5D595BE92C407CFF004564A5 /* Notifications.swift */,
 				5D595BE62C407CEC004564A5 /* Constants.swift */,
-				5D1461642BEC246F00E85D50 /* Mock */,
-				5DCE88502BC9ECFA00F853B5 /* Extensions */,
 				5D14616B2BEC288B00E85D50 /* Utils.swift */,
+				5DBBB6B42C9A2E170035E3B8 /* Nameable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -706,6 +847,7 @@
 				5DCE88532BC9EEA200F853B5 /* UIColor+Extension.swift */,
 				5DCE88552BCB261400F853B5 /* String+Extension.swift */,
 				5D8834BF2BD080FA00A46774 /* CharacterSet+Extension.swift */,
+				5D8828142D3AF0B4005FB93C /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -713,33 +855,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D8834A32BD0712600A46774 /* GardenGuideTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D8834AC2BD0712600A46774 /* Build configuration list for PBXNativeTarget "GardenGuideTests" */;
-			buildPhases = (
-				5D8834A02BD0712600A46774 /* Sources */,
-				5D8834A12BD0712600A46774 /* Frameworks */,
-				5D8834A22BD0712600A46774 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D8834A92BD0712600A46774 /* PBXTargetDependency */,
-			);
-			name = GardenGuideTests;
-			packageProductDependencies = (
-				5D8834AF2BD07AF100A46774 /* FirebaseAuth */,
-				5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */,
-				5D8834B32BD07B9900A46774 /* FirebaseFirestore */,
-				5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */,
-				5D8834BB2BD07C6500A46774 /* GoogleSignIn */,
-				5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */,
-				5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */,
-			);
-			productName = GardenGuideTests;
-			productReference = 5D8834A42BD0712600A46774 /* GardenGuideTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		5DCE87E82BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DCE87FD2BC4641800F853B5 /* Build configuration list for PBXNativeTarget "GardenGuide" */;
@@ -781,11 +896,6 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					5D8834A32BD0712600A46774 = {
-						CreatedOnToolsVersion = 14.3.1;
-						LastSwiftMigration = 1430;
-						TestTargetID = 5DCE87E82BC4641500F853B5;
-					};
 					5DCE87E82BC4641500F853B5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -803,7 +913,6 @@
 			packageReferences = (
 				5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				5D14617B2BF2C69D00E85D50 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5DCE87EA2BC4641500F853B5 /* Products */;
@@ -811,25 +920,18 @@
 			projectRoot = "";
 			targets = (
 				5DCE87E82BC4641500F853B5 /* GardenGuide */,
-				5D8834A32BD0712600A46774 /* GardenGuideTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5D8834A22BD0712600A46774 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DCE87E72BC4641500F853B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5D1461512BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.xib in Resources */,
 				5DCE87F92BC4641800F853B5 /* LaunchScreen.storyboard in Resources */,
+				5DBFAC542CBDC8260026ABA9 /* GoogleService-Info.plist in Resources */,
 				5D595BE32C407CD8004564A5 /* PlantNameResultsUsingTextSearch.json in Resources */,
 				5DCE880A2BC474DE00F853B5 /* AuthMain.storyboard in Resources */,
 				5D595BB02C4078C9004564A5 /* ButtonInformationListTableViewCell.xib in Resources */,
@@ -837,11 +939,18 @@
 				5D1461492BE2FACE00E85D50 /* UserGarden.storyboard in Resources */,
 				5D595BDE2C407C29004564A5 /* RandomPlantsTableViewCell.xib in Resources */,
 				5D595BB22C4078C9004564A5 /* ButtonDetailsViewController.xib in Resources */,
+				5D0AB8CF2CC7038D00610D8E /* FavouritePlantsMock.json in Resources */,
 				5D595BE12C407CD2004564A5 /* PlantInformationMock.json in Resources */,
+				5D2945B22D179C4B006A33D8 /* FavouritePlantsNameMock.json in Resources */,
+				5D8F14FE2D3C4C5D00393906 /* SettingsViewController.xib in Resources */,
+				5D2945AF2D12158B006A33D8 /* AddIrrigationViewController.xib in Resources */,
+				5D92FEB62CCC36CF0016BF31 /* PlantsForFirestoreMock.json in Resources */,
 				5D595BD62C407B84004564A5 /* SearchPlantForTableViewCell.xib in Resources */,
-				5DCE881E2BC5C8C000F853B5 /* GoogleService-Info.plist in Resources */,
+				5DBFAC6E2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.xib in Resources */,
+				5D53AAE72D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json in Resources */,
 				5D595BB52C4078C9004564A5 /* PlantDetailsViewController.xib in Resources */,
 				5D595BB72C4078E8004564A5 /* Assets.xcassets in Resources */,
+				5DBFAC722CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.xib in Resources */,
 				5D14617A2BF179B400E85D50 /* PlantResultsByImageSearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,27 +983,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5D8834A02BD0712600A46774 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D8834C32BD1CB6B00A46774 /* StringExtensionTests.swift in Sources */,
-				5D8834C62BD30C9600A46774 /* UIColorExtensionTests.swift in Sources */,
-				5D7AC0532BE1A971003EF2C9 /* AuthMainSnapshotTests.swift in Sources */,
-				5D8834CC2BD3177800A46774 /* ProviderTypeTests.swift in Sources */,
-				5D9B18932BD9C1BD00E9903F /* AuthMainViewControllerMock.swift in Sources */,
-				5D8834C82BD3133E00A46774 /* UIButtonExtensionTests.swift in Sources */,
-				5D8834D02BD3208D00A46774 /* NetworkErrorFirebaseTests.swift in Sources */,
-				5D8834CE2BD31BCD00A46774 /* SignUpErrorTests.swift in Sources */,
-				5D9B18902BD5CC7E00E9903F /* AuthMainControllerTests.swift in Sources */,
-				5D8834D22BD3271900A46774 /* AuthMainViewControllerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DCE87E52BC4641500F853B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0AB8C72CC6FFA300610D8E /* UserGardenProvider.swift in Sources */,
 				5D595BAF2C4078C9004564A5 /* ButtonInformationListTableViewCell.swift in Sources */,
 				5D595BD52C407B84004564A5 /* SearchPlantForTableViewCell.swift in Sources */,
 				5D595BBD2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld in Sources */,
@@ -902,68 +995,90 @@
 				5D595BBC2C4079DD004564A5 /* CoreDataPlant.swift in Sources */,
 				5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */,
 				5D595BC42C407A65004564A5 /* SimilarPlantsName.swift in Sources */,
+				5D0AB8C92CC7003C00610D8E /* UserGardenProviderMock.swift in Sources */,
 				5D595BAD2C4078C9004564A5 /* DetailsButtonIconEnum.swift in Sources */,
 				5D595BDD2C407C29004564A5 /* RandomPlantsTableViewCell.swift in Sources */,
 				5D595BD72C407B84004564A5 /* PlantSearchListViewController.swift in Sources */,
 				5D14615B2BEC1D0400E85D50 /* SimilarImage.swift in Sources */,
+				5DBBB6C22CB0929D0035E3B8 /* FirestoreDeleteData.swift in Sources */,
 				5D1461572BEC1A4B00E85D50 /* IsPlant.swift in Sources */,
 				5D1461532BEC185300E85D50 /* SimilarPlants.swift in Sources */,
 				5D7A65FD2BCDB91D00BE0341 /* NetworkErrorFirebase.swift in Sources */,
+				5D8828152D3AF0B4005FB93C /* UILabel+Extension.swift in Sources */,
+				5DBBB6B32C94E29D0035E3B8 /* CoreDataUtils.swift in Sources */,
 				5D595BAA2C4078C9004564A5 /* PlantDetailsProvider.swift in Sources */,
+				5D0AB8AF2CC6F41E00610D8E /* GardenPlant.swift in Sources */,
 				5D595BC52C407A65004564A5 /* SuggestedPlantName.swift in Sources */,
 				5D14617F2BF2CEEB00E85D50 /* RequestModel.swift in Sources */,
 				5D14616C2BEC288B00E85D50 /* Utils.swift in Sources */,
 				5D14616F2BEC296100E85D50 /* NetworkError.swift in Sources */,
+				5D2945B02D12158B006A33D8 /* AddIrrigationViewController.swift in Sources */,
+				5DBFAC712CC1C0AA0026ABA9 /* GardenPlantCollectionViewCell.swift in Sources */,
+				5D0AB8BE2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift in Sources */,
+				5D92FEBA2CD031240016BF31 /* ItemPlant.swift in Sources */,
 				5D14615D2BEC1D9700E85D50 /* PlantDetails.swift in Sources */,
 				5D14616A2BEC264500E85D50 /* SearchViewProviderMock.swift in Sources */,
 				5D595BEA2C407CFF004564A5 /* MockManagerSingleton.swift in Sources */,
+				5DBBB6C42CB09A310035E3B8 /* FirestoreGetData.swift in Sources */,
+				5D8F14FF2D3C4C5D00393906 /* SettingsViewController.swift in Sources */,
+				5D0AB8CB2CC7005900610D8E /* UserGardenProviderProtocol.swift in Sources */,
 				5D595BE52C407CE1004564A5 /* UIImage+Extension.swift in Sources */,
 				5DCE88082BC474BF00F853B5 /* AuthMainViewController.swift in Sources */,
 				5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */,
 				5D14614C2BEAE30100E85D50 /* CollectionTabsView.swift in Sources */,
 				5D1461812BF2CF1C00E85D50 /* ServiceLayer.swift in Sources */,
+				5DBBB6BE2CACAD9D0035E3B8 /* FirestoreUtilts.swift in Sources */,
+				5DBBB6B52C9A2E170035E3B8 /* Nameable.swift in Sources */,
 				5D1461592BEC1C0400E85D50 /* SuggestedPlant.swift in Sources */,
 				5D8834C02BD080FA00A46774 /* CharacterSet+Extension.swift in Sources */,
+				5DBBB6C62CB1CFBF0035E3B8 /* FavouritePlantInFirestore.swift in Sources */,
 				5D595BD22C407B84004564A5 /* PlantSearchListController.swift in Sources */,
 				5D595BB32C4078C9004564A5 /* ButtonsIconList.swift in Sources */,
+				5DBFAC6D2CC1C0770026ABA9 /* FavouritePlantCollectionViewCell.swift in Sources */,
 				5D1461472BE2FAAA00E85D50 /* UserGardenViewController.swift in Sources */,
 				5D595BC02C407A5E004564A5 /* IrrigationInformation.swift in Sources */,
 				5D1461762BED69B900E85D50 /* SectionHeaderView.swift in Sources */,
+				5DBBB6C02CAF4A070035E3B8 /* FirestoreEditData.swift in Sources */,
 				5D595BAC2C4078C9004564A5 /* DetailsButtonIcon.swift in Sources */,
 				5DCE88112BC4876E00F853B5 /* ProviderType.swift in Sources */,
 				5D1461552BEC198500E85D50 /* ResultOfSimilarPlants.swift in Sources */,
+				5D0AB8D12CC708F400610D8E /* FavouritePlant.swift in Sources */,
 				5D1461632BEC22DC00E85D50 /* PlantsByImageSearch.swift in Sources */,
 				5DCE880C2BC4756300F853B5 /* GardenGuideViewController.swift in Sources */,
 				5D595BEB2C407CFF004564A5 /* Notifications.swift in Sources */,
+				5D0AB8C22CC6FD2200610D8E /* LineCollectionReusableView.swift in Sources */,
 				5DCE87ED2BC4641500F853B5 /* AppDelegate.swift in Sources */,
 				5D14615F2BEC211800E85D50 /* Watered.swift in Sources */,
 				5D595BD32C407B84004564A5 /* PlantSearchListProvider.swift in Sources */,
+				5D0AB8B32CC6F47000610D8E /* IrrigationStatus.swift in Sources */,
 				5DCE884E2BC885AE00F853B5 /* AuthMainController.swift in Sources */,
 				5D595BDF2C407C29004564A5 /* SectionTitleView.swift in Sources */,
+				5D0AB8D32CC99F8300610D8E /* GardenPlantCell.swift in Sources */,
+				5D0AB8C02CC6FCA700610D8E /* HeaderCollectionReusableView.swift in Sources */,
+				5DBBB6BC2CACA6A00035E3B8 /* PlantForFirestore.swift in Sources */,
+				5DBBB6B92CA88FF00035E3B8 /* FirestoreAddData.swift in Sources */,
 				5D1461712BEC330C00E85D50 /* SearchViewController.swift in Sources */,
 				5D1461502BEAE39A00E85D50 /* PlantsFoundCollectionViewCell.swift in Sources */,
+				5D8F15022D3C4CD900393906 /* SettingsController.swift in Sources */,
 				5D595BE72C407CEC004564A5 /* Constants.swift in Sources */,
 				5DCE87EF2BC4641500F853B5 /* SceneDelegate.swift in Sources */,
+				5D0AB8C42CC6FDB900610D8E /* UserGardenController.swift in Sources */,
 				5D595BB42C4078C9004564A5 /* PlantDetailsViewController.swift in Sources */,
+				5D8A724F2D40374700C4F955 /* SettingsProvider.swift in Sources */,
 				5DCE88522BC9ED1200F853B5 /* UIButton+Extension.swift in Sources */,
+				5D23F1B72C5055EA002A8499 /* PersistenceManager.swift in Sources */,
 				5D595BB12C4078C9004564A5 /* ButtonDetailsViewController.swift in Sources */,
 				5DCE88542BC9EEA200F853B5 /* UIColor+Extension.swift in Sources */,
 				5D595BD42C407B84004564A5 /* PlantSearchListProviderMock.swift in Sources */,
 				5D1461682BEC260D00E85D50 /* SearchViewProvider.swift in Sources */,
+				5D92FEB82CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift in Sources */,
 				5D595BAB2C4078C9004564A5 /* PlantDetailsProviderMock.swift in Sources */,
+				5DE5C4B32CB9CC490012DA15 /* PlantDetailsFirestore.swift in Sources */,
 				5D595BAE2C4078C9004564A5 /* PlantInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5D8834A92BD0712600A46774 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5DCE87E82BC4641500F853B5 /* GardenGuide */;
-			targetProxy = 5D8834A82BD0712600A46774 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */ = {
@@ -977,44 +1092,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5D8834AA2BD0712600A46774 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DonovanZJaimes.GardenGuideTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
-			};
-			name = Debug;
-		};
-		5D8834AB2BD0712600A46774 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DonovanZJaimes.GardenGuideTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
-			};
-			name = Release;
-		};
 		5DCE87FB2BC4641800F853B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1188,15 +1265,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5D8834AC2BD0712600A46774 /* Build configuration list for PBXNativeTarget "GardenGuideTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D8834AA2BD0712600A46774 /* Debug */,
-				5D8834AB2BD0712600A46774 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		5DCE87E42BC4641500F853B5 /* Build configuration list for PBXProject "GardenGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1226,14 +1294,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1257,41 +1317,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D14617B2BF2C69D00E85D50 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		5D7AC04D2BE1A8B3003EF2C9 /* InlineSnapshotTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
-			productName = InlineSnapshotTesting;
-		};
-		5D7AC04F2BE1A8B3003EF2C9 /* SnapshotTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D7AC04C2BE1A8B3003EF2C9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
-			productName = SnapshotTesting;
-		};
-		5D8834AF2BD07AF100A46774 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		5D8834B12BD07B4A00A46774 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		5D8834B32BD07B9900A46774 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		5D8834B72BD07C2300A46774 /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		5D8834BB2BD07C6500A46774 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
 		};
 		5DCE88032BC46BD500F853B5 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
