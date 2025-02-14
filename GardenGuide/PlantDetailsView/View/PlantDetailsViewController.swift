@@ -254,7 +254,7 @@ class PlantDetailsViewController: UIViewController {
     @IBAction func heartButtonPressed(_ sender: UIButton) {
         //save or delete the plant from the favourites in CoreData
         CoreDataUtils.shared.addPlantToFavorites(name: plantInformation.name, selectedForFavorites: !sender.isSelected) { text in
-            print(text.rawValue)
+            //print(text.rawValue)
             //Perform an action depending on the result
             let favouritePlant = FavouritePlant(name: plantInformation.name, image: plantInformation.details.image?.url ?? Constants.imagePlant, min: self.plantInformation.details.watering?.min ?? 1, max: plantInformation.details.watering?.max ?? 1)
             switch text {

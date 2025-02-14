@@ -56,11 +56,11 @@ class ServiceLayer {
             
             let decoder = JSONDecoder()
             do{
-                print("BRUTO")
-                print(String(data: data, encoding: .utf8)!)
+                //print("BRUTO")
+                //print(String(data: data, encoding: .utf8)!)
                 let decodeData = try decoder.decode(T.self, from: data)
-                print("LIMPIO")
-                print(decodeData)
+                //print("LIMPIO")
+                //print(decodeData)
                 return decodeData
             }catch{
                 print(error)

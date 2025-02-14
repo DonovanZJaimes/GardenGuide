@@ -64,7 +64,7 @@ class UserGardenController {
     func getGardenPlantFromFavouritePlant(name: String, watered: IrrigationInformation) async throws -> GardenPlant {
         //We tried to obtain the plant from Core Data
         if let gardenPlant = isThePlantInTheCoreData(name: name, watered: watered) {
-            print("It was ready in coreData")
+            //print("It was ready in coreData")
             return gardenPlant
         }
        
@@ -141,7 +141,7 @@ class UserGardenController {
     //Attempting to save GardenPlants in CoreData
     func savePlantsInCoreData(_ plants: [GardenPlant]){
         guard CoreDataUtils.shared.savePlantsByImageSearch else {
-            print("New plants are not saved in the history")
+            //print("New plants are not saved in the history")
             return }
         
         plants.forEach { plant in

@@ -346,7 +346,7 @@ class UserGardenViewController: UIViewController{
 //MARK: Extension of UserGardenView Controller
 extension UserGardenViewController: UserGardenControllerDelegate {
     func getNewGardenPlantFromFavouritePlant() {
-       print("getNewGardenPlantFromFavouritePlant")
+      // print("getNewGardenPlantFromFavouritePlant")
     }
     
     //get the GardenPlants to CollectionView

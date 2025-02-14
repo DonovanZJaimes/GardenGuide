@@ -110,7 +110,7 @@ class GardenGuideViewController: UIViewController {
         if let email = defaults.value(forKey: "email") as? String, let provider = defaults.value(forKey: "provider") as? String, let providerType = ProviderType.init(rawValue: provider) {
             self.email = email
             self.provider =  providerType
-            print("User with email: " + email + "and provider: " + provider)
+            //print("User with email: " + email + "and provider: " + provider)
         }
         //save data
         saveUser(email: email, provider: provider)

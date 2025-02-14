@@ -150,7 +150,7 @@ extension CollectionTabsView: PlantsFoundCollectionViewCellDelegate {
         var isSelect: Bool = true
         //save or delete the plant from the favourites in CoreData
         CoreDataUtils.shared.addPlantToFavorites(name: name, selectedForFavorites: isSelected) { text in
-            print(text.rawValue)
+            //print(text.rawValue)
             //Perform an action depending on the result
             switch text {
             case .save:

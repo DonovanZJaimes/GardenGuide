@@ -144,7 +144,7 @@ struct CoreDataUtils {
         
         //Handling the case where the plant is not found
         guard let plant = plantEntity else {
-            print("Planta no encontrada")
+            print("plant not found")
             return
         }
         
@@ -170,7 +170,6 @@ struct CoreDataUtils {
                 //Check if the plant has already been modified.
                 guard verifyWatered(plant: plant) else {
                     callback(ResultForFavorites.dontDelete)
-                    print("jijii")
                     return
                 }
                 plant.isAdded = false
