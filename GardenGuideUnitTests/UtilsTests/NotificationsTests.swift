@@ -6,11 +6,12 @@
 //
 
 import XCTest
+@testable import GardenGuide
 
 final class NotificationsTests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        Notifications.shared.newPlants.removeAll()
     }
 
     override func tearDownWithError() throws {
@@ -33,3 +34,32 @@ final class NotificationsTests: XCTestCase {
     }
 
 }
+
+//Notifications.shared.newPlants.append("new plant")
+/**
+ 
+ if Notifications.shared.newPlants.count != 0 {
+     Notifications.shared.newPlants.removeLast()
+ }
+ 
+ 
+ Notifications.shared.newPlants.removeAll()
+ 
+ 
+ 
+ @objc func updateItemUserGardenView() {
+     /*if Notifications.shared.newPlants.count != nil {
+         //tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
+     }*/
+     let value = Notifications.shared.newPlants.count
+     tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
+ }
+ 
+ 
+ func configItemUserGardenView(){
+     NotificationCenter.default.addObserver(self, selector: #selector(updateItemUserGardenView), name: Notifications.plantsUpdateNotification, object: nil)
+     
+     tabBarItemUserGardenView = (window?.rootViewController as? UITabBarController)?.viewControllers?[1].tabBarItem
+     
+ }
+ */
