@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D09ED202D61461C0085ABF7 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D09ED1F2D61461C0085ABF7 /* InlineSnapshotTesting */; };
 		5D0AB8AF2CC6F41E00610D8E /* GardenPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8AE2CC6F41E00610D8E /* GardenPlant.swift */; };
 		5D0AB8B32CC6F47000610D8E /* IrrigationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8B22CC6F47000610D8E /* IrrigationStatus.swift */; };
 		5D0AB8BE2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0AB8BD2CC6FB6E00610D8E /* SubHeaderCollectionReusableView.swift */; };
@@ -46,6 +47,7 @@
 		5D2945AF2D12158B006A33D8 /* AddIrrigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945AE2D12158B006A33D8 /* AddIrrigationViewController.xib */; };
 		5D2945B02D12158B006A33D8 /* AddIrrigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945AD2D12158B006A33D8 /* AddIrrigationViewController.swift */; };
 		5D2945B22D179C4B006A33D8 /* FavouritePlantsNameMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945B12D179C4A006A33D8 /* FavouritePlantsNameMock.json */; };
+		5D3199FB2D63C415002DCA17 /* GardenGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3199FA2D63C415002DCA17 /* GardenGuideUITests.swift */; };
 		5D53AAE72D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D53AAE62D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json */; };
 		5D595BA92C4078C9004564A5 /* PlantDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595B952C4078C8004564A5 /* PlantDetailsController.swift */; };
 		5D595BAA2C4078C9004564A5 /* PlantDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595B972C4078C8004564A5 /* PlantDetailsProvider.swift */; };
@@ -92,6 +94,18 @@
 		5D92FEB62CCC36CF0016BF31 /* PlantsForFirestoreMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D92FEB52CCC36CF0016BF31 /* PlantsForFirestoreMock.json */; };
 		5D92FEB82CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D92FEB72CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift */; };
 		5D92FEBA2CD031240016BF31 /* ItemPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D92FEB92CD031240016BF31 /* ItemPlant.swift */; };
+		5DB7D2F72D5FDF3100FFACF4 /* UIButtonExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D2F62D5FDF3100FFACF4 /* UIButtonExtensionTests.swift */; };
+		5DB7D2F92D5FE07D00FFACF4 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D2F82D5FE07D00FFACF4 /* UIColorExtensionTests.swift */; };
+		5DB7D2FB2D5FE0DE00FFACF4 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D2FA2D5FE0DE00FFACF4 /* StringExtensionTests.swift */; };
+		5DB7D2FD2D5FE28D00FFACF4 /* MockManagerSingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D2FC2D5FE28D00FFACF4 /* MockManagerSingletonTests.swift */; };
+		5DB7D2FF2D5FE37A00FFACF4 /* NotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D2FE2D5FE37A00FFACF4 /* NotificationsTests.swift */; };
+		5DB7D3032D5FE6A000FFACF4 /* AuthMainSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D3022D5FE6A000FFACF4 /* AuthMainSnapshotTests.swift */; };
+		5DB7D3082D5FE7A500FFACF4 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5DB7D3072D5FE7A500FFACF4 /* SnapshotTesting */; };
+		5DB7D30A2D5FE7A500FFACF4 /* SnapshotTestingCustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = 5DB7D3092D5FE7A500FFACF4 /* SnapshotTestingCustomDump */; };
+		5DB7D30C2D5FE96400FFACF4 /* NetworkErrorFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D30B2D5FE96400FFACF4 /* NetworkErrorFirebaseTests.swift */; };
+		5DB7D30E2D5FED9500FFACF4 /* SignUpErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D30D2D5FED9500FFACF4 /* SignUpErrorTests.swift */; };
+		5DB7D3102D5FEE1B00FFACF4 /* ProviderTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D30F2D5FEE1B00FFACF4 /* ProviderTypeTests.swift */; };
+		5DB7D3162D5FEF4500FFACF4 /* AuthMainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7D3152D5FEF4500FFACF4 /* AuthMainViewControllerTests.swift */; };
 		5DBBB6B32C94E29D0035E3B8 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */; };
 		5DBBB6B52C9A2E170035E3B8 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B42C9A2E170035E3B8 /* Nameable.swift */; };
 		5DBBB6B92CA88FF00035E3B8 /* FirestoreAddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBB6B82CA88FF00035E3B8 /* FirestoreAddData.swift */; };
@@ -130,6 +144,23 @@
 		5DCE88562BCB261400F853B5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE88552BCB261400F853B5 /* String+Extension.swift */; };
 		5DE5C4B32CB9CC490012DA15 /* PlantDetailsFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE5C4B22CB9CC480012DA15 /* PlantDetailsFirestore.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D3199F52D63C0FE002DCA17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DCE87E12BC4641500F853B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DCE87E82BC4641500F853B5;
+			remoteInfo = GardenGuide;
+		};
+		5DB7D2EC2D5FDC9600FFACF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DCE87E12BC4641500F853B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DCE87E82BC4641500F853B5;
+			remoteInfo = GardenGuide;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D0AB8AE2CC6F41E00610D8E /* GardenPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlant.swift; path = GardenGuide/UserGardenView/Model/GardenPlant.swift; sourceTree = SOURCE_ROOT; };
@@ -170,6 +201,8 @@
 		5D2945AD2D12158B006A33D8 /* AddIrrigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIrrigationViewController.swift; sourceTree = "<group>"; };
 		5D2945AE2D12158B006A33D8 /* AddIrrigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIrrigationViewController.xib; sourceTree = "<group>"; };
 		5D2945B12D179C4A006A33D8 /* FavouritePlantsNameMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavouritePlantsNameMock.json; sourceTree = "<group>"; };
+		5D3199EF2D63C0FE002DCA17 /* GardenGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GardenGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D3199FA2D63C415002DCA17 /* GardenGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenGuideUITests.swift; sourceTree = "<group>"; };
 		5D53AAE62D35B06100C0AAE3 /* FavouritePlantsUsingTextSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavouritePlantsUsingTextSearch.json; sourceTree = "<group>"; };
 		5D595B952C4078C8004564A5 /* PlantDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailsController.swift; sourceTree = "<group>"; };
 		5D595B972C4078C8004564A5 /* PlantDetailsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailsProvider.swift; sourceTree = "<group>"; };
@@ -216,6 +249,17 @@
 		5D92FEB52CCC36CF0016BF31 /* PlantsForFirestoreMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlantsForFirestoreMock.json; sourceTree = "<group>"; };
 		5D92FEB72CCC40AA0016BF31 /* IrrigationInformationForFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrrigationInformationForFirestore.swift; sourceTree = "<group>"; };
 		5D92FEB92CD031240016BF31 /* ItemPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPlant.swift; sourceTree = "<group>"; };
+		5DB7D2E82D5FDC9600FFACF4 /* GardenGuideUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GardenGuideUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DB7D2F62D5FDF3100FFACF4 /* UIButtonExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensionTests.swift; sourceTree = "<group>"; };
+		5DB7D2F82D5FE07D00FFACF4 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
+		5DB7D2FA2D5FE0DE00FFACF4 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		5DB7D2FC2D5FE28D00FFACF4 /* MockManagerSingletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManagerSingletonTests.swift; sourceTree = "<group>"; };
+		5DB7D2FE2D5FE37A00FFACF4 /* NotificationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTests.swift; sourceTree = "<group>"; };
+		5DB7D3022D5FE6A000FFACF4 /* AuthMainSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainSnapshotTests.swift; sourceTree = "<group>"; };
+		5DB7D30B2D5FE96400FFACF4 /* NetworkErrorFirebaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorFirebaseTests.swift; sourceTree = "<group>"; };
+		5DB7D30D2D5FED9500FFACF4 /* SignUpErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpErrorTests.swift; sourceTree = "<group>"; };
+		5DB7D30F2D5FEE1B00FFACF4 /* ProviderTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTypeTests.swift; sourceTree = "<group>"; };
+		5DB7D3152D5FEF4500FFACF4 /* AuthMainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainViewControllerTests.swift; sourceTree = "<group>"; };
 		5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
 		5DBBB6B42C9A2E170035E3B8 /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		5DBBB6B82CA88FF00035E3B8 /* FirestoreAddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAddData.swift; sourceTree = "<group>"; };
@@ -248,6 +292,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5D3199EC2D63C0FE002DCA17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DB7D2E52D5FDC9500FFACF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DB7D30A2D5FE7A500FFACF4 /* SnapshotTestingCustomDump in Frameworks */,
+				5D09ED202D61461C0085ABF7 /* InlineSnapshotTesting in Frameworks */,
+				5DB7D3082D5FE7A500FFACF4 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E62BC4641500F853B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +512,14 @@
 				5D8F14F22D3C4A9C00393906 /* Watered */,
 			);
 			path = ComplementaryViews;
+			sourceTree = "<group>";
+		};
+		5D3199F02D63C0FE002DCA17 /* GardenGuideUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5D3199FA2D63C415002DCA17 /* GardenGuideUITests.swift */,
+			);
+			path = GardenGuideUITests;
 			sourceTree = "<group>";
 		};
 		5D595B962C4078C8004564A5 /* Controller */ = {
@@ -672,6 +741,55 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		5DB7D2E92D5FDC9600FFACF4 /* GardenGuideUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7D2F32D5FDE3500FFACF4 /* LoginAuthTests */,
+				5DB7D2F12D5FDDEB00FFACF4 /* UtilsTests */,
+			);
+			path = GardenGuideUnitTests;
+			sourceTree = "<group>";
+		};
+		5DB7D2F12D5FDDEB00FFACF4 /* UtilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7D2F22D5FDE1500FFACF4 /* ExtensionsTests */,
+				5DB7D2FC2D5FE28D00FFACF4 /* MockManagerSingletonTests.swift */,
+				5DB7D2FE2D5FE37A00FFACF4 /* NotificationsTests.swift */,
+			);
+			path = UtilsTests;
+			sourceTree = "<group>";
+		};
+		5DB7D2F22D5FDE1500FFACF4 /* ExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7D2F62D5FDF3100FFACF4 /* UIButtonExtensionTests.swift */,
+				5DB7D2F82D5FE07D00FFACF4 /* UIColorExtensionTests.swift */,
+				5DB7D2FA2D5FE0DE00FFACF4 /* StringExtensionTests.swift */,
+			);
+			path = ExtensionsTests;
+			sourceTree = "<group>";
+		};
+		5DB7D2F32D5FDE3500FFACF4 /* LoginAuthTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7D2F42D5FDE5500FFACF4 /* SnapshopTests */,
+				5DB7D30B2D5FE96400FFACF4 /* NetworkErrorFirebaseTests.swift */,
+				5DB7D30D2D5FED9500FFACF4 /* SignUpErrorTests.swift */,
+				5DB7D30F2D5FEE1B00FFACF4 /* ProviderTypeTests.swift */,
+				5DB7D3152D5FEF4500FFACF4 /* AuthMainViewControllerTests.swift */,
+			);
+			path = LoginAuthTests;
+			sourceTree = "<group>";
+		};
+		5DB7D2F42D5FDE5500FFACF4 /* SnapshopTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7D3022D5FE6A000FFACF4 /* AuthMainSnapshotTests.swift */,
+			);
+			path = SnapshopTests;
+			sourceTree = "<group>";
+		};
 		5DBBB6B62CA88EE30035E3B8 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,6 +861,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCE87EB2BC4641500F853B5 /* GardenGuide */,
+				5DB7D2E92D5FDC9600FFACF4 /* GardenGuideUnitTests */,
+				5D3199F02D63C0FE002DCA17 /* GardenGuideUITests */,
 				5DCE87EA2BC4641500F853B5 /* Products */,
 				5DCE88152BC4A49900F853B5 /* Frameworks */,
 			);
@@ -752,6 +872,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCE87E92BC4641500F853B5 /* GardenGuide.app */,
+				5DB7D2E82D5FDC9600FFACF4 /* GardenGuideUnitTests.xctest */,
+				5D3199EF2D63C0FE002DCA17 /* GardenGuideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -855,6 +977,47 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5D3199EE2D63C0FE002DCA17 /* GardenGuideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D3199F92D63C0FE002DCA17 /* Build configuration list for PBXNativeTarget "GardenGuideUITests" */;
+			buildPhases = (
+				5D3199EB2D63C0FE002DCA17 /* Sources */,
+				5D3199EC2D63C0FE002DCA17 /* Frameworks */,
+				5D3199ED2D63C0FE002DCA17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D3199F62D63C0FE002DCA17 /* PBXTargetDependency */,
+			);
+			name = GardenGuideUITests;
+			productName = GardenGuideUITests;
+			productReference = 5D3199EF2D63C0FE002DCA17 /* GardenGuideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		5DB7D2E72D5FDC9500FFACF4 /* GardenGuideUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DB7D2F02D5FDC9600FFACF4 /* Build configuration list for PBXNativeTarget "GardenGuideUnitTests" */;
+			buildPhases = (
+				5DB7D2E42D5FDC9500FFACF4 /* Sources */,
+				5DB7D2E52D5FDC9500FFACF4 /* Frameworks */,
+				5DB7D2E62D5FDC9500FFACF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DB7D2ED2D5FDC9600FFACF4 /* PBXTargetDependency */,
+			);
+			name = GardenGuideUnitTests;
+			packageProductDependencies = (
+				5DB7D3072D5FE7A500FFACF4 /* SnapshotTesting */,
+				5DB7D3092D5FE7A500FFACF4 /* SnapshotTestingCustomDump */,
+				5D09ED1F2D61461C0085ABF7 /* InlineSnapshotTesting */,
+			);
+			productName = GardenGuideUnitTests;
+			productReference = 5DB7D2E82D5FDC9600FFACF4 /* GardenGuideUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5DCE87E82BC4641500F853B5 /* GardenGuide */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DCE87FD2BC4641800F853B5 /* Build configuration list for PBXNativeTarget "GardenGuide" */;
@@ -893,9 +1056,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					5D3199EE2D63C0FE002DCA17 = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+						TestTargetID = 5DCE87E82BC4641500F853B5;
+					};
+					5DB7D2E72D5FDC9500FFACF4 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5DCE87E82BC4641500F853B5;
+					};
 					5DCE87E82BC4641500F853B5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -914,17 +1086,34 @@
 				5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5DCE88182BC5C69100F853B5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				5D14617B2BF2C69D00E85D50 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5DB7D3042D5FE7A500FFACF4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 5DCE87EA2BC4641500F853B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5DCE87E82BC4641500F853B5 /* GardenGuide */,
+				5DB7D2E72D5FDC9500FFACF4 /* GardenGuideUnitTests */,
+				5D3199EE2D63C0FE002DCA17 /* GardenGuideUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5D3199ED2D63C0FE002DCA17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DB7D2E62D5FDC9500FFACF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E72BC4641500F853B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -983,6 +1172,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5D3199EB2D63C0FE002DCA17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D3199FB2D63C415002DCA17 /* GardenGuideUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DB7D2E42D5FDC9500FFACF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DB7D2F72D5FDF3100FFACF4 /* UIButtonExtensionTests.swift in Sources */,
+				5DB7D30C2D5FE96400FFACF4 /* NetworkErrorFirebaseTests.swift in Sources */,
+				5DB7D2FF2D5FE37A00FFACF4 /* NotificationsTests.swift in Sources */,
+				5DB7D3102D5FEE1B00FFACF4 /* ProviderTypeTests.swift in Sources */,
+				5DB7D2FD2D5FE28D00FFACF4 /* MockManagerSingletonTests.swift in Sources */,
+				5DB7D30E2D5FED9500FFACF4 /* SignUpErrorTests.swift in Sources */,
+				5DB7D2F92D5FE07D00FFACF4 /* UIColorExtensionTests.swift in Sources */,
+				5DB7D3032D5FE6A000FFACF4 /* AuthMainSnapshotTests.swift in Sources */,
+				5DB7D2FB2D5FE0DE00FFACF4 /* StringExtensionTests.swift in Sources */,
+				5DB7D3162D5FEF4500FFACF4 /* AuthMainViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DCE87E52BC4641500F853B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1080,6 +1294,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5D3199F62D63C0FE002DCA17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DCE87E82BC4641500F853B5 /* GardenGuide */;
+			targetProxy = 5D3199F52D63C0FE002DCA17 /* PBXContainerItemProxy */;
+		};
+		5DB7D2ED2D5FDC9600FFACF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DCE87E82BC4641500F853B5 /* GardenGuide */;
+			targetProxy = 5DB7D2EC2D5FDC9600FFACF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5DCE87F72BC4641800F853B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1092,6 +1319,101 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5D3199F72D63C0FE002DCA17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonovanZJA.GardenGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GardenGuide;
+			};
+			name = Debug;
+		};
+		5D3199F82D63C0FE002DCA17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonovanZJA.GardenGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GardenGuide;
+			};
+			name = Release;
+		};
+		5DB7D2EE2D5FDC9600FFACF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonovanZJA.GardenGuideUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
+			};
+			name = Debug;
+		};
+		5DB7D2EF2D5FDC9600FFACF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonovanZJA.GardenGuideUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GardenGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GardenGuide";
+			};
+			name = Release;
+		};
 		5DCE87FB2BC4641800F853B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1265,6 +1587,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5D3199F92D63C0FE002DCA17 /* Build configuration list for PBXNativeTarget "GardenGuideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D3199F72D63C0FE002DCA17 /* Debug */,
+				5D3199F82D63C0FE002DCA17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DB7D2F02D5FDC9600FFACF4 /* Build configuration list for PBXNativeTarget "GardenGuideUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DB7D2EE2D5FDC9600FFACF4 /* Debug */,
+				5DB7D2EF2D5FDC9600FFACF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5DCE87E42BC4641500F853B5 /* Build configuration list for PBXProject "GardenGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1294,6 +1634,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		5DB7D3042D5FE7A500FFACF4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
 		5DCE88022BC46BD500F853B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1313,10 +1661,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D09ED1F2D61461C0085ABF7 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DB7D3042D5FE7A500FFACF4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
 		5D14617C2BF2C69D00E85D50 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D14617B2BF2C69D00E85D50 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5DB7D3072D5FE7A500FFACF4 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DB7D3042D5FE7A500FFACF4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		5DB7D3092D5FE7A500FFACF4 /* SnapshotTestingCustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DB7D3042D5FE7A500FFACF4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTestingCustomDump;
 		};
 		5DCE88032BC46BD500F853B5 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -40,6 +40,28 @@
                ReferencedContainer = "container:GardenGuide.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5DB7D2E72D5FDC9500FFACF4"
+               BuildableName = "GardenGuideUnitTests.xctest"
+               BlueprintName = "GardenGuideUnitTests"
+               ReferencedContainer = "container:GardenGuide.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D3199EE2D63C0FE002DCA17"
+               BuildableName = "GardenGuideUITests.xctest"
+               BlueprintName = "GardenGuideUITests"
+               ReferencedContainer = "container:GardenGuide.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
