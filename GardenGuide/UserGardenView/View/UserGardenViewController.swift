@@ -660,6 +660,12 @@ extension UserGardenViewController: AddIrrigationViewControllerDelegate {
 
 //MARK: Extension of SettingsView
 extension UserGardenViewController: SettingsViewControllerDelegate {
+    func updateVariables() {
+        ItemPlant.gardenPlants = [[]]
+        ItemPlant.favouritePlants = []
+        gardenPlantsCell = [[]]
+    }
+    
     //get info of SettingsView
     func deletingCellsFromThePlantGarden(_ isEditingMode: Bool) {
         self.isEditingMode = isEditingMode

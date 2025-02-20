@@ -11,6 +11,7 @@ import FirebaseAuth
 //MARK: Protocol to Delegate
 protocol SettingsViewControllerDelegate: AnyObject {
     func deletingCellsFromThePlantGarden(_ isEditingMode: Bool)
+    func updateVariables()
 }
 
 class SettingsViewController: UIViewController{
@@ -123,6 +124,7 @@ class SettingsViewController: UIViewController{
             //remove CoreData
             let dataManager = CoreDataPlant()
             dataManager.deletePlants()
+            delegate?.updateVariables()
             //Go to Storyboard without authentication
             let authStoryboard = UIStoryboard(name: "AuthMain", bundle: .main)
             if let authMainViewController = authStoryboard.instantiateViewController(withIdentifier: "AuthMainVC") as? AuthMainViewController {
