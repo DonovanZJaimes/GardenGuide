@@ -64,7 +64,7 @@
 		5D595BB52C4078C9004564A5 /* PlantDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D595BA62C4078C8004564A5 /* PlantDetailsViewController.xib */; };
 		5D595BB72C4078E8004564A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D595BB62C4078E8004564A5 /* Assets.xcassets */; };
 		5D595BBC2C4079DD004564A5 /* CoreDataPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BB82C4079DD004564A5 /* CoreDataPlant.swift */; };
-		5D595BBD2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BB92C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld */; };
+		5D595BBD2C4079DD004564A5 /* GardenGuideCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BB92C4079DD004564A5 /* GardenGuideCoreDataModel.xcdatamodeld */; };
 		5D595BC02C407A5E004564A5 /* IrrigationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BBE2C407A5E004564A5 /* IrrigationInformation.swift */; };
 		5D595BC42C407A65004564A5 /* SimilarPlantsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BC12C407A65004564A5 /* SimilarPlantsName.swift */; };
 		5D595BC52C407A65004564A5 /* SuggestedPlantName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D595BC22C407A65004564A5 /* SuggestedPlantName.swift */; };
@@ -219,7 +219,7 @@
 		5D595BA62C4078C8004564A5 /* PlantDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlantDetailsViewController.xib; sourceTree = "<group>"; };
 		5D595BB62C4078E8004564A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D595BB82C4079DD004564A5 /* CoreDataPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPlant.swift; sourceTree = "<group>"; };
-		5D595BBB2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GardenGuideCoreData.xcdatamodel; sourceTree = "<group>"; };
+		5D595BBB2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = GardenGuideCoreData.xcdatamodel; sourceTree = "<group>"; };
 		5D595BBE2C407A5E004564A5 /* IrrigationInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrrigationInformation.swift; sourceTree = "<group>"; };
 		5D595BC12C407A65004564A5 /* SimilarPlantsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimilarPlantsName.swift; sourceTree = "<group>"; };
 		5D595BC22C407A65004564A5 /* SuggestedPlantName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedPlantName.swift; sourceTree = "<group>"; };
@@ -594,7 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				5D595BB82C4079DD004564A5 /* CoreDataPlant.swift */,
-				5D595BB92C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld */,
+				5D595BB92C4079DD004564A5 /* GardenGuideCoreDataModel.xcdatamodeld */,
 				5D23F1B62C5055EA002A8499 /* PersistenceManager.swift */,
 				5DBBB6B22C94E29D0035E3B8 /* CoreDataUtils.swift */,
 			);
@@ -1204,7 +1204,7 @@
 				5D0AB8C72CC6FFA300610D8E /* UserGardenProvider.swift in Sources */,
 				5D595BAF2C4078C9004564A5 /* ButtonInformationListTableViewCell.swift in Sources */,
 				5D595BD52C407B84004564A5 /* SearchPlantForTableViewCell.swift in Sources */,
-				5D595BBD2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld in Sources */,
+				5D595BBD2C4079DD004564A5 /* GardenGuideCoreDataModel.xcdatamodeld in Sources */,
 				5D595BA92C4078C9004564A5 /* PlantDetailsController.swift in Sources */,
 				5D595BBC2C4079DD004564A5 /* CoreDataPlant.swift in Sources */,
 				5D7A65FB2BCDB8A100BE0341 /* SignUpError.swift in Sources */,
@@ -1734,14 +1734,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		5D595BB92C4079DD004564A5 /* GardenGuideCoreData.xcdatamodeld */ = {
+		5D595BB92C4079DD004564A5 /* GardenGuideCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				5D595BBB2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodel */,
 			);
 			currentVersion = 5D595BBB2C4079DD004564A5 /* GardenGuideCoreData.xcdatamodel */;
-			name = GardenGuideCoreData.xcdatamodeld;
-			path = /Users/donovanz.jaimes/Desktop/Aplicaciones/GardenGuide/GardenGuide/GardenGuide/CoreData/GardenGuideCoreData.xcdatamodeld;
+			path = GardenGuideCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

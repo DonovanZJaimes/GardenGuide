@@ -12,7 +12,7 @@ class CoreDataPlant {
     private let container: NSPersistentContainer!
     init(){
         //container = NSPersistentContainer(name: "GardenGuideCoreData")
-        container = NSPersistentContainer(name: "GardenGuideCoreData", managedObjectModel: PersistenceManager.managedObjectModel)
+        container = NSPersistentContainer(name: "GardenGuideCoreDataModel", managedObjectModel: PersistenceManager.managedObjectModel)
         setUpDataBase()
     }
     
