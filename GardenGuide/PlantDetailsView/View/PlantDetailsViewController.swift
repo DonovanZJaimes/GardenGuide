@@ -50,7 +50,7 @@ class PlantDetailsViewController: UIViewController {
     //var numberOfImages = 1
     var hasWatered: Bool = false
     //Core Data
-    let dataManager = CoreDataPlant()
+    //let dataManager = CoreDataPlant()
     //Controller for de ViewController
     lazy var controller = PlantDetailsController(delegate: self)
     private var firestoreUtilts = FirestoreUtilts()

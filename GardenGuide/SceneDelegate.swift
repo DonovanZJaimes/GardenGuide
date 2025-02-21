@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("tabBarItemUserGardenView is not yet initialized.")
             return
         }
-        print("ya se inicializo")
         let value = Notifications.shared.newPlants.count
         tabBarItemUserGardenView.badgeValue = (value == 0) ? nil : String(value)
          

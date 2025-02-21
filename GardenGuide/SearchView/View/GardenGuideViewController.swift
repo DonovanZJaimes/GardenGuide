@@ -59,7 +59,7 @@ class GardenGuideViewController: UIViewController {
     //Plants for the tableView
     var randomPlants: [SuggestedPlant] = []
     //CoreData
-    let dataManager = CoreDataPlant()
+    //let dataManager = CoreDataPlant()
     let defaults = UserDefaults.standard
     //Cloud Firestore
     private let db = Firestore.firestore()

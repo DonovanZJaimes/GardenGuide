@@ -52,7 +52,7 @@ class CollectionTabsView: UIView {
     //Global variables
     private var plants : PlantsByImageSearch!
     weak private var delegate: CollectionTabsViewDelegate?
-    let dataManager = CoreDataPlant()
+    //let dataManager = CoreDataPlant()
     
     
     //MARK: Functions
