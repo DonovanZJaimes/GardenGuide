@@ -264,24 +264,7 @@ class SettingsViewController: UIViewController{
         print("User deleted")
     }
     
-    
-#warning ("borrar esto")
-    @IBAction func borrarAccion(_ sender: Any) {
-        print("Plantas en coredata")
-        let dataManager = CoreDataPlant()
-        let Plants = dataManager.fetchPlants()
-        print(Plants.count)
-        for index in 0 ..< Plants.count {
-            print("SIGUIENTE")
-            let plant = Plants[index]
-            let watered = dataManager.fetchWatered(plant: plant)
-            print(plant.name!)
-            print(plant.isAdded)
-            print("cantidad de agua: \(String(describing: watered?.waterAmount)) ")
-            print("numero de dias \(String(describing: watered?.numberOfDays))")
-        }
-        
-    }
+  
     
     
     
